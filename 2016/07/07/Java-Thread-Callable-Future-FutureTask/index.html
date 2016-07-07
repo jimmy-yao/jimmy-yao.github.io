@@ -11,19 +11,22 @@
     
 
     
-    <meta name="description" content="title: Java并发编程:Callable、Future和FutureTask #可以改成中文的，如“新文章”date: 2016-07-07 16:10:09 #发表日期，一般不改动categories: Java #文章文类
-tags: [Java] #文章标签，多于一项时用这种格式，只有一项时使用tags: blogJava并发编程：Callable、Future和FutureTask">
+    <meta name="description" content="title: Java并发编程之Callable、Future和FutureTaskdate: 2016-07-07 16:10:09categories: Java
+tags: [Java]Java并发编程：Callable、Future和FutureTask创建线程的2种方式，一种是直接继承Thread，另外一种就是实现Runnable接口。
+　　这2种方式都有一个缺陷就是：在执行完任务之后无">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jimmy's Blog">
 <meta property="og:url" content="http:jimmy-yao.github.io/2016/07/07/Java-Thread-Callable-Future-FutureTask/index.html">
 <meta property="og:site_name" content="Jimmy's Blog">
-<meta property="og:description" content="title: Java并发编程:Callable、Future和FutureTask #可以改成中文的，如“新文章”date: 2016-07-07 16:10:09 #发表日期，一般不改动categories: Java #文章文类
-tags: [Java] #文章标签，多于一项时用这种格式，只有一项时使用tags: blogJava并发编程：Callable、Future和FutureTask">
-<meta property="og:updated_time" content="2016-07-07T08:11:23.024Z">
+<meta property="og:description" content="title: Java并发编程之Callable、Future和FutureTaskdate: 2016-07-07 16:10:09categories: Java
+tags: [Java]Java并发编程：Callable、Future和FutureTask创建线程的2种方式，一种是直接继承Thread，另外一种就是实现Runnable接口。
+　　这2种方式都有一个缺陷就是：在执行完任务之后无">
+<meta property="og:updated_time" content="2016-07-07T08:13:17.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jimmy's Blog">
-<meta name="twitter:description" content="title: Java并发编程:Callable、Future和FutureTask #可以改成中文的，如“新文章”date: 2016-07-07 16:10:09 #发表日期，一般不改动categories: Java #文章文类
-tags: [Java] #文章标签，多于一项时用这种格式，只有一项时使用tags: blogJava并发编程：Callable、Future和FutureTask">
+<meta name="twitter:description" content="title: Java并发编程之Callable、Future和FutureTaskdate: 2016-07-07 16:10:09categories: Java
+tags: [Java]Java并发编程：Callable、Future和FutureTask创建线程的2种方式，一种是直接继承Thread，另外一种就是实现Runnable接口。
+　　这2种方式都有一个缺陷就是：在执行完任务之后无">
 
     
     <link rel="alternative" href="/atom.xml" title="Jimmy&#39;s Blog" type="application/atom+xml">
@@ -101,12 +104,12 @@ tags: [Java] #文章标签，多于一项时用这种格式，只有一项时使
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-Java-文章标签，多于一项时用这种格式，只有一项时使用tags-blog"><span class="toc-number">1.</span> <span class="toc-text">tags: [Java] #文章标签，多于一项时用这种格式，只有一项时使用tags: blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java并发编程：Callable、Future和FutureTask"><span class="toc-number">2.</span> <span class="toc-text">Java并发编程：Callable、Future和FutureTask</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-Java"><span class="toc-number">1.</span> <span class="toc-text">tags: [Java]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java并发编程：Callable、Future和FutureTask"><span class="toc-number">2.</span> <span class="toc-text">Java并发编程：Callable、Future和FutureTask</span></a></li></ol>
 		
 		</div>
 		
-		<p>title: Java并发编程:Callable、Future和FutureTask #可以改成中文的，如“新文章”<br>date: 2016-07-07 16:10:09 #发表日期，一般不改动<br>categories: Java #文章文类</p>
-<h2 id="tags-Java-文章标签，多于一项时用这种格式，只有一项时使用tags-blog"><a href="#tags-Java-文章标签，多于一项时用这种格式，只有一项时使用tags-blog" class="headerlink" title="tags: [Java] #文章标签，多于一项时用这种格式，只有一项时使用tags: blog"></a>tags: [Java] #文章标签，多于一项时用这种格式，只有一项时使用tags: blog</h2><h2 id="Java并发编程：Callable、Future和FutureTask"><a href="#Java并发编程：Callable、Future和FutureTask" class="headerlink" title="Java并发编程：Callable、Future和FutureTask"></a>Java并发编程：Callable、Future和FutureTask</h2><p>创建线程的2种方式，一种是直接继承Thread，另外一种就是实现Runnable接口。</p>
+		<p>title: Java并发编程之Callable、Future和FutureTask<br>date: 2016-07-07 16:10:09<br>categories: Java</p>
+<h2 id="tags-Java"><a href="#tags-Java" class="headerlink" title="tags: [Java]"></a>tags: [Java]</h2><h2 id="Java并发编程：Callable、Future和FutureTask"><a href="#Java并发编程：Callable、Future和FutureTask" class="headerlink" title="Java并发编程：Callable、Future和FutureTask"></a>Java并发编程：Callable、Future和FutureTask</h2><p>创建线程的2种方式，一种是直接继承Thread，另外一种就是实现Runnable接口。</p>
 <p>　　这2种方式都有一个缺陷就是：在执行完任务之后无法获取执行结果。</p>
 <p>　　如果需要获取执行结果，就必须通过共享变量或者使用线程通信的方式来达到效果，这样使用起来就比较麻烦。</p>
 <p>　　而自从Java 1.5开始，就提供了Callable和Future，通过它们可以在任务执行完毕之后得到任务执行结果。</p>
@@ -234,7 +237,7 @@ V call() throws Exception;
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-Java-文章标签，多于一项时用这种格式，只有一项时使用tags-blog"><span class="toc-number">1.</span> <span class="toc-text">tags: [Java] #文章标签，多于一项时用这种格式，只有一项时使用tags: blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java并发编程：Callable、Future和FutureTask"><span class="toc-number">2.</span> <span class="toc-text">Java并发编程：Callable、Future和FutureTask</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-Java"><span class="toc-number">1.</span> <span class="toc-text">tags: [Java]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java并发编程：Callable、Future和FutureTask"><span class="toc-number">2.</span> <span class="toc-text">Java并发编程：Callable、Future和FutureTask</span></a></li></ol>
  
   </div>
 
