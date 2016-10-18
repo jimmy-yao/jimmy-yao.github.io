@@ -31,7 +31,7 @@ e.使用volatile关键字的场景
 内存模型的相关概念缓存一致性问题。通常称这种被多个线程访问的变量为共享变量。
 也就是说，如果一个变量在多个CPU中都存在缓存（一般在多线程编程时才会出现），那么就可能存在缓存不一致的问题。
 为了解决缓存不一致性问题，通常来说有以下2种解决方法：">
-<meta property="og:updated_time" content="2016-10-18T12:15:44.419Z">
+<meta property="og:updated_time" content="2016-10-18T12:22:44.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从根源上解析 Java volatile 关键字的实现">
 <meta name="twitter:description" content="解析概览a.内存模型的相关概念
@@ -117,7 +117,7 @@ e.使用volatile关键字的场景
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解析概览"><span class="toc-number">1.</span> <span class="toc-text">解析概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存模型的相关概念"><span class="toc-number">2.</span> <span class="toc-text">内存模型的相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发编程中的三个概念"><span class="toc-number">3.</span> <span class="toc-text">并发编程中的三个概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子性"><span class="toc-number">3.1.</span> <span class="toc-text">原子性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性"><span class="toc-number">3.2.</span> <span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序性"><span class="toc-number">3.3.</span> <span class="toc-text">有序性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java内存模型"><span class="toc-number">4.</span> <span class="toc-text">Java内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子性-1"><span class="toc-number">4.1.</span> <span class="toc-text">原子性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性-1"><span class="toc-number">4.2.</span> <span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序性-1"><span class="toc-number">4.3.</span> <span class="toc-text">有序性</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解析概览"><span class="toc-number">1.</span> <span class="toc-text">解析概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存模型的相关概念"><span class="toc-number">2.</span> <span class="toc-text">内存模型的相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发编程中的三个概念"><span class="toc-number">3.</span> <span class="toc-text">并发编程中的三个概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子性"><span class="toc-number">3.1.</span> <span class="toc-text">原子性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性"><span class="toc-number">3.2.</span> <span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序性"><span class="toc-number">3.3.</span> <span class="toc-text">有序性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java内存模型"><span class="toc-number">4.</span> <span class="toc-text">Java内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子性-1"><span class="toc-number">4.1.</span> <span class="toc-text">原子性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性-1"><span class="toc-number">4.2.</span> <span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序性-1"><span class="toc-number">4.3.</span> <span class="toc-text">有序性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深入剖析volatile关键字"><span class="toc-number">5.</span> <span class="toc-text">深入剖析volatile关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Volatile关键字的两层语义"><span class="toc-number">5.1.</span> <span class="toc-text">Volatile关键字的两层语义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile保证原子性吗？"><span class="toc-number">5.2.</span> <span class="toc-text">volatile保证原子性吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile能保证有序性吗？"><span class="toc-number">5.3.</span> <span class="toc-text">volatile能保证有序性吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile的原理和实现机制"><span class="toc-number">5.4.</span> <span class="toc-text">volatile的原理和实现机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用volatile关键字的场景"><span class="toc-number">6.</span> <span class="toc-text">使用volatile关键字的场景</span></a></li></ol>
 		
 		</div>
 		
@@ -175,9 +175,7 @@ e.使用volatile关键字的场景
 <p>2.第二条规则也比较容易理解，也就是说无论在单线程中还是多线程中，同一个锁如果出于被锁定的状态，那么必须先对锁进行了释放操作，后面才能继续进行lock操作。</p>
 <p>3.第三条规则是一条比较重要的规则，也是后文将要重点讲述的内容。直观地解释就是，如果一个线程先去写一个变量，然后一个线程去进行读取，那么写入操作肯定会先行发生于读操作。</p>
 <p>4.第四条规则实际上就是体现happens-before原则具备传递性。</p>
-<p>5、深入剖析volatile关键字</p>
-<p>5.1 Volatile关键字的两层语义</p>
-<p>一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：</p>
+<h2 id="深入剖析volatile关键字"><a href="#深入剖析volatile关键字" class="headerlink" title="深入剖析volatile关键字"></a>深入剖析volatile关键字</h2><h3 id="Volatile关键字的两层语义"><a href="#Volatile关键字的两层语义" class="headerlink" title="Volatile关键字的两层语义"></a>Volatile关键字的两层语义</h3><p>一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：</p>
 <p>1.保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。</p>
 <p>2.禁止进行指令重排序。</p>
 <p>关于可见性，先看一段代码，假如线程1先执行，线程2后执行：</p>
@@ -191,8 +189,7 @@ e.使用volatile关键字的场景
 <p>第三：由于线程1的工作内存中缓存变量stop的缓存行无效，所以线程1再次读取变量stop的值时会去主存读取。</p>
 <p>那么在线程2修改stop值时（当然这里包括2个操作，修改线程2工作内存中的值，然后将修改后的值写入内存），会使得线程1的工作内存中缓存变量stop的缓存行无效，然后线程1读取时，发现自己的缓存行无效，它会等待缓存行对应的主存地址被更新之后，然后去对应的主存读取最新的值。</p>
 <p>那么线程1读取到的就是最新的正确的值。</p>
-<p>5.2 volatile保证原子性吗？</p>
-<p>volatile不保证原子性，下面看一个实例。</p>
+<h3 id="volatile保证原子性吗？"><a href="#volatile保证原子性吗？" class="headerlink" title="volatile保证原子性吗？"></a>volatile保证原子性吗？</h3><p>volatile不保证原子性，下面看一个实例。</p>
 <p>public class Test {<br>    public volatile int inc = 0;<br>public void increase() {<br>inc++;<br>}</p>
 <p>public static void main(String[] args) {<br>final Test test = new Test();<br>for(int i=0;i&lt;10;i++){<br>new Thread(){<br>public void run() {<br>for(int j=0;j&lt;1000;j++)<br>test.increase();<br>};<br>}.start();<br>}</p>
 <p>while(Thread.activeCount()&gt;1) //保证前面的线程都执行完<br>Thread.yield();<br>System.out.println(test.inc);<br>}<br>}</p>
@@ -220,8 +217,7 @@ e.使用volatile关键字的场景
 <p>public static void main(String[] args) {<br>final Test test = new Test();<br>for(int i=0;i&lt;10;i++){<br>new Thread(){<br>public void run() {<br>for(int j=0;j&lt;1000;j++)<br>test.increase();<br>};<br>}.start();<br>}</p>
 <p>while(Thread.activeCount()&gt;1) //保证前面的线程都执行完<br>Thread.yield();<br>System.out.println(test.inc);<br>}<br>}</p>
 <p>在java 1.5的java.util.concurrent.atomic包下提供了一些原子操作类，即对基本数据类型的 自增（加1操作），自减（减1操作）、以及加法操作（加一个数），减法操作（减一个数）进行了封装，保证这些操作是原子性操作。atomic是利用CAS来实现原子性操作的（Compare And Swap），CAS实际上是利用处理器提供的CMPXCHG指令实现的，而处理器执行CMPXCHG指令是一个原子性操作。</p>
-<p>5.3 volatile能保证有序性吗？</p>
-<p>volatile能在一定程度上保证有序性。</p>
+<h3 id="volatile能保证有序性吗？"><a href="#volatile能保证有序性吗？" class="headerlink" title="volatile能保证有序性吗？"></a>volatile能保证有序性吗？</h3><p>volatile能在一定程度上保证有序性。</p>
 <p>volatile关键字禁止指令重排序有两层意思：</p>
 <p>1）当程序执行到volatile变量的读操作或者写操作时，在其前面的操作的更改肯定全部已经进行，且结果已经对后面的操作可见；在其后面的操作肯定还没有进行；</p>
 <p>2）在进行指令优化时，不能将在对volatile变量访问的语句放在其后面执行，也不能把volatile变量后面的语句放到其前面执行。</p>
@@ -229,16 +225,14 @@ e.使用volatile关键字的场景
 <p>//x、y为非volatile变量<br>//flag为volatile变量<br>x = 2; //语句1<br>y = 0; //语句2<br>flag = true; //语句3<br>x = 4; //语句4<br>y = -1; //语句5</p>
 <p>由于flag变量为volatile变量，那么在进行指令重排序的过程的时候，不会将语句3放到语句1、语句2前面，也不会讲语句3放到语句4、语句5后面。但是要注意语句1和语句2的顺序、语句4和语句5的顺序是不作任何保证的。</p>
 <p>并且volatile关键字能保证，执行到语句3时，语句1和语句2必定是执行完毕了的，且语句1和语句2的执行结果对语句3、语句4、语句5是可见的。</p>
-<p>5.4 volatile的原理和实现机制</p>
-<p>这里探讨一下volatile到底如何保证可见性和禁止指令重排序的。</p>
+<h3 id="volatile的原理和实现机制"><a href="#volatile的原理和实现机制" class="headerlink" title="volatile的原理和实现机制"></a>volatile的原理和实现机制</h3><p>这里探讨一下volatile到底如何保证可见性和禁止指令重排序的。</p>
 <p>下面这段话摘自《深入理解Java虚拟机》：</p>
 <p>“观察加入volatile关键字和没有加入volatile关键字时所生成的汇编代码发现，加入volatile关键字时，会多出一个lock前缀指令”</p>
 <p>lock前缀指令实际上相当于一个内存屏障（也成内存栅栏），内存屏障会提供3个功能：</p>
 <p>1.它确保指令重排序时不会把其后面的指令排到内存屏障之前的位置，也不会把前面的指令排到内存屏障的后面；即在执行到内存屏障这句指令时，在它前面的操作已经全部完成；</p>
 <p>2.它会强制将对缓存的修改操作立即写入主存；</p>
 <p>3.如果是写操作，它会导致其他CPU中对应的缓存行无效。</p>
-<p>6、使用volatile关键字的场景</p>
-<p>synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字的，因为volatile关键字无法保证操作的原子性。通常来说，使用volatile必须具备以下2个条件：</p>
+<h2 id="使用volatile关键字的场景"><a href="#使用volatile关键字的场景" class="headerlink" title="使用volatile关键字的场景"></a>使用volatile关键字的场景</h2><p>synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字的，因为volatile关键字无法保证操作的原子性。通常来说，使用volatile必须具备以下2个条件：</p>
 <p>1.对变量的写操作不依赖于当前值（比如++操作，上面有例子）</p>
 <p>2.该变量没有包含在具有其他变量的不变式中</p>
 <p>实际上，这些条件表明，可以被写入 volatile 变量的这些有效值独立于任何程序的状态，包括变量的当前状态。</p>
@@ -291,9 +285,9 @@ e.使用volatile关键字的场景
  
 
 <div class="next">
-<a href="/2016/08/16/Tomcat容器管理安全的几种验证方式/"  title="Tomcat容器管理安全的几种验证方式">
+<a href="/2016/08/16/粗浅看Tomcat系统架构分析/"  title="粗浅看Tomcat系统架构分析">
  <strong>下一篇：</strong><br/> 
- <span>Tomcat容器管理安全的几种验证方式
+ <span>粗浅看Tomcat系统架构分析
 </span>
 </a>
 </div>
@@ -308,7 +302,7 @@ e.使用volatile关键字的场景
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解析概览"><span class="toc-number">1.</span> <span class="toc-text">解析概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存模型的相关概念"><span class="toc-number">2.</span> <span class="toc-text">内存模型的相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发编程中的三个概念"><span class="toc-number">3.</span> <span class="toc-text">并发编程中的三个概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子性"><span class="toc-number">3.1.</span> <span class="toc-text">原子性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性"><span class="toc-number">3.2.</span> <span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序性"><span class="toc-number">3.3.</span> <span class="toc-text">有序性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java内存模型"><span class="toc-number">4.</span> <span class="toc-text">Java内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子性-1"><span class="toc-number">4.1.</span> <span class="toc-text">原子性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性-1"><span class="toc-number">4.2.</span> <span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序性-1"><span class="toc-number">4.3.</span> <span class="toc-text">有序性</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解析概览"><span class="toc-number">1.</span> <span class="toc-text">解析概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存模型的相关概念"><span class="toc-number">2.</span> <span class="toc-text">内存模型的相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发编程中的三个概念"><span class="toc-number">3.</span> <span class="toc-text">并发编程中的三个概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子性"><span class="toc-number">3.1.</span> <span class="toc-text">原子性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性"><span class="toc-number">3.2.</span> <span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序性"><span class="toc-number">3.3.</span> <span class="toc-text">有序性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java内存模型"><span class="toc-number">4.</span> <span class="toc-text">Java内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子性-1"><span class="toc-number">4.1.</span> <span class="toc-text">原子性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性-1"><span class="toc-number">4.2.</span> <span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序性-1"><span class="toc-number">4.3.</span> <span class="toc-text">有序性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深入剖析volatile关键字"><span class="toc-number">5.</span> <span class="toc-text">深入剖析volatile关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Volatile关键字的两层语义"><span class="toc-number">5.1.</span> <span class="toc-text">Volatile关键字的两层语义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile保证原子性吗？"><span class="toc-number">5.2.</span> <span class="toc-text">volatile保证原子性吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile能保证有序性吗？"><span class="toc-number">5.3.</span> <span class="toc-text">volatile能保证有序性吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile的原理和实现机制"><span class="toc-number">5.4.</span> <span class="toc-text">volatile的原理和实现机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用volatile关键字的场景"><span class="toc-number">6.</span> <span class="toc-text">使用volatile关键字的场景</span></a></li></ol>
  
   </div>
 
@@ -350,11 +344,11 @@ e.使用volatile关键字的场景
 			
 		
 			
-				<li><a href="/tags/文章/" title="文章">文章<sup>1</sup></a></li>
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+				<li><a href="/tags/文章/" title="文章">文章<sup>1</sup></a></li>
 			
 		
 		</ul>
