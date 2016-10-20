@@ -1,0 +1,627 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Asher's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="原文出处:http://my.oschina.net/itblog/blog/678845?fromerr=mnnjJA0O
+摘要本文介绍如何使用容器（这里指tomcat）来进行安全管理。
+当访问服务器中受保护的资源时，容器管理的验证方法可以控制确认用户身份的方式。Tomcat支持四种容器管理的安全防护，它们是：
+BASIC(基本验证)：通过HTTP验证，需要提供base64编码文本的用户口令DI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tomcat容器管理安全的几种验证方式">
+<meta property="og:url" content="http:jimmy-yao.github.io/2016/08/16/Tomcat容器管理安全的几种验证方式/index.html">
+<meta property="og:site_name" content="Asher's Blog">
+<meta property="og:description" content="原文出处:http://my.oschina.net/itblog/blog/678845?fromerr=mnnjJA0O
+摘要本文介绍如何使用容器（这里指tomcat）来进行安全管理。
+当访问服务器中受保护的资源时，容器管理的验证方法可以控制确认用户身份的方式。Tomcat支持四种容器管理的安全防护，它们是：
+BASIC(基本验证)：通过HTTP验证，需要提供base64编码文本的用户口令DI">
+<meta property="og:updated_time" content="2016-08-19T10:15:00.715Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tomcat容器管理安全的几种验证方式">
+<meta name="twitter:description" content="原文出处:http://my.oschina.net/itblog/blog/678845?fromerr=mnnjJA0O
+摘要本文介绍如何使用容器（这里指tomcat）来进行安全管理。
+当访问服务器中受保护的资源时，容器管理的验证方法可以控制确认用户身份的方式。Tomcat支持四种容器管理的安全防护，它们是：
+BASIC(基本验证)：通过HTTP验证，需要提供base64编码文本的用户口令DI">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Tomcat容器管理安全的几种验证方式 | Asher's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Asher's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love life | Love wife</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Tomcat容器管理安全的几种验证方式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-16T17:26:39+08:00" content="2016-08-16">
+              2016-08-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>原文出处:<a href="http://my.oschina.net/itblog/blog/678845?fromerr=mnnjJA0O" target="_blank" rel="external">http://my.oschina.net/itblog/blog/678845?fromerr=mnnjJA0O</a></p>
+<p>摘要<br>本文介绍如何使用容器（这里指tomcat）来进行安全管理。</p>
+<p>当访问服务器中受保护的资源时，容器管理的验证方法可以控制确认用户身份的方式。Tomcat支持四种容器管理的安全防护，它们是：</p>
+<p>BASIC(基本验证)：通过HTTP验证，需要提供base64编码文本的用户口令<br>DIGEST(摘要验证)：通过HTTP验证，需要提供摘要编码字符串的用户口令<br>FORM(表单验证)：在网页的表单上要求提供密码<br>CLIENT-CERT(客户端证书验证)：以客户端证书来确认用户的身份<br> 基本验证</p>
+<p>当web.xml文件中的auth-method元素设置为BASIC时，表明应用使用的是基本验证，每次浏览器请求受保护的Web应用资源时，Tomcat都会使用HTTP基本验证向浏览器索取用户名和密码（以页面弹窗的方式）。使用这种验证方法，所有的密码都会以base64编码的文本在网络上传输。</p>
+<p>先看下项目结构（我用Maven管理的依赖）：</p>
+<p>其中，protect/protect.jsp是被保护的，需要授权访问。</p>
+<p>说明：本文提到的tomcat-users.xml，server.xml等文件，如果是在Eclipse中启动tomcat，则这些文件在Eclipse中的Servers工程下对应的tomcat下，如图：</p>
+<p>而本文提到的web.xml是指项目自己的web.xml，而非Servers项目下Tomcat中的web.xml。</p>
+<p>web.xml</p>
+<p><security-constraint><br>    <web-resource-collection><br>        <http-method>GET</http-method><br>        <web-resource-name>tomcat protect page</web-resource-name><br>        <!-- /protect目录下的所有资源是受保护的 --><br>        <url-pattern>/protect/*</url-pattern><br>    </web-resource-collection><br>    <auth-constraint><br>        <!-- 这里的member要与tomcat-user.xml中配置的role一致 --><br>        <role-name>member</role-name><br>    </auth-constraint><br></security-constraint></p>
+<p><login-config><br>    <!-- 验证方式，可选的值为： "BASIC", "DIGEST", "FORM", "CLIENT-CERT" --><br>    <auth-method>BASIC</auth-method><br>    <!-- 使用的Realm名字，注意这里不能有空格 --><br>    <realm-name>MyConstraints</realm-name><br></login-config><br>tomcat-user.xml（注意如果是在Eclipse中启动tomcat，这个tomcat-user.xml在Eclipse中的Servers工程下）</p>
+<p><role rolename="member"><br><!-- member角色下有一个叫alvis的用户，密码为pwd --></role></p>
+<p><user username="alvis" password="pwd" roles="member"><br>重启tomcat后，访问protect目录下的资源，情况是这样的：</user></p>
+<p>输入账户alvis，密码pwd后，访问成功（当然，非protect目录下的资源是可以直接访问的）：</p>
+<p>摘要验证</p>
+<p>当web.xml文件中的auth-method元素设置为DIGEST时，表明应用使用的是摘要验证。还是上面的例子，看配置：</p>
+<p>web.xml和基本验证一样，只是auth-method修改为DIGEST，此处不赘述。</p>
+<p>server.xml中的UserDatabaseRealm（如果tomcat使用的是其他Realm，也一样的）里增加digest属性：</p>
+<p>接下来，要生成tomcat可识别的MD5密码。方式有两种，正如官网描述：</p>
+<p>To calculate the digested value of a cleartext password, two convenience techniques are supported:</p>
+<p>If you are writing an application that needs to calculate digested passwords dynamically, call the static Digest()method of the org.apache.catalina.realm.RealmBase class, passing the cleartext password and the digest algorithm name as arguments. This method will return the digested password.<br>If you want to execute a command line utility to calculate the digested password, simply execute<br>CATALINA_HOME/bin/digest.[bat|sh] -a {algorithm} {cleartext-password}<br>and the digested version of this cleartext password will be returned to standard output.<br>方式一：用代码来生成：</p>
+<p>import org.apache.catalina.realm.RealmBase;</p>
+<p>public class T {<br>    public static void main(String[] args) {<br>        //参数1：要加密的字符串；参数2：加密算法；参数3：字符串的编码<br>        String base = RealmBase.Digest(“alvis:MyConstraints:pwd”, “MD5”, null);<br>        System.out.println(base);<br>    }<br>}<br>由于RealmBase类在catalina.jar包中，如果项目中没有这个类，可在项目上右键–&gt;Java Build Path–&gt; Libraries–&gt;Add Library–&gt;选择Server Runtime–&gt;选择Apache Tomcat V8.0(其实7.0也行)，如图：</p>
+<p>方式二：用脚本来生成：</p>
+<p>在tomcat/bin目录下有个digest.sh(Linux系统)或digest.bat(Windows系统)脚本，运行这个脚本，传入摘要算法和参数即可，这里我在Windows系统上运行，如图：</p>
+<p>这里的-a指定摘要算法为MD5，要特别注意这里的参数是：{用户名}:{Realm名}:{密码明文}。用户名就是tomcat-users.xml中配置的<user>名字(这里为alvis)，Realm名是在web.xml中配置的<realm-name>(这里为MyConstraints)，密码明文即该用户用于登录的密码(我这里设为pwd)。</realm-name></user></p>
+<p>只有这样的参数加密后的密码，在tomcat-users.xml中配置才有效，否则是登录不了的。由于我是参考《Tomcat权威指南(第二版)》的步骤做的，之前试了很久都不知道为什么登录不了，结果在官网找到答案，是这么描述的：</p>
+<p>If using digested passwords with DIGEST authentication, the cleartext used to generate the digest is different and the digest must use the MD5 algorithm. In the examples above {cleartext-password} must be replaced with {username}:{realm}:{cleartext-password}. For example, in a development environment this might take the form testUser:Authentication required:testPassword. The value for {realm} is taken from the <realm-name> element of the web application’s <login-config>. If not specified in web.xml, the default value of Authentication required is used.</login-config></realm-name></p>
+<p>大意是说，如果使用DIGEST方式验证，用于生成摘要的明文必须被替换为这种格式。实践出真知，所以还是不能完全看书啊，动手实践才是实在的。</p>
+<p>然后就是在tomcat-users.xml中配置生成的密码（通过下方的截图，可以比较password跟上方digest.bat脚本生成的密码是否一致）：</p>
+<p>之后重启tomcat，效果自然是跟使用基本验证的效果一样了。</p>
+<p>表单验证</p>
+<p>当web.xml文件中的auth-method元素设置为FORM时，表明应用使用的是表单验证。当用户请求Web应用程序受保护的资源时，表单验证会跳转至配置的登录页面。当登录失败时，还需要一个验证失败的页面，还是上面的例子，看配置：</p>
+<p>web.xml</p>
+<p><security-constraint><br>    <web-resource-collection><br>        <http-method>GET</http-method><br>        <web-resource-name>tomcat member part</web-resource-name><br>        <url-pattern>/protect/*</url-pattern><br>    </web-resource-collection><br>    <auth-constraint><br>        <role-name>member</role-name><br>    </auth-constraint><br></security-constraint></p>
+<p><login-config><br>    <auth-method>FORM</auth-method><br>    <realm-name>MyConstraints</realm-name><br>    <form-login-config><br>        <form-login-page>/form/login.html</form-login-page><br>        <form-error-page>/form/error.html</form-error-page><br>    </form-login-config><br></login-config><br>这里的form/login.html是用于登录的页面，而form/error.html则是验证失败后跳转到的页面（这两个页面在上方的工程结构图中已经有了）。</p>
+<p>login.html</p>
+<p><html><br>    <body><br>    <h2>Login Page.</h2></body></html></p>
+<pre><code>&lt;form method=&quot;post&quot; action=&quot;j_security_check&quot; name=&quot;loginForm&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;j_username&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;password&quot; name=&quot;j_password&quot; /&gt;&lt;br&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Login&quot; /&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+</code></pre><p><br>注意：这里form的action=”j_security_check”，账号的name=”j_username”和密码的name=”j_password”都是不可变的，否则配置的验证规则不起作用。</p>
+<p>server.xml中，要去掉Realm中添加的“digest=MD5”这个属性：</p>
+<p>tomcat-users.xml中使用明文保存密码：</p>
+<p>效果（仅在访问protect目录下的资源时才出现Login Page）：</p>
+<p>输入错误的账号和密码，跳转至form/error.html页面：</p>
+<p>输入正确的账号和密码，跳转至受保护的页面：</p>
+<p>客户端证书验证</p>
+<p>待续</p>
+<p>Demo下载：</p>
+<p>链接: <a href="http://pan.baidu.com/s/1gfnqVdT" target="_blank" rel="external">http://pan.baidu.com/s/1gfnqVdT</a> 密码: pubw</p>
+<p>参考页面：</p>
+<p><a href="https://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html" target="_blank" rel="external">https://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/16/Java中的多线程你只要看这一篇就够了/" rel="next" title="Java中的多线程你只要看这一篇就够了">
+                <i class="fa fa-chevron-left"></i> Java中的多线程你只要看这一篇就够了
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/16/粗浅看Tomcat系统架构分析/" rel="prev" title="粗浅看Tomcat系统架构分析">
+                粗浅看Tomcat系统架构分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Asher Yao" />
+          <p class="site-author-name" itemprop="name">Asher Yao</p>
+          <p class="site-description motion-element" itemprop="description">Love is the source of life</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Login Page.</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Asher Yao</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
