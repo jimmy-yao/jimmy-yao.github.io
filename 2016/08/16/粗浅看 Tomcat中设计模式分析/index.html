@@ -101,7 +101,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2016-08-16</span>
-            <span class="time">17:43:33</span>
+            <span class="time">17:52:21</span>
           </span>
           
         </div>
@@ -138,7 +138,7 @@
 <ol>
 <li>LifecycleSupport 中的 fireLifecycleEvent 方法</li>
 </ol>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>public void fireLifecycleEvent(String type, Object data) {</p>
+<p>public void fireLifecycleEvent(String type, Object data) {</p>
 <pre><code>LifecycleEvent event = new LifecycleEvent(lifecycle, type, data);
 
 LifecycleListener interested[] = null;
@@ -156,7 +156,7 @@ for (int i = 0; i &lt; interested.length; i++)
 <ol>
 <li>容器中的 start 方法</li>
 </ol>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>public void start() throws LifecycleException {</p>
+<p>public void start() throws LifecycleException {</p>
 <pre><code>lifecycle.fireLifecycleEvent(BEFORE_START_EVENT, null);
 
 lifecycle.fireLifecycleEvent(START_EVENT, null);

@@ -101,7 +101,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2016-08-16</span>
-            <span class="time">17:43:33</span>
+            <span class="time">17:52:21</span>
           </span>
           
         </div>
@@ -121,7 +121,7 @@
 <p>从上图中可以看出除了 Service接口的方法的实现以及控制组件生命周期的 Lifecycle 接口的实现，还有几个方法是用于在事件监听的 方法的实现，不仅是这个 Service 组件，Tomcat 中其它组件也同样 有这几个方法，这也是一个典型的设计模式，将在后面介绍。</p>
 <p>下面看一下 StandardService 中主要的几个方法实现的代码，下面是setContainer和addConnector 方法的源码：</p>
 <p>③StandardService. SetContainer</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>public void setContainer(Container container) {</p>
+<p>public void setContainer(Container container) {</p>
 <p>Container oldContainer = this.container;</p>
 <p>if ((oldContainer != null) &amp;&amp; (oldContainer instanceof Engine))</p>
 <p>((Engine) oldContainer).setService(null);</p>
@@ -149,7 +149,7 @@
 <p>}</p>
 <p>support.firePropertyChange(“container”, oldContainer, this.container);<br>—————————————————————————————<br>}<br>这段代码很简单，其实就是先判断当前的这个 Service 有没有已经关 联了 Container，如果已经关联了，那么去掉这个关联关系——oldContainer.setService(null)。如果这个oldContainer 已经被启动 了，结束它的生命周期。然后再替换新的关联、再初始化并开始这个新的 Container 的生命周期。最后将这个过程通知感兴趣的事件监听程序。这里值得注意的地方就是，修改Container 时要将新的 Container关联到每个Connector，还好Container 和 Connector 没有双向关联，不然这个关联关系将会很难维护。</p>
 <p>④StandardService. addConnector</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>public void addConnector(Connector connector) {</p>
+<p>public void addConnector(Connector connector) {</p>
 <p>synchronized (connectors) {</p>
 <p>connector.setContainer(this.container);</p>
 <p>connector.setService(this);</p>
@@ -182,7 +182,7 @@
 <p>①Server的类结构图</p>
 <p>它的标准实现类 StandardServer 实现了上面这些方法，同时也实现 了Lifecycle、MbeanRegistration 两个接口的所有方法，下面主要看 一下 StandardServer重要的一个方法 addService的实现：</p>
 <p>②StandardServer.addService</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>public void addService(Service service) {</p>
+<p>public void addService(Service service) {</p>
 <p>service.setServer(this);</p>
 <p>synchronized (services) {</p>
 <p>Service results[] = new Service[services.length + 1];</p>
@@ -214,7 +214,7 @@
 <p>除了控制生命周期的 Start 和 Stop 方法外还有一个监听机制，在生命周期开始和结束的时候做一些额外的操作。这个机制在其它的框架中也被使用，如在Spring 中。关于这个设计模式会在后面介绍。</p>
 <p>Lifecycle接口的方法的实现都在其它组件中，就像前面中说的，组件的生命周期由包含它的父组件控制，所以它的 Start 方法自然就是调用它下面的组件的 Start 方法，Stop 方法也是一样。如在 Server 中 Start 方法就会调用Service组件的 Start方法，Server 的 Start方法代码如下：</p>
 <p>②StandardServer.Start</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>public void start() throws LifecycleException {</p>
+<p>public void start() throws LifecycleException {</p>
 <p>if (started) {</p>
 <p>log.debug(sm.getString(“standardServer.start.started”));</p>
 <p>return;</p>
@@ -232,7 +232,7 @@
 <p>}<br>监听的代码会包围Service组件的启动过程，就是简单的循环启动所有Service组件的Start方法，但是所有Service必须要实现Lifecycle接口，这样做会更加灵活。</p>
 <p>Server的 Stop 方法代码如下：</p>
 <p>③StandardServer.Stop</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>public void stop() throws LifecycleException {</p>
+<p>public void stop() throws LifecycleException {</p>
 <p>if (!started)</p>
 <p>return;</p>
 <p>lifecycle.fireLifecycleEvent(BEFORE_STOP_EVENT, null);</p>
@@ -253,7 +253,7 @@
 <p>② Connector的主要类图</p>
 <p>看一下HttpConnector的Start 方法：</p>
 <p>③HttpConnector.Start</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>public void start() throws LifecycleException {</p>
+<p>public void start() throws LifecycleException {</p>
 <p>if (started)</p>
 <p>throw new LifecycleException</p>
 <p>(sm.getString(“httpConnector.alreadyStarted”));</p>
@@ -269,7 +269,7 @@
 <p>}</p>
 <p>}<br>threadStart()执行就会进入等待请求的状态，直到一个新的请求到来才会激活它继续执行，这个激活是在HttpProcessor 的 assign 方法中，这个方法是代码如下 ：</p>
 <p>④ HttpProcessor.assign</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>synchronized void assign(Socket socket) {</p>
+<p>synchronized void assign(Socket socket) {</p>
 <p>while (available) {</p>
 <p>try {</p>
 <p>wait();</p>
@@ -284,7 +284,7 @@
 <p>}<br>创建 HttpProcessor 对象是会把 available 设为 false，所以当请求 到来时不会进入 while循环，将请求的socket 赋给当期处理的 socket，并将 available设为true，当 available设为true 是 HttpProcessor的 run方法将被激活，接下去将会处理这次请求。</p>
 <p>Run方法代码如下：</p>
 <p>⑤HttpProcessor.Run</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>public void run() {</p>
+<p>public void run() {</p>
 <p>while (!stopped) {</p>
 <p>Socket socket = await();</p>
 <p>if (socket == null)</p>
@@ -301,7 +301,7 @@
 <p>}</p>
 <p>}<br>解析 socket 的过程在 process 方法中，process 方法的代码片段如 下：</p>
 <p>⑥HttpProcessor.process</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79<br>80<br>81<br>82<br>83<br>84<br>85<br>86<br>87<br>88<br>89<br>90<br>91<br>92<br>93<br>94<br>95<br>96<br>97<br>98<br>99<br>100<br>101<br>102<br>103<br>104<br>105<br>106<br>107<br>108<br>109<br>private void process(Socket socket) {</p>
+<p>private void process(Socket socket) {</p>
 <p>boolean ok = true;</p>
 <p>boolean finishResponse = true;</p>
 <p>SocketInputStream input = null;</p>
@@ -358,12 +358,9 @@
 <p>Servlet容器“Container”</p>
 <p>Container是容器的父接口，所有子容器都必须实现这个接口，Container容器的设计用的是典型的责任链的设计模式，它有四个子 容器组件构成，分别是：Engine、Host、Context、Wrapper，这四个组件不是平行的，而是父子关系，Engine包含 Host,Host 包含 Context，Context 包含 Wrapper。通常一个 Servlet class 对应一个 Wrapper，如果有多个 Servlet 就可以定义多个 Wrapper，如果有多 个 Wrapper 就要定义一个更高的Container 了，如 Context， Context 通常就是对应下面这个配置：</p>
 <p>①Server.xml</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</p>
-<p>&lt;Context</p>
-<p>path=”/library”</p>
-<p>docBase=”D:\projects\library\deploy\target\library.war”</p>
-<p>reloadable=”true”</p>
-<p>/&gt;<br>②容器的总体设计</p>
+<context path="/library" docbase="D:\projects\library\deploy\target\library.war" reloadable="true">
+
+<p>②容器的总体设计</p>
 <p>Context 还可以定义在父容器Host中，Host 不是必须的，但是要运行 war 程序，就必须要 Host，因为 war 中必有 web.xml 文件， 这个文件的解析就需要 Host 了，如果要有多个 Host 就要定义一个 top 容器 Engine 了。而 Engine 没有父容器了，一个 Engine 代表 一个完整的 Servlet 引擎。</p>
 <p>那么这些容器是如何协同工作的呢？先看一下它们之间的关系图：</p>
 <p>① 四个容器的关系图</p>
@@ -371,7 +368,6 @@
 <p>②Engine和Host  处理请求的时序图</p>
 <p>这里看到了 Valve 是不是很熟悉，没错 Valve 的设计在其他框架中 也有用的，同样Pipeline的原理也基本是相似的，它是一个管道，Engine和 Host都会执行这个 Pipeline，您可以在这个管道上增加 任意的 Valve，Tomcat 会挨个执行这些Valve，而且四个组件都会 有自己的一套 Valve 集合。您怎么才能定义自己的Valve 呢？在server.xml 文件中可以添加，如给 Engine 和 Host 增加一个 Valve如下：</p>
 <p>③Server.xml</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21</p>
 <engine defaulthost="localhost" name="Catalina">
 
 <valve classname="org.apache.catalina.valves.RequestDumperValve">
@@ -388,7 +384,7 @@
 <p>①Engine 接口的类结构</p>
 <p>它的标准实现类是StandardEngine，这个类注意一点就是 Engine没有父容器了，如果调用 setParent 方法时将会报错。添加子容器也 只能是 Host 类型的，代码如下：</p>
 <p>②StandardEngine. addChild</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>public void addChild(Container child) {</p>
+<p>public void addChild(Container child) {</p>
 <p>if (!(child instanceof Host))</p>
 <p>throw new IllegalArgumentException</p>
 <p>(sm.getString(“standardEngine.notHost”));</p>
@@ -408,7 +404,7 @@
 <p>Context 最重要的功能就是管理它里面的Servlet实例，Servlet 实 例在 Context 中是以Wrapper 出现的，还有一点就是 Context 如 何才能找到正确的Servlet 来执行它呢？Tomcat5以前是通过一 个 Mapper 类来管理的，Tomcat5 以后这个功能被移到了request 中，在前面的时序图中就可以发现获取子容器都是通过request 来分配的。</p>
 <p>Context 准备 Servlet 的运行环境是在 Start 方法开始的，这个方法 的代码片段如下：</p>
 <p>①StandardContext.start</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79<br>80<br>81<br>82<br>83<br>84<br>85<br>86<br>87<br>88<br>89<br>90<br>91<br>92<br>93<br>94<br>95<br>96<br>97<br>98<br>99<br>100<br>101<br>102<br>103<br>104<br>105<br>106<br>107<br>108<br>109<br>110<br>111<br>112<br>113<br>114<br>public synchronized void start() throws LifecycleException {</p>
+<p>public synchronized void start() throws LifecycleException {</p>
 <p>………</p>
 <p>if( !initialized ) {</p>
 <p>try {</p>
@@ -466,14 +462,13 @@
 <p>}<br>它主要是设置各种资源属性和管理组件，还有非常重要的就是启动子容器和 Pipeline。</p>
 <p>我们知道 Context 的配置文件中有个 reloadable 属性，如下面配置：</p>
 <p>②Server.xml</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</p>
 <p>&lt;Context</p>
 <p>path=”/library”</p>
 <p>—————————————————————————————<br>docBase=”D:\projects\library\deploy\target\library.war”</p>
 <p>reloadable=”true”</p>
 <p>/&gt;<br>当这个 reloadable 设为 true 时，war被修改后 Tomcat 会自动的重新加载这个应用。如何做到这点的呢? 这个功能是在StandardContext的 backgroundProcess 方法中实现的，这个方法的代码如下：</p>
 <p>③StandardContext. backgroundProcess</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>public void backgroundProcess() {</p>
+<p>public void backgroundProcess() {</p>
 <p>if (!started) return;</p>
 <p>count = (count + 1) % managerChecksFrequency;</p>
 <p>if ((getManager() != null) &amp;&amp; (count == 0)) {</p>
@@ -507,7 +502,7 @@
 <p>Wrapper 的实现类是 StandardWrapper，StandardWrapper 还实现 了拥有一个 Servlet初始化信息的ServletConfig，由此看出 StandardWrapper 将直接和Servlet的各种信息打交道。</p>
 <p>下面看一下非常重要的一个方法loadServlet，代码片段如下：</p>
 <p>①StandardWrapper.loadServlet</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79<br>public synchronized Servlet loadServlet() throws ServletException {</p>
+<p>public synchronized Servlet loadServlet() throws ServletException {</p>
 <p>………</p>
 <p>Servlet servlet;</p>
 <p>try {</p>
@@ -552,7 +547,7 @@
 <p>当 Servlet 被初始化完成后，就等着 StandardWrapperValve 去调用 它的 service 方法了，调用 service 方法之前要调用 Servlet 所有的 filter。</p>
 <p>Tomcat中其它组件</p>
 <p>Tomcat 还有其它重要的组件，如安全组件security、logger 日 志组件、session、mbeans、naming 等其它组件。这些组件共同为Connector和 Container 提供必要的服务。</p>
-
+</context>
         </div>
       </div>
     </div>
