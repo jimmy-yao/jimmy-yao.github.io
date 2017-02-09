@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Asher Yao">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="SQL语句大全—查看表空间(一)"/>
+  <meta property="og:description" content="Love is the source of life" />
+  <meta property="og:site_name" content="Asher&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http:jimmy-yao.github.ioundefined"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Asher&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Asher's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">SQL语句大全—查看表空间(一)</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/jimmy-yao">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:yao.asher@gmail.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Asher Yao</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2017-02-09</span>
+            <span class="time">17:19:44</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/Database/">Database</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Database/">#Database</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h2 id="SQL语句大全—查看表空间-一"><a href="#SQL语句大全—查看表空间-一" class="headerlink" title="SQL语句大全—查看表空间(一)"></a>SQL语句大全—查看表空间(一)</h2><p>查看表空间的名称及大小:<br>SQL&gt; SELECT T.TABLESPACE_NAME, ROUND(SUM(BYTES/(1024 * 1024)), 0) TS_SIZE<br>FROM DBA_TABLESPACES T, DBA_DATA_FILES D<br>WHERE T.TABLESPACE_NAME = D.TABLESPACE_NAME<br>GROUP BY T.TABLESPACE_NAME;</p>
+<p>查看表空间物理文件的名称及大小:</p>
+<p>SQL&gt; SELECT TABLESPACE_NAME,FILE_ID,FILE_NAME,ROUND(BYTES / (1024 * 1024), 0) TOTAL_SPACE<br>FROM DBA_DATA_FILES<br>ORDER BY TABLESPACE_NAME;</p>
+<p>查看回滚段名称及大小:<br>SQL&gt; SELECT SEGMENT_NAME,<br>       TABLESPACE_NAME,<br>       R.STATUS,<br>       (INITIAL_EXTENT / 1024) INITIALEXTENT,<br>       (NEXT_EXTENT / 1024) NEXTEXTENT,<br>       MAX_EXTENTS,<br>       V.CUREXT CUREXTENT<br>FROM DBA_ROLLBACK_SEGS R, V$ROLLSTAT V<br>WHERE R.SEGMENT_ID = V.USN(+)<br>ORDER BY SEGMENT_NAME;</p>
+<p>如何查看某个回滚段里面，跑的什么事物或者正在执行什么sql语句:<br>SQL&gt; SELECT D.SQL_TEXT, A.NAME<br>FROM V$ROLLNAME A, V$TRANSACTION B, V$SESSION C, V$SQLTEXT D<br>WHERE A.USN = B.XIDUSN<br>   AND B.ADDR = C.TADDR<br>   AND C.SQL_ADDRESS = D.ADDRESS<br>   AND C.SQL_HASH_VALUE = D.HASH_VALUE<br>   AND A.USN = 1;<br>(备注：你要看哪个，就把usn=?写成几就行了)</p>
+<p>查看控制文件:<br>SQL&gt; SELECT * FROM V$CONTROLFILE;</p>
+<p>查看日志文件:<br>SQL&gt; COL MEMBER FORMAT A50<br>SQL&gt;SELECT * FROM V$LOGFILE;</p>
+<p>如何查看当前SQL*PLUS用户的sid和serial#:<br>SQL&gt;SELECT SID, SERIAL#, STATUS FROM V$SESSION WHERE AUDSID=USERENV(‘SESSIONID’);</p>
+<p>如何查看当前数据库的字符集:<br>SQL&gt;SELECT USERENV(‘LANGUAGE’) FROM DUAL;<br>SQL&gt;SELECT USERENV(‘LANG’) FROM DUAL;</p>
+<p>怎么判断当前正在使用何种SQL优化方式:<br>用EXPLAIN PLAN產生EXPLAIN PLAN¡檢查PLAN_TABLE中ID=0的POSITION列的值<br>SQL&gt;SELECT DECODE(NVL(POSITION,-1),-1,’RBO’,1,’CBO’) FROM PLAN_TABLE WHERE ID=0;</p>
+<p>如何查看系统当前最新的SCN号：<br>SQL&gt;SELECT MAX(KTUXESCNW * POWER(2,32) + KTUXESCNB) FROM X$KTUXE;</p>
+<p>在ORACLE中查找TRACE文件的脚本:</p>
+<p>SQL&gt;SELECT U_DUMP.VALUE || ‘/‘ || INSTANCE.VALUE || ‘<em>ORA</em>‘ ||<br>V$PROCESS.SPID || NVL2(V$PROCESS.TRACEID, ‘_’ || V$PROCESS.TRACEID, NULL ) || ‘.TRC’”TRACE FILE” FROM V$PARAMETER U_DUMP CROSS JOIN V$PARAMETER INSTANCE CROSS JOIN V$PROCESS JOIN V$SESSION ON V$PROCESS.ADDR = V$SESSION.PADDR WHERE U_DUMP.NAME = ‘USER_DUMP_DEST’ AND<br>INSTANCE.NAME = ‘INSTANCE_NAME’ AND V$SESSION.AUDSID=SYS_CONTEXT(‘USERENV’,’SESSIONID’);</p>
+<p>SQL&gt;SELECT D.VALUE || ‘/ORA_’ || P.SPID || ‘.TRC’ TRACE_FILE<em>NAME<br>FROM (SELECT P.SPID FROM SYS.V</em>$MYSTAT M,SYS.V<em>$SESSION S,<br>SYS.V</em>$PROCESS P WHERE M.STATISTIC# = 1 AND<br>S.SID = M.SID AND P.ADDR = S.PADDR) P,(SELECT VALUE FROM SYS.V_$PARAMETER WHERE NAME =’USER_DUMP_DEST’) D;</p>
+<p>如何查看客户端登陆的IP地址:<br>SQL&gt;SELECT SYS_CONTEXT(‘USERENV’,’IP_ADDRESS’) FROM DUAL;</p>
+<p>如何在生产数据库中创建一个追踪客户端IP地址的触发器：<br>SQL&gt;CREATE OR REPLACE TRIGGER ON_LOGON_TRIGGER AFTER LOGON ON DATABASE<br>BEGIN<br>DBMS_APPLICATION_INFO.SET_CLIENT_INFO(SYS_CONTEXT(‘USERENV’, ‘IP_ADDRESS’));<br>END;</p>
+<p>REM 记录登陆信息的触发器<br>CREATE OR REPLACE TRIGGER LOGON_HISTORY<br>AFTER LOGON ON DATABASE –WHEN (USER=’WACOS’) –ONLY FOR USER ‘WACOS’<br>BEGIN<br>INSERT INTO SESSION_HISTORY SELECT USERNAME,SID,SERIAL#,AUDSID,OSUSER,ACTION,SYSDATE,NULL,SYS_CONTEXT(‘USERENV’,’IP_ADDRESS’),TERMINAL,MACHINE,PROGRAM FROM V$SESSION WHERE AUDSID = USERENV(‘SESSIONID’);<br>END;</p>
+<p>查询当前日期:<br>SQL&gt; SELECT TO_CHAR(SYSDATE,’YYYY-MM-DD,HH24:MI:SS’) FROM DUAL;</p>
+<p>查看所有表空间对应的数据文件名：</p>
+<p>SQL&gt;SELECT DISTINCT FILE_NAME,TABLESPACE_NAME,AUTOEXTENSIBLE FROM DBA_DATA_FILES;</p>
+<p>查看表空间的使用情况:<br>SQL&gt;SELECT SUM(BYTES)/(1024*1024) AS FREE_SPACE,TABLESPACE_NAME<br>FROM DBA_FREE_SPACE GROUP BY TABLESPACE_NAME;</p>
+<p>SQL&gt;SELECT A.TABLESPACE_NAME,A.BYTES TOTAL,B.BYTES USED, C.BYTES FREE,<br>(B.BYTES<em>100)/A.BYTES “% USED”,(C.BYTES</em>100)/A.BYTES “% FREE”<br>FROM SYS.SM$TS_AVAIL A,SYS.SM$TS_USED B,SYS.SM$TS_FREE C<br>WHERE A.TABLESPACE_NAME=B.TABLESPACE_NAME AND A.TABLESPACE_NAME=C.TABLESPACE_NAME; </p>
+<p>COLUMN TABLESPACE_NAME FORMAT A18;<br>COLUMN SUM_M FORMAT A12;<br>COLUMN USED_M FORMAT A12;<br>COLUMN FREE_M FORMAT A12;<br>COLUMN PTO_M FORMAT 9.99; </p>
+<p>SELECT S.TABLESPACE_NAME,CEIL(SUM(S.BYTES/1024/1024))||’M’ SUM_M,CEIL(SUM(S.USEDSPACE/1024/1024))||’M’ USED_M,CEIL(SUM(S.FREESPACE/1024/1024))||’M’ FREE_M, SUM(S.USEDSPACE)/SUM(S.BYTES) PTUSED FROM (SELECT B.FILE_ID,B.TABLESPACE_NAME,B.BYTES, (B.BYTES-SUM(NVL(A.BYTES,0))) USEDSPACE, SUM(NVL(A.BYTES,0)) FREESPACE,(SUM(NVL(A.BYTES,0))/(B.BYTES)) * 100 FREEPERCENTRATIO FROM SYS.DBA_FREE_SPACE A,SYS.DBA_DATA_FILES B WHERE A.FILE_ID(+)=B.FILE_ID GROUP BY B.FILE_ID,B.TABLESPACE_NAME,B.BYTES ORDER BY B.TABLESPACE_NAME) S GROUP BY S.TABLESPACE_NAME ORDER BY SUM(S.FREESPACE)/SUM(S.BYTES) DESC;</p>
+<p>查看数据文件的hwm（可以resize的最小空间）和文件头大小:<br>SELECT V1.FILE_NAME,V1.FILE_ID,NUM1 TOTLE_SPACE,NUM3 FREE_SPACE,<br>NUM1-NUM3 “USED_SPACE(HWM)”,NVL(NUM2,0) DATA_SPACE,NUM1-NUM3-NVL(NUM2,0) FILE_HEAD<br>FROM<br>(SELECT FILE_NAME,FILE_ID,SUM(BYTES) NUM1 FROM DBA_DATA_FILES GROUP BY FILE_NAME,FILE_ID) V1,<br>(SELECT FILE_ID,SUM(BYTES) NUM2 FROM DBA_EXTENTS GROUP BY FILE_ID) V2,<br>(SELECT FILE_ID,SUM(BYTES) NUM3 FROM DBA_FREE_SPACE GROUP BY FILE_ID) V3<br>WHERE V1.FILE_ID=V2.FILE_ID(+) AND V1.FILE_ID=V3.FILE_ID(+);<br>数据文件大小及头大小:<br>SELECT V1.FILE_NAME,V1.FILE_ID,<br>NUM1 TOTLE_SPACE,<br>NUM3 FREE_SPACE,<br>NUM1-NUM3 USED_SPACE,<br>NVL(NUM2,0) DATA_SPACE,<br>NUM1-NUM3-NVL(NUM2,0) FILE_HEAD<br>FROM<br>(SELECT FILE_NAME,FILE_ID,SUM(BYTES) NUM1 FROM DBA_DATA_FILES GROUP BY FILE_NAME,FILE_ID) V1,<br>(SELECT FILE_ID,SUM(BYTES) NUM2 FROM DBA_EXTENTS GROUP BY FILE_ID) V2,<br>(SELECT FILE_ID,SUM(BYTES) NUM3 FROM DBA_FREE_SPACE GROUP BY FILE_ID) V3<br>WHERE V1.FILE_ID=V2.FILE_ID(+)<br>AND V1.FILE_ID=V3.FILE_ID(+);</p>
+<p>(运行以上查询，我们可以如下信息：<br>Totle_pace:该数据文件的总大小，字节为单位<br>Free_space:该数据文件的剩于大小，字节为单位<br>Used_space:该数据文件的已用空间，字节为单位<br>Data_space:该数据文件中段数据占用空间，也就是数据空间，字节为单位<br>File_Head:该数据文件头部占用空间，字节为单位)</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
