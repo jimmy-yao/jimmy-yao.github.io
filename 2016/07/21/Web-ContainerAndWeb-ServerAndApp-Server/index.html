@@ -1,137 +1,298 @@
-<!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Asher Yao">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="web容器web服务器应用服务器"/>
-  <meta property="og:description" content="Love is the source of life" />
-  <meta property="og:site_name" content="Asher&#39;s Blog"/>
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="http:jimmy-yao.github.ioundefined"/>
-  
-    <link rel="alternate" href="/atom.xml" title="Asher&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
+<!doctype html>
+
+
+
   
 
-  <!-- Site Title -->
-  <title>Asher's Blog</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <link rel="stylesheet" href="/css/style.light.css">
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-  <!-- Google Analytics -->
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-92775813-1', 'auto');
-  ga('send', 'pageview');
 
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Asher's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="WebServer，Webcontainer和ApplicationServer区别。　　WebServer，Web服务器，同上面所说，Web服务器是指能够为发出请求的浏览器提供文档的程序。服务器是一种被动程序，只有浏览器发出请求的时候才会响应。应用层使用的是HTTP协议。目前最主流的三个Web服务器是ApacheNginxIIS。　　Web容器是一种服务器程序，在服务器端口就有一个提供相应服务的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web容器web服务器应用服务器">
+<meta property="og:url" content="http:jimmy-yao.github.io/2016/07/21/Web-ContainerAndWeb-ServerAndApp-Server/index.html">
+<meta property="og:site_name" content="Asher's Blog">
+<meta property="og:description" content="WebServer，Webcontainer和ApplicationServer区别。　　WebServer，Web服务器，同上面所说，Web服务器是指能够为发出请求的浏览器提供文档的程序。服务器是一种被动程序，只有浏览器发出请求的时候才会响应。应用层使用的是HTTP协议。目前最主流的三个Web服务器是ApacheNginxIIS。　　Web容器是一种服务器程序，在服务器端口就有一个提供相应服务的">
+<meta property="og:updated_time" content="2016-07-21T10:50:01.567Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web容器web服务器应用服务器">
+<meta name="twitter:description" content="WebServer，Webcontainer和ApplicationServer区别。　　WebServer，Web服务器，同上面所说，Web服务器是指能够为发出请求的浏览器提供文档的程序。服务器是一种被动程序，只有浏览器发出请求的时候才会响应。应用层使用的是HTTP协议。目前最主流的三个Web服务器是ApacheNginxIIS。　　Web容器是一种服务器程序，在服务器端口就有一个提供相应服务的">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
 </script>
+
+  <title> web容器web服务器应用服务器 | Asher's Blog </title>
 </head>
 
-  <body>
-    <!-- Page Header -->
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
 
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">web容器web服务器应用服务器</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/jimmy-yao">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:yao.asher@gmail.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Asher's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
   </div>
-</header>
+  <p class="site-subtitle">Love life | Love wife</p>
+</div>
 
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By Asher Yao</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2016-07-21</span>
-            <span class="time">16:57:23</span>
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                web容器web服务器应用服务器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-21T18:15:54+08:00" content="2016-07-21">
+              2016-07-21
+            </time>
           </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
 
-<a href="/categories/Java/">Java</a>
-</span>
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
           
         </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/Java/">#Java</a>
+      </header>
+    
 
 
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <h2 id="WebServer，Webcontainer和ApplicationServer区别。"><a href="#WebServer，Webcontainer和ApplicationServer区别。" class="headerlink" title="WebServer，Webcontainer和ApplicationServer区别。"></a>WebServer，Webcontainer和ApplicationServer区别。</h2><p>　　WebServer，Web服务器，同上面所说，Web服务器是指能够为发出请求的浏览器提供文档的程序。服务器是一种被动程序，只有浏览器发出请求的时候才会响应。应用层使用的是HTTP协议。目前最主流的三个Web服务器是ApacheNginxIIS。<br>　　Web容器是一种服务器程序，在服务器端口就有一个提供相应服务的程序。所以现在知道为什么Tomcat有默认的端口——8080。一个服务器可以有多个容器。<br>如Tomcat，收到浏览器的请求之后还会解析Servlet，然后再把Servlet处理后的结果返回给浏览器。其实Tomcat既是Web服务器也是Web容器。为什么这样说，第三点会讲到。<br>而应用服务器，这里有个区分它与Web服务器的答案：<br>　　Whatisthedifferencebetweenapplicationserverandwebserver?<br>　　Web服务器设计服务于HTTP内容，应用服务器不只限于HTTP。Web服务器服务于静态内容，有插件支持动态语言，<br>　　应用服务器也具有Web服务器的这些东西，除此它还支持程序级的服务，如连接池，事务支持，信息服务等。</p>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="WebServer，Webcontainer和ApplicationServer区别。"><a href="#WebServer，Webcontainer和ApplicationServer区别。" class="headerlink" title="WebServer，Webcontainer和ApplicationServer区别。"></a>WebServer，Webcontainer和ApplicationServer区别。</h2><p>　　WebServer，Web服务器，同上面所说，Web服务器是指能够为发出请求的浏览器提供文档的程序。服务器是一种被动程序，只有浏览器发出请求的时候才会响应。应用层使用的是HTTP协议。目前最主流的三个Web服务器是ApacheNginxIIS。<br>　　Web容器是一种服务器程序，在服务器端口就有一个提供相应服务的程序。所以现在知道为什么Tomcat有默认的端口——8080。一个服务器可以有多个容器。<br>如Tomcat，收到浏览器的请求之后还会解析Servlet，然后再把Servlet处理后的结果返回给浏览器。其实Tomcat既是Web服务器也是Web容器。为什么这样说，第三点会讲到。<br>而应用服务器，这里有个区分它与Web服务器的答案：<br>　　Whatisthedifferencebetweenapplicationserverandwebserver?<br>　　Web服务器设计服务于HTTP内容，应用服务器不只限于HTTP。Web服务器服务于静态内容，有插件支持动态语言，<br>　　应用服务器也具有Web服务器的这些东西，除此它还支持程序级的服务，如连接池，事务支持，信息服务等。</p>
 <h2 id="web容器"><a href="#web容器" class="headerlink" title="web容器"></a>web容器</h2><p>何为容器：<br>容器是一种服务调用规范框架，J2EE大量运用了容器和组件技术来构建分层的企业级应用。在J2EE规范中，相应的有WEBContainer和EJBContainer等。<br>WEB容器给处于其中的应用程序组件（JSP，SERVLET）提供一个环境，使JSP，SERVLET直接跟容器中的环境变量交互，不必关注其它系统问题（从这个角度来说，web容器应该属于架构上的概念）。web容器主要由WEB服务器来实现。例如：TOMCAT，WEBLOGIC，WEBSPHERE等。<br>若容器提供的接口严格遵守J2EE规范中的WEBAPPLICATION标准。我们把该容器叫做J2EE中的WEB容器。<br>　　WEB容器更多的是跟基于HTTP的请求打交道。而EJB容器不是。它是更多的跟数据库、其它服务打交道。<br>容器的行为是将其内部的应用程序组件与外界的通信协议交互进行了隔离，从而减轻内部应用程序组件的负担（实现方面的负担？）。例如，SERVLET不用关心HTTP的细节，而是直接引用环境变量session、request、response就行、EJB不用关心数据库连接速度、各种事务控制，直接由容器来完成。</p>
 <h2 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h2><p>Web服务器（WebServer）可以处理HTTP协议。当Web服务器接收到一个HTTP请求，会返回一个HTTP响应，例如送回一个HTML页面。<br>Web服务器可以响应针对静态页面或图片的请求，进行页面跳转（redirect），或者把动态响应（dynamicresponse）的产生委托（delegate）给一些其它的程序，例如CGI脚本，JSP（JavaServerPages）脚本，servlets，ASP（ActiveServerPages）脚本，服务器端JavaScript，或者一些其它的服务器端技术。<br>　　Web服务器仅仅提供一个可以执行服务器端程序和返回(程序所产生的)响应的环境，而不会超出职能范围。<br>　　Web服务器主要是处理需要向浏览器发送HTML的请求以供浏览。</p>
 <h2 id="应用程序服务器（TheApplicationServer）"><a href="#应用程序服务器（TheApplicationServer）" class="headerlink" title="应用程序服务器（TheApplicationServer）"></a>应用程序服务器（TheApplicationServer）</h2><p>根据定义，作为应用程序服务器，要求可以通过各种协议（包括HTTP协议）把商业逻辑暴露给（expose）客户端应用程序。应用程序使用此商业逻辑就像你调用对象的一个方法或过程（语言中的一个函数）一样。</p>
@@ -143,42 +304,293 @@
 <h2 id="Tomcat与Web服务器"><a href="#Tomcat与Web服务器" class="headerlink" title="Tomcat与Web服务器"></a>Tomcat与Web服务器</h2><p>Tomcat是提供一个支持Servlet和JSP运行的容器。Servlet和JSP能根据实时需要，产生动态网页内容。而对于Web服务器来说，Apache仅仅支持静态网页，对于支持动态网页就会显得无能为力；Tomcat则既能为动态网页服务，同时也能为静态网页提供支持。尽管它没有通常的Web服务器快、功能也不如Web服务器丰富，但是Tomcat逐渐为支持静态内容不断扩充。大多数的Web服务器都是用底层语言编写如C，利用了相应平台的特征，因此用纯Java编写的Tomcat执行速度不可能与它们相提并论。</p>
 <p>一般来说，大的站点都是将Tomcat与Apache的结合，Apache负责接受所有来自客户端的HTTP请求，然后将Servlets和JSP的请求转发给Tomcat来处理。Tomcat完成处理后，将响应传回给Apache，最后Apache将响应返回给客户端。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag">#Java</a>
+          
         </div>
-      </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/15/Java-Thread-Callable-Future-FutureTask/" rel="next" title="Java并发编程之Callable、Future、FutureTask">
+                <i class="fa fa-chevron-left"></i> Java并发编程之Callable、Future、FutureTask
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/16/粗浅看Tomcat系统架构分析/" rel="prev" title="粗浅看Tomcat系统架构分析">
+                粗浅看Tomcat系统架构分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
   </div>
-</article>
 
 
+          </div>
+          
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Asher Yao" />
+          <p class="site-author-name" itemprop="name">Asher Yao</p>
+          <p class="site-description motion-element" itemprop="description">Love is the source of life</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WebServer，Webcontainer和ApplicationServer区别。"><span class="nav-number">1.</span> <span class="nav-text">WebServer，Webcontainer和ApplicationServer区别。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web容器"><span class="nav-number">2.</span> <span class="nav-text">web容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web服务器"><span class="nav-number">3.</span> <span class="nav-text">Web服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用程序服务器（TheApplicationServer）"><span class="nav-number">4.</span> <span class="nav-text">应用程序服务器（TheApplicationServer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#serverlet"><span class="nav-number">5.</span> <span class="nav-text">serverlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat"><span class="nav-number">6.</span> <span class="nav-text">Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat与应用服务器"><span class="nav-number">7.</span> <span class="nav-text">Tomcat与应用服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat与Web服务器"><span class="nav-number">8.</span> <span class="nav-text">Tomcat与Web服务器</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Asher Yao</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-  </body>
-</html>
 
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
