@@ -1,2439 +1,458 @@
-<!doctype html>
-
-
-
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Asher Yao">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Asher&#39;s Blog"/>
+  <meta property="og:description" content="Love is the source of life" />
+  <meta property="og:site_name" content="Asher&#39;s Blog"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http:jimmy-yao.github.ioundefined"/>
   
-
-
-<html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
+    <link rel="alternate" href="/atom.xml" title="Asher&#39;s Blog" type="application/atom+xml">
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
+    <link rel="icon" href="/favicon.png">
   
 
+  <!-- Site Title -->
+  <title>Asher's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
   
-    
-    
-  
+  <link rel="stylesheet" href="/css/style.light.css">
 
-  
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  
+  ga('create', 'UA-92775813-1', 'auto');
+  ga('send', 'pageview');
 
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Asher's Blog" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
-
-
-<meta name="description" content="Love is the source of life">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Asher's Blog">
-<meta property="og:url" content="http:jimmy-yao.github.io/index.html">
-<meta property="og:site_name" content="Asher's Blog">
-<meta property="og:description" content="Love is the source of life">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Asher's Blog">
-<meta name="twitter:description" content="Love is the source of life">
-
-
-
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: '博主'
-    }
-  };
 </script>
-
-  <title> Asher's Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
+  <body>
+    <!-- Page Header -->
 
 
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Asher's Blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle">Love life | Love wife</p>
-</div>
-
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Asher&#39;s Blog</p>
+          <p class="subtitle">Love life | Love wife</p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/28/oracle-tablespace/" itemprop="url">
-                  oracle_tablespace
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
                 </a>
-              
+              </li>
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-28T11:28:24+08:00" content="2017-02-28">
-              2017-02-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Database/" itemprop="url" rel="index">
-                    <span itemprop="name">Database</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>此文从以下几个方面来整理关于分区表的概念及操作:<br>        1.表空间及分区表的概念<br>        2.表分区的具体作用<br>        3.表分区的优缺点<br>        4.表分区的几种类型及操作方法<br>        5.对表分区的维护性操作.<br>(1.) 表空间及分区表的概念<br>表空间：<br>　　是一个或多个数据文件的集合，所有的数据对象都存放在指定的表空间中，但主要存放的是表， 所以称作表空间。</p>
-<p>分区表：<br>当表中的数据量不断增大，查询数据的速度就会变慢，应用程序的性能就会下降，这时就应该考虑对表进行分区。表进行分区后，逻辑上表仍然是一张完整的表，只是将表中的数据在物理上存放到多个表空间(物理文件上)，这样查询数据时，不至于每次都扫描整张表。</p>
-<p>(2.)表分区的具体作用<br>Oracle的表分区功能通过改善可管理性、性能和可用性，从而为各式应用程序带来了极大的好处。通常，分区可以使某些查询以及维护操作的性能大大提高。此外,分区还可以极大简化常见的管理任务，分区是构建千兆字节数据系统或超高可用性系统的关键工具。</p>
-<p>分区功能能够将表、索引或索引组织表进一步细分为段，这些数据库对象的段叫做分区。每个分区有自己的名称，还可以选择自己的存储特性。从数据库管理员的角度来看，一个分区后的对象具有多个段，这些段既可进行集体管理，也可单独管理，这就使数据库管理员在管理分区后的对象时有相当大的灵活性。但是，从应用程序的角度来看，分区后的表与非分区表完全相同，使用 SQL DML 命令访问分区后的表时，无需任何修改。</p>
-<p>什么时候使用分区表：<br>1、表的大小超过2GB。<br>2、表中包含历史数据，新的数据被增加都新的分区中。</p>
-<p>(3.)表分区的优缺点<br>表分区有以下优点：<br>1、改善查询性能：对分区对象的查询可以仅搜索自己关心的分区，提高检索速度。<br>2、增强可用性：如果表的某个分区出现故障，表在其他分区的数据仍然可用；<br>3、维护方便：如果表的某个分区出现故障，需要修复数据，只修复该分区即可；<br>4、均衡I/O：可以把不同的分区映射到磁盘以平衡I/O，改善整个系统性能。</p>
-<p>缺点：<br>分区表相关：已经存在的表没有方法可以直接转化为分区表。不过 Oracle 提供了在线重定义表的功能。</p>
-<p>(4.)表分区的几种类型及操作方法<br> 一.范围分区：<br>范围分区将数据基于范围映射到每一个分区，这个范围是你在创建分区时指定的分区键决定的。这种分区方式是最为常用的，并且分区键经常采用日期。举个例子：你可能会将销售数据按照月份进行分区。<br>当使用范围分区时，请考虑以下几个规则：<br>1、每一个分区都必须有一个VALUES LESS THEN子句，它指定了一个不包括在该分区中的上限值。分区键的任何值等于或者大于这个上限值的记录都会被加入到下一个高一些的分区中。<br>2、所有分区，除了第一个，都会有一个隐式的下限值，这个值就是此分区的前一个分区的上限值。<br>3、在最高的分区中，MAXVALUE被定义。MAXVALUE代表了一个不确定的值。这个值高于其它分区中的任何分区键的值，也可以理解为高于任何分区中指定的VALUE LESS THEN的值，同时包括空值。<br>例一：<br>假设有一个CUSTOMER表，表中有数据200000行，我们将此表通过CUSTOMER_ID进行分区，每个分区存储100000行，我们将每个分区保存到单独的表空间中，这样数据文件就可以跨越多个物理磁盘。下面是创建表和分区的代码，如下：<br>CREATE TABLE CUSTOMER<br>(<br>    CUSTOMER_ID NUMBER NOT NULL PRIMARY KEY,<br>    FIRST_NAME  VARCHAR2(30) NOT NULL,<br>    LAST_NAME   VARCHAR2(30) NOT NULL,<br>    PHONE        VARCHAR2(15) NOT NULL,<br>    EMAIL        VARCHAR2(80),<br>    STATUS       CHAR(1)<br>)<br>PARTITION BY RANGE (CUSTOMER_ID)<br>(<br>    PARTITION CUS_PART1 VALUES LESS THAN (100000) TABLESPACE CUS_TS01,<br>    PARTITION CUS_PART2 VALUES LESS THAN (200000) TABLESPACE CUS_TS02<br>)<br>例二：按时间划分<br>CREATE TABLE ORDER_ACTIVITIES<br>(<br>    ORDER_ID      NUMBER(7) NOT NULL,<br>    ORDER_DATE    DATE,<br>    TOTAL_AMOUNT NUMBER,<br>    CUSTOTMER_ID NUMBER(7),<br>    PAID           CHAR(1)<br>)<br>PARTITION BY RANGE (ORDER_DATE)<br>(<br>  PARTITION ORD_ACT_PART01 VALUES LESS THAN (TO_DATE(‘01- MAY -2003’,’DD-MON-YYYY’)) TABLESPACEORD_TS01,<br>  PARTITION ORD_ACT_PART02 VALUES LESS THAN (TO_DATE(‘01-JUN-2003’,’DD-MON-YYYY’)) TABLESPACE ORD_TS02,<br>  PARTITION ORD_ACT_PART02 VALUES LESS THAN (TO_DATE(‘01-JUL-2003’,’DD-MON-YYYY’)) TABLESPACE ORD_TS03<br>)<br>例三：MAXVALUE<br>CREATE TABLE RangeTable<br>(<br>  idd   INT PRIMARY KEY ,<br>  iNAME VARCHAR(10),<br>  grade INT<br>)<br>PARTITION  BY  RANGE (grade)<br>(<br>      PARTITION  part1 VALUES  LESS  THEN (1000) TABLESPACE  Part1_tb,<br>      PARTITION  part2 VALUES  LESS  THEN (MAXVALUE) TABLESPACE  Part2_tb<br>);</p>
-<p>二.列表分区：<br>该分区的特点是某列的值只有几个，基于这样的特点我们可以采用列表分区。<br>例一<br>CREATE TABLE PROBLEM_TICKETS<br>(<br>    PROBLEM_ID   NUMBER(7) NOT NULL PRIMARY KEY,<br>    DESCRIPTION  VARCHAR2(2000),<br>    CUSTOMER_ID  NUMBER(7) NOT NULL,<br>    DATE_ENTERED DATE NOT NULL,<br>    STATUS       VARCHAR2(20)<br>)<br>PARTITION BY LIST (STATUS)<br>(<br>      PARTITION PROB_ACTIVE   VALUES (‘ACTIVE’) TABLESPACE PROB_TS01,<br>      PARTITION PROB_INACTIVE VALUES (‘INACTIVE’) TABLESPACE PROB_TS02<br>例二<br>CREATE  TABLE  ListTable<br>(<br>    id    INT  PRIMARY  KEY ,<br>    name  VARCHAR (20),<br>    area  VARCHAR (10)<br>)<br>PARTITION  BY  LIST (area)<br>(<br>    PARTITION  part1 VALUES (‘guangdong’,’beijing’) TABLESPACE  Part1_tb,<br>    PARTITION  part2 VALUES (‘shanghai’,’nanjing’)  TABLESPACE  Part2_tb<br>);<br>)</p>
-<p>三.散列分区：<br>这类分区是在列值上使用散列算法，以确定将行放入哪个分区中。当列的值没有合适的条件时，建议使用散列分区。<br>散列分区为通过指定分区编号来均匀分布数据的一种分区类型，因为通过在I/O设备上进行散列分区，使得这些分区大小一致。<br>例一：<br>CREATE TABLE HASH_TABLE<br>(<br>  COL NUMBER(8),<br>  INF VARCHAR2(100)<br>)<br>PARTITION BY HASH (COL)<br>(<br>  PARTITION PART01 TABLESPACE HASH_TS01,<br>  PARTITION PART02 TABLESPACE HASH_TS02,<br>  PARTITION PART03 TABLESPACE HASH_TS03<br>)<br>简写：<br>CREATE TABLE emp<br>(<br>    empno NUMBER (4),<br>    ename VARCHAR2 (30),<br>    sal   NUMBER<br>)<br>PARTITION BY  HASH (empno) PARTITIONS 8<br>STORE IN (emp1,emp2,emp3,emp4,emp5,emp6,emp7,emp8);</p>
-<p>hash分区最主要的机制是根据hash算法来计算具体某条纪录应该插入到哪个分区中,hash算法中最重要的是hash函数，Oracle中如果你要使用hash分区，只需指定分区的数量即可。建议分区的数量采用2的n次方，这样可以使得各个分区间数据分布更加均匀。</p>
-<p>四.组合范围散列分区<br>这种分区是基于范围分区和列表分区，表首先按某列进行范围分区，然后再按某列进行列表分区，分区之中的分区被称为子分区。<br>CREATE TABLE SALES<br>(<br>PRODUCT_ID VARCHAR2(5),<br>SALES_DATE DATE,<br>SALES_COST NUMBER(10),<br>STATUS VARCHAR2(20)<br>)<br>PARTITION BY RANGE(SALES_DATE) SUBPARTITION BY LIST (STATUS)<br>(<br>   PARTITION P1 VALUES LESS THAN(TO_DATE(‘2003-01-01’,’YYYY-MM-DD’))TABLESPACE rptfact2009<br>          (<br>              SUBPARTITION P1SUB1 VALUES (‘ACTIVE’) TABLESPACE rptfact2009,<br>              SUBPARTITION P1SUB2 VALUES (‘INACTIVE’) TABLESPACE rptfact2009<br>          ),<br>   PARTITION P2 VALUES LESS THAN (TO_DATE(‘2003-03-01’,’YYYY-MM-DD’)) TABLESPACE rptfact2009<br>          (<br>              SUBPARTITION P2SUB1 VALUES (‘ACTIVE’) TABLESPACE rptfact2009,<br>              SUBPARTITION P2SUB2 VALUES (‘INACTIVE’) TABLESPACE rptfact2009<br>          )<br>)</p>
-<p>五.复合范围散列分区：<br>这种分区是基于范围分区和散列分区，表首先按某列进行范围分区，然后再按某列进行散列分区。<br>create table dinya_test<br> (<br> transaction_id number primary key,<br> item_id number(8) not null,<br> item_description varchar2(300),<br> transaction_date date<br> )<br> partition by range(transaction_date)subpartition by hash(transaction_id)  subpartitions 3 store in (dinya_space01,dinya_space02,dinya_space03)<br> (<br>     partition part_01 values less than(to_date(‘2006-01-01’,’yyyy-mm-dd’)),<br>     partition part_02 values less than(to_date(‘2010-01-01’,’yyyy-mm-dd’)),<br>     partition part_03 values less than(maxvalue)<br> );</p>
-<p>(5.)有关表分区的一些维护性操作：<br>一、添加分区<br>以下代码给SALES表添加了一个P3分区<br>ALTER TABLE SALES ADD PARTITION P3 VALUES LESS THAN(TO_DATE(‘2003-06-01’,’YYYY-MM-DD’));<br>注意：以上添加的分区界限应该高于最后一个分区界限。<br>以下代码给SALES表的P3分区添加了一个P3SUB1子分区<br>ALTER TABLE SALES MODIFY PARTITION P3 ADD SUBPARTITION P3SUB1 VALUES(‘COMPLETE’);<br>二、删除分区<br>以下代码删除了P3表分区：<br>ALTER TABLE SALES DROP PARTITION P3;<br>在以下代码删除了P4SUB1子分区：<br>ALTER TABLE SALES DROP SUBPARTITION P4SUB1;<br>注意：如果删除的分区是表中唯一的分区，那么此分区将不能被删除，要想删除此分区，必须删除表。<br>三、截断分区<br>截断某个分区是指删除某个分区中的数据，并不会删除分区，也不会删除其它分区中的数据。当表中即使只有一个分区时，也可以截断该分区。通过以下代码截断分区：<br>ALTER TABLE SALES TRUNCATE PARTITION P2;<br>通过以下代码截断子分区：<br>ALTER TABLE SALES TRUNCATE SUBPARTITION P2SUB2;<br>四、合并分区<br>合并分区是将相邻的分区合并成一个分区，结果分区将采用较高分区的界限，值得注意的是，不能将分区合并到界限较低的分区。以下代码实现了P1 P2分区的合并：<br>ALTER TABLE SALES MERGE PARTITIONS P1,P2 INTO PARTITION P2;<br>五、拆分分区<br>拆分分区将一个分区拆分两个新分区，拆分后原来分区不再存在。注意不能对HASH类型的分区进行拆分。<br>ALTER TABLE SALES SBLIT PARTITION P2 AT(TO_DATE(‘2003-02-01’,’YYYY-MM-DD’)) INTO (PARTITION P21,PARTITION P22);<br>六、接合分区(coalesca)<br>结合分区是将散列分区中的数据接合到其它分区中，当散列分区中的数据比较大时，可以增加散列分区，然后进行接合，值得注意的是，接合分区只能用于散列分区中。通过以下代码进行接合分区：<br>ALTER TABLE SALES COALESCA PARTITION;<br>七、重命名表分区<br>以下代码将P21更改为P2<br>ALTER TABLE SALES RENAME PARTITION P21 TO P2;<br>八、相关查询<br>跨分区查询<br>select sum( <em>) from<br>(select count(</em>) cn from t_table_SS PARTITION (P200709_1)<br>union all<br>select count(<em>) cn from t_table_SS PARTITION (P200709_2)<br>);<br>查询表上有多少分区<br>SELECT </em> FROM useR_TAB_PARTITIONS WHERE TABLE_NAME=’tableName’<br>查询索引信息<br>select object_name,object_type,tablespace_name,sum(value)<br>from v$segment_statistics<br>where statistic_name IN (‘physical reads’,’physical write’,’logical reads’)and object_type=’INDEX’<br>group by object_name,object_type,tablespace_name<br>order by 4 desc</p>
-<p>–显示数据库所有分区表的信息：<br>select * from DBA_PART_TABLES</p>
-<p>–显示当前用户可访问的所有分区表信息:<br>select * from ALL_PART_TABLES</p>
-<p>–显示当前用户所有分区表的信息：<br>select * from USER_PART_TABLES</p>
-<p>–显示表分区信息 显示数据库所有分区表的详细分区信息：<br>select * from DBA_TAB_PARTITIONS</p>
-<p>–显示当前用户可访问的所有分区表的详细分区信息：<br>select * from ALL_TAB_PARTITIONS</p>
-<p>–显示当前用户所有分区表的详细分区信息：<br>select * from USER_TAB_PARTITIONS</p>
-<p>–显示子分区信息 显示数据库所有组合分区表的子分区信息：<br>select * from DBA_TAB_SUBPARTITIONS</p>
-<p>–显示当前用户可访问的所有组合分区表的子分区信息：<br>select * from ALL_TAB_SUBPARTITIONS</p>
-<p>–显示当前用户所有组合分区表的子分区信息：<br>select * from USER_TAB_SUBPARTITIONS</p>
-<p>–显示分区列 显示数据库所有分区表的分区列信息：<br>select * from DBA_PART_KEY_COLUMNS</p>
-<p>–显示当前用户可访问的所有分区表的分区列信息：<br>select * from ALL_PART_KEY_COLUMNS</p>
-<p>–显示当前用户所有分区表的分区列信息：<br>select * from USER_PART_KEY_COLUMNS</p>
-<p>–显示子分区列 显示数据库所有分区表的子分区列信息：<br>select * from DBA_SUBPART_KEY_COLUMNS</p>
-<p>–显示当前用户可访问的所有分区表的子分区列信息：<br>select * from ALL_SUBPART_KEY_COLUMNS</p>
-<p>–显示当前用户所有分区表的子分区列信息：<br>select * from USER_SUBPART_KEY_COLUMNS</p>
-<p>–怎样查询出oracle数据库中所有的的分区表<br>select * from user_tables a where a.partitioned=’YES’</p>
-<p>–删除一个表的数据是<br>truncate table table_name;</p>
-<p>–删除分区表一个分区的数据是<br>alter table table_name truncate partition p5;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/09/SQL语句大全—查看表空间(一)/" itemprop="url">
-                  SQL语句大全—查看表空间(一)
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
                 </a>
-              
+              </li>
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-09T08:58:09+08:00" content="2017-02-09">
-              2017-02-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Database/" itemprop="url" rel="index">
-                    <span itemprop="name">Database</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="SQL语句大全—查看表空间-一"><a href="#SQL语句大全—查看表空间-一" class="headerlink" title="SQL语句大全—查看表空间(一)"></a>SQL语句大全—查看表空间(一)</h2><p>查看表空间的名称及大小:<br>SQL&gt; SELECT T.TABLESPACE_NAME, ROUND(SUM(BYTES/(1024 * 1024)), 0) TS_SIZE<br>FROM DBA_TABLESPACES T, DBA_DATA_FILES D<br>WHERE T.TABLESPACE_NAME = D.TABLESPACE_NAME<br>GROUP BY T.TABLESPACE_NAME;</p>
-<p>查看表空间物理文件的名称及大小:</p>
-<p>SQL&gt; SELECT TABLESPACE_NAME,FILE_ID,FILE_NAME,ROUND(BYTES / (1024 * 1024), 0) TOTAL_SPACE<br>FROM DBA_DATA_FILES<br>ORDER BY TABLESPACE_NAME;</p>
-<p>查看回滚段名称及大小:<br>SQL&gt; SELECT SEGMENT_NAME,<br>       TABLESPACE_NAME,<br>       R.STATUS,<br>       (INITIAL_EXTENT / 1024) INITIALEXTENT,<br>       (NEXT_EXTENT / 1024) NEXTEXTENT,<br>       MAX_EXTENTS,<br>       V.CUREXT CUREXTENT<br>FROM DBA_ROLLBACK_SEGS R, V$ROLLSTAT V<br>WHERE R.SEGMENT_ID = V.USN(+)<br>ORDER BY SEGMENT_NAME;</p>
-<p>如何查看某个回滚段里面，跑的什么事物或者正在执行什么sql语句:<br>SQL&gt; SELECT D.SQL_TEXT, A.NAME<br>FROM V$ROLLNAME A, V$TRANSACTION B, V$SESSION C, V$SQLTEXT D<br>WHERE A.USN = B.XIDUSN<br>   AND B.ADDR = C.TADDR<br>   AND C.SQL_ADDRESS = D.ADDRESS<br>   AND C.SQL_HASH_VALUE = D.HASH_VALUE<br>   AND A.USN = 1;<br>(备注：你要看哪个，就把usn=?写成几就行了)</p>
-<p>查看控制文件:<br>SQL&gt; SELECT * FROM V$CONTROLFILE;</p>
-<p>查看日志文件:<br>SQL&gt; COL MEMBER FORMAT A50<br>SQL&gt;SELECT * FROM V$LOGFILE;</p>
-<p>如何查看当前SQL*PLUS用户的sid和serial#:<br>SQL&gt;SELECT SID, SERIAL#, STATUS FROM V$SESSION WHERE AUDSID=USERENV(‘SESSIONID’);</p>
-<p>如何查看当前数据库的字符集:<br>SQL&gt;SELECT USERENV(‘LANGUAGE’) FROM DUAL;<br>SQL&gt;SELECT USERENV(‘LANG’) FROM DUAL;</p>
-<p>怎么判断当前正在使用何种SQL优化方式:<br>用EXPLAIN PLAN產生EXPLAIN PLAN¡檢查PLAN_TABLE中ID=0的POSITION列的值<br>SQL&gt;SELECT DECODE(NVL(POSITION,-1),-1,’RBO’,1,’CBO’) FROM PLAN_TABLE WHERE ID=0;</p>
-<p>如何查看系统当前最新的SCN号：<br>SQL&gt;SELECT MAX(KTUXESCNW * POWER(2,32) + KTUXESCNB) FROM X$KTUXE;</p>
-<p>在ORACLE中查找TRACE文件的脚本:</p>
-<p>SQL&gt;SELECT U_DUMP.VALUE || ‘/‘ || INSTANCE.VALUE || ‘<em>ORA</em>‘ ||<br>V$PROCESS.SPID || NVL2(V$PROCESS.TRACEID, ‘_’ || V$PROCESS.TRACEID, NULL ) || ‘.TRC’”TRACE FILE” FROM V$PARAMETER U_DUMP CROSS JOIN V$PARAMETER INSTANCE CROSS JOIN V$PROCESS JOIN V$SESSION ON V$PROCESS.ADDR = V$SESSION.PADDR WHERE U_DUMP.NAME = ‘USER_DUMP_DEST’ AND<br>INSTANCE.NAME = ‘INSTANCE_NAME’ AND V$SESSION.AUDSID=SYS_CONTEXT(‘USERENV’,’SESSIONID’);</p>
-<p>SQL&gt;SELECT D.VALUE || ‘/ORA_’ || P.SPID || ‘.TRC’ TRACE_FILE<em>NAME<br>FROM (SELECT P.SPID FROM SYS.V</em>$MYSTAT M,SYS.V<em>$SESSION S,<br>SYS.V</em>$PROCESS P WHERE M.STATISTIC# = 1 AND<br>S.SID = M.SID AND P.ADDR = S.PADDR) P,(SELECT VALUE FROM SYS.V_$PARAMETER WHERE NAME =’USER_DUMP_DEST’) D;</p>
-<p>如何查看客户端登陆的IP地址:<br>SQL&gt;SELECT SYS_CONTEXT(‘USERENV’,’IP_ADDRESS’) FROM DUAL;</p>
-<p>如何在生产数据库中创建一个追踪客户端IP地址的触发器：<br>SQL&gt;CREATE OR REPLACE TRIGGER ON_LOGON_TRIGGER AFTER LOGON ON DATABASE<br>BEGIN<br>DBMS_APPLICATION_INFO.SET_CLIENT_INFO(SYS_CONTEXT(‘USERENV’, ‘IP_ADDRESS’));<br>END;</p>
-<p>REM 记录登陆信息的触发器<br>CREATE OR REPLACE TRIGGER LOGON_HISTORY<br>AFTER LOGON ON DATABASE –WHEN (USER=’WACOS’) –ONLY FOR USER ‘WACOS’<br>BEGIN<br>INSERT INTO SESSION_HISTORY SELECT USERNAME,SID,SERIAL#,AUDSID,OSUSER,ACTION,SYSDATE,NULL,SYS_CONTEXT(‘USERENV’,’IP_ADDRESS’),TERMINAL,MACHINE,PROGRAM FROM V$SESSION WHERE AUDSID = USERENV(‘SESSIONID’);<br>END;</p>
-<p>查询当前日期:<br>SQL&gt; SELECT TO_CHAR(SYSDATE,’YYYY-MM-DD,HH24:MI:SS’) FROM DUAL;</p>
-<p>查看所有表空间对应的数据文件名：</p>
-<p>SQL&gt;SELECT DISTINCT FILE_NAME,TABLESPACE_NAME,AUTOEXTENSIBLE FROM DBA_DATA_FILES;</p>
-<p>查看表空间的使用情况:<br>SQL&gt;SELECT SUM(BYTES)/(1024*1024) AS FREE_SPACE,TABLESPACE_NAME<br>FROM DBA_FREE_SPACE GROUP BY TABLESPACE_NAME;</p>
-<p>SQL&gt;SELECT A.TABLESPACE_NAME,A.BYTES TOTAL,B.BYTES USED, C.BYTES FREE,<br>(B.BYTES<em>100)/A.BYTES “% USED”,(C.BYTES</em>100)/A.BYTES “% FREE”<br>FROM SYS.SM$TS_AVAIL A,SYS.SM$TS_USED B,SYS.SM$TS_FREE C<br>WHERE A.TABLESPACE_NAME=B.TABLESPACE_NAME AND A.TABLESPACE_NAME=C.TABLESPACE_NAME; </p>
-<p>COLUMN TABLESPACE_NAME FORMAT A18;<br>COLUMN SUM_M FORMAT A12;<br>COLUMN USED_M FORMAT A12;<br>COLUMN FREE_M FORMAT A12;<br>COLUMN PTO_M FORMAT 9.99; </p>
-<p>SELECT S.TABLESPACE_NAME,CEIL(SUM(S.BYTES/1024/1024))||’M’ SUM_M,CEIL(SUM(S.USEDSPACE/1024/1024))||’M’ USED_M,CEIL(SUM(S.FREESPACE/1024/1024))||’M’ FREE_M, SUM(S.USEDSPACE)/SUM(S.BYTES) PTUSED FROM (SELECT B.FILE_ID,B.TABLESPACE_NAME,B.BYTES, (B.BYTES-SUM(NVL(A.BYTES,0))) USEDSPACE, SUM(NVL(A.BYTES,0)) FREESPACE,(SUM(NVL(A.BYTES,0))/(B.BYTES)) * 100 FREEPERCENTRATIO FROM SYS.DBA_FREE_SPACE A,SYS.DBA_DATA_FILES B WHERE A.FILE_ID(+)=B.FILE_ID GROUP BY B.FILE_ID,B.TABLESPACE_NAME,B.BYTES ORDER BY B.TABLESPACE_NAME) S GROUP BY S.TABLESPACE_NAME ORDER BY SUM(S.FREESPACE)/SUM(S.BYTES) DESC;</p>
-<p>查看数据文件的hwm（可以resize的最小空间）和文件头大小:<br>SELECT V1.FILE_NAME,V1.FILE_ID,NUM1 TOTLE_SPACE,NUM3 FREE_SPACE,<br>NUM1-NUM3 “USED_SPACE(HWM)”,NVL(NUM2,0) DATA_SPACE,NUM1-NUM3-NVL(NUM2,0) FILE_HEAD<br>FROM<br>(SELECT FILE_NAME,FILE_ID,SUM(BYTES) NUM1 FROM DBA_DATA_FILES GROUP BY FILE_NAME,FILE_ID) V1,<br>(SELECT FILE_ID,SUM(BYTES) NUM2 FROM DBA_EXTENTS GROUP BY FILE_ID) V2,<br>(SELECT FILE_ID,SUM(BYTES) NUM3 FROM DBA_FREE_SPACE GROUP BY FILE_ID) V3<br>WHERE V1.FILE_ID=V2.FILE_ID(+) AND V1.FILE_ID=V3.FILE_ID(+);<br>数据文件大小及头大小:<br>SELECT V1.FILE_NAME,V1.FILE_ID,<br>NUM1 TOTLE_SPACE,<br>NUM3 FREE_SPACE,<br>NUM1-NUM3 USED_SPACE,<br>NVL(NUM2,0) DATA_SPACE,<br>NUM1-NUM3-NVL(NUM2,0) FILE_HEAD<br>FROM<br>(SELECT FILE_NAME,FILE_ID,SUM(BYTES) NUM1 FROM DBA_DATA_FILES GROUP BY FILE_NAME,FILE_ID) V1,<br>(SELECT FILE_ID,SUM(BYTES) NUM2 FROM DBA_EXTENTS GROUP BY FILE_ID) V2,<br>(SELECT FILE_ID,SUM(BYTES) NUM3 FROM DBA_FREE_SPACE GROUP BY FILE_ID) V3<br>WHERE V1.FILE_ID=V2.FILE_ID(+)<br>AND V1.FILE_ID=V3.FILE_ID(+);</p>
-<p>(运行以上查询，我们可以如下信息：<br>Totle_pace:该数据文件的总大小，字节为单位<br>Free_space:该数据文件的剩于大小，字节为单位<br>Used_space:该数据文件的已用空间，字节为单位<br>Data_space:该数据文件中段数据占用空间，也就是数据空间，字节为单位<br>File_Head:该数据文件头部占用空间，字节为单位)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/09/Linux 文件和文件夹的操作权限/" itemprop="url">
-                  Linux 文件和文件夹的操作权限
+              <li>
+                <a href="https://github.com/jimmy-yao">
+                  
+                  Github
+                  
                 </a>
-              
+              </li>
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-09T08:58:09+08:00" content="2017-02-09">
-              2017-02-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="解析概览"><a href="#解析概览" class="headerlink" title="解析概览"></a>解析概览</h2><p>由于 linux 是多用户操作系统，所以基于安全的考虑，需要具备保障个人隐私和系统安全的机制。因此在使用 linux 系统的时候，经常会出现权限的问题(比如: 删除文件、安装软件、运行应用等等)，期初遇到这些问题的时候，大部分都使用sudo或者是sudo chmod 777 file(后面会讲解这个命令)来解决的。虽然这种方式可以解决问题，但是这样是不安全的，特别是在服务器上操作的时候，因为不是所有的文件和文件夹都可以被其它用户操作的，不是所有的用户都有root权限的，不是所有的应用都可以用root用户启动的。那么我们要如何正确的处理这些权限问题呢？那就让我们来学习一下 linux 权限相关的知识。</p>
-<p>用户的权限<br>要确定一个用户对某个文件或文件夹是否具有相应的操作权限，先要明确该用户与文件或文件夹之间的关系。在 linux 系统中，定义了如下三种关系：</p>
-<p>文件或文件夹的所有者 (owner)：文件或文件夹的拥有者，开始创建文件或文件夹时为创建者。<br>组 (group)：文件或文件夹所属的组, 开始创建文件或文件夹时为创建者的所属的组。<br>其他人 (other)：除了文件或文件夹的所有者和文件或文件夹所属的组的其他成员，剩下的 linux 的用户。<br>因为在 linux 下的文件和文件夹都有读取(r)、写入(w)、执行(x)的操作，所以上面描述的每种关系的用户分别都可以赋予这些操作权限。操作权限介绍:</p>
-<p>权限    简写    对普通文件的作用    对文件夹的作用<br>读取    r    查看文件内容    列出文件夹中的文件(ls)<br>写入    w    修改文件内容    在文件夹中删除、添加或重命名文件(夹)<br>执行    x    文件可以作为程序执行    cd 到文件夹<br>文件或文件夹和用户的三种关系的基础操作权限<br>在 linux 使用ls -la命令可以查看文件夹内文件的属性，下面是我电脑上某个文件夹下文件的属性:</p>
-<p>$ ls -la<br>drwxr-xr-x 14 root root     4096 Apr  3 18:47 .<br>drwxr-xr-x 23 root root     4096 Mar  2 05:48 ..<br>drwxr-xr-x  2 root root     4096 Apr  3 07:44 backups<br>drwxr-xr-x 17 root root     4096 Jul 22  2014 cache<br>drwxr-xr-x  2 root root     4096 Mar  2 04:26 docker-registry<br>lrwxrwxrwx  1 root root        9 Feb 25 13:31 lock -&gt; /run/lock<br>drwxrwxr-x 15 root syslog   4096 Apr  3 07:44 log<br>-rw-r–r–  1 root root        0 Apr  3 18:47 test<br>上面的有九列数据，第一列数据表示和文件或文件夹相应关系用户的操作权限，第二列表示文件夹内文件和文件夹的总数量(包括文件夹本身)，第三列表示文件夹或文件的拥有者，第四列表示文件或文件夹的所属的组，第五列表示文件或文件夹的大小，第六、七、八列表示文件或文件夹最后被修改的时间，第九列文件或文件夹的名字。<br>接下主要分析第一列的数据，在上面的信息中倒数第二行drwxrwxr-x，从左到右第一个字母表示文件系统对象的类别，这里d表示为目录(文件夹)。其它文件系统对象:<br>-(常规文件)、d(目录)、l(符号链接)、c(字符特殊设备)、b(模块特殊设备)、p(FIFO)、s(套接字)<br>drwxrwxr-x除出去第一个字母d后的rwxrwxr-x表示的是三种用户关系对文件或文件夹的操作权限。从左到右每三个一组，依次表示所有者权限、组权限、其他用户权限。每组的顺序均为rwx，如果用户有相应的操作权限就用相应的字母表示，如果不具有相应的操作权限就用-表示。比如: rwxrwxr-x表示文件或文件夹的所有者具有rwx(可读，可写，可执行)的操作权限，组用户也具有rwx(可读，可写，可执行)的权限，其他用户具有r-x(可读，可执行，没有可读)的操作权限。<br>特殊权限SUID、SGID、Sticky<br>在 linux 系统中还有三种与用户身份无关的三个文件权限属性。即SUID、SGID和Sticky。</p>
-<p>SUID(Set User ID, 4):<br>该属性只对有执行权限的文件有效，对目录无效。执行具有SUID权限的程序时，引发的进程的所有者是程序文件的所有者，而不是启动程序的用户（除非二者是同一个人）。比如，如果一个程序的所有者是root且具有SUID属性，一个普通用户执行此程序时，如同root执行此程序一样。（请注意该属性对Shell脚本程序无效）该属性为一些特殊程序（如lpr）的启动带来了方便。但有时也带来了安全隐患：比如一个具有SUID属性的程序如果在执行时运行了一个shell，那么用户可以籍此得到系统的最高权限。SUID可用s表示，如:<br>$ ls -l /usr/bin/passwd<br>-rwsr-xr-x 1 root root 47032 Feb 16  2014 /usr/bin/passwd<br>SGID(Set Group ID, 4):<br>对于可执行文件，SGID与SUID类似，引发的进程的所有组是程序文件所属的组。对于目录，SGID属性会使目录中新建文件的所属组与该目录相同。SGID也可以用s表示，如:<br>$ ls -l /var<br>drwxrwsr-x  2 root staff    4096 Apr 10  2014 local<br>drwxrwxr-x 15 root syslog   4096 Apr  4 19:57 log<br>Sticky, 1:<br>仅对目录有效。带sticky属性的目录下的文件或目录可以被其拥有者删除或改名。常利用sticky属性创建这样的目录：组用户可以在此目录中创建新文件、修改文件内容，但只有文件所有者才能对自己的文件进行删除或改名。如系统中的/tmp文件夹。在属性字符串中，通常用t表示。<br>$ ls -l /<br>drwxrwxrwt   8 root root  4096 Apr  4 23:57 tmp<br>修改文件或文件夹对应用户的操作权限<br>在 linux 系统中，可以使用chmod命令来修改文件或文件夹对应用户的操作权限，chmod命令也有两种方式修改，一种是使用代表相应操作权限的字母简写表示，另一种是使用代表相应操作权限的数字表示。</p>
-<p>使用简写字母<br>chmod语法参数格式: ugoa[rwxst]<br>第一个字符是u、g、 o 或 a 中的一个（分别表示用户、组、其他人和所有人）。还可以选择添加（+）、删除（-）或设置（=）各种不同权限。<br>给文件或文件夹try的拥有者加可执行权限<br>$ sudo chmod u+x try<br>给文件或文件夹try的拥有者和组成员加可读可写权限<br>$ sudo chmod ug+rw try<br>给文件或文件夹try的拥有者和组成员除去可写权限<br>$ sudo chmod ug-r try<br>使用数字表示(八进制数)<br>为了简化表述，也可使用八进制数来表示权限。即用一个四位八进制数来表示，其中最高位表示特殊权限，随后的三位依次是所有者权限、组权限和其他人权限。每一个八进制位的权限数值是文件具有的相应权限所对应的数值之后，如：<br>0755=rwxr-xr-x=0(4+2+1)(4+0+1)(4+0+1)<br>数值权限的算法，比如rw-其实就是110的二进制，也就是0<em>2^0 + 1</em>2^1 + 1*2^2 = 6。有相应的权限就用1表示，没有相应的权限就用0表示。不过这种算法特殊权限不包含在内。<br>给文件或文件夹try的拥有者加rwx权限，组用户加r-x权限，其他用户r–权限<br>$ sudo chmod 0754 try<br>chmod命令也可以递归的修改文件夹下所有的文件的权限，如给 try 文件夹下得所有文件加上 0755 权限<br>$ sudo chmod -R 0755 try<br>批量只修改文件或文件夹权限<br>$ find -type d|xargs chmod 745     // 只修改文件夹权限<br>$ find -type f|xargs chmod 644     // 只修改文件权限<br>// 或者<br>$ chmod 745 <code>find 路径 -type d</code>     // 只修改文件夹权限<br>$ chmod 644 <code>find 路径 -type f</code>    // 只修改文件权限<br>相应权限的数值:<br>rwx(7)、rw-(6)、r-x(5)、r–(4)、–wx(3)、-w-(2)、–x(1)、—(0)<br>suid: 符号s(4)<br>sgid: 符号s(2)<br>sticky: 符号t(1)<br>修改文件或文件夹的拥有者和所属的组<br>使用chown可以修改文件或文件夹的拥有者和所属的组。</p>
-<p>将文件或文件夹try的拥有者修改成aikin，所属的组修改成adm<br>$ sudo chown aikin:adm try<br>和chmod一样，-R参数可以起到递归的作用<br>$ sudo chown -R aikin:adm try<br>创建组和用户<br>组相关操作：<br>创建一个try组<br>$ sudo groupadd try<br>修改try组的名字为rename-try<br>$ sudo groupadd -n rename-try try<br>修改try组的名字为rename-try<br>$ sudo groupadd -n rename-try try<br>删除try2组<br>$ sudo groupdel try2<br>查看所有组<br>$ sudo cat /etc/group<br>用户相关操作：<br>创建用户test<br>在 linux 系统上虽然可以使用useradd或adduser来创建用户，但是这两个命令是有区别的。</p>
-<p>使用useradd时，如果后面不添加任何参数选项，例如：$sudo useradd test创建出来的用户将是默认“三无”用户：一无Home Directory，二无密码，三无系统Shell。<br>使用adduser时，创建用户的过程更像是一种人机对话，系统会提示你输入各种信息，然后会根据这些信息帮你创建新用户。<br>下面创建用户使用的是adduser命令:<br>$ sudo adduser test<br>Adding user <code>test&#39; ...
-Adding new group</code>test’ (1002) …<br>Adding new user <code>test&#39; (1001) with group</code>test’ …<br>Creating home directory <code>/home/test&#39; ...
-Copying files from</code>/etc/skel’ …<br>Enter new UNIX password:<br>Retype new UNIX password:<br>passwd: password updated successfully<br>Changing the user information for test<br>Enter the new value, or press ENTER for the default<br>  Full Name []: test<br>  Room Number []:<br>  Work Phone []:<br>  Home Phone []:<br>  Other []:<br>Is the information correct? [Y/n] y<br>修改用户<br>$ sudo passwd test    // 修改用户密码<br>$ sudo usermod -d /home/test -G try2 test   // 将test用户的登录目录改成/home/test，并加入 try 组，注意这里是大 G。<br>$ sudo gpasswd -a test try     // 将用户 test 加入到 try2 组。<br>$ sudo gpasswd -d test try2    // 将用户 test 从 try 组中移除<br>删除用户test<br>$ sudo userdel test<br>查看所有用户<br>$ cut -d : -f 1 /etc/passwd<br>// 或者<br>$ cat /etc/passwd |awk -F \: ‘{print $1}’<br>　　了解 linux 用户操作权限，安全就掌握在手中。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/20/常用Git命令清单/" itemprop="url">
-                  常用 Git 命令清单
+              <li>
+                <a href="mailto:yao.asher@gmail.com">
+                  
+                  Email
+                  
                 </a>
-              
+              </li>
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-20T10:05:00+08:00" content="2016-10-20">
-              2016-10-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </ul>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="几个专用名词的译名"><a href="#几个专用名词的译名" class="headerlink" title="几个专用名词的译名"></a>几个专用名词的译名</h2><p>Workspace：工作区<br>Index / Stage：暂存区<br>Repository：仓库区（或本地仓库）<br>Remote：远程仓库</p>
-<h2 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h2><h3 id="在当前目录新建一个Git代码库"><a href="#在当前目录新建一个Git代码库" class="headerlink" title="在当前目录新建一个Git代码库"></a>在当前目录新建一个Git代码库</h3><p>$ git init</p>
-<h3 id="新建一个目录-将其初始化为Git代码库"><a href="#新建一个目录-将其初始化为Git代码库" class="headerlink" title="新建一个目录,将其初始化为Git代码库"></a>新建一个目录,将其初始化为Git代码库</h3><p>$ git init [project-name]</p>
-<h3 id="下载一个项目和它的整个代码历史"><a href="#下载一个项目和它的整个代码历史" class="headerlink" title="下载一个项目和它的整个代码历史"></a>下载一个项目和它的整个代码历史</h3><p>$ git clone [url]</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git的设置文件为.gitconfig,它可以在用户主目录下（全局配置）,也可以在项目目录下（项目配置）。</p>
-<h3 id="显示当前的Git配置"><a href="#显示当前的Git配置" class="headerlink" title="显示当前的Git配置"></a>显示当前的Git配置</h3><p>$ git config –list</p>
-<h3 id="编辑Git配置文件"><a href="#编辑Git配置文件" class="headerlink" title="编辑Git配置文件"></a>编辑Git配置文件</h3><p>$ git config -e [–global]</p>
-<h3 id="设置提交代码时的用户信息"><a href="#设置提交代码时的用户信息" class="headerlink" title="设置提交代码时的用户信息"></a>设置提交代码时的用户信息</h3><p>$ git config [–global] user.name “[name]”<br>$ git config [–global] user.email “[email address]”</p>
-<h2 id="增加-删除文件"><a href="#增加-删除文件" class="headerlink" title="增加/删除文件"></a>增加/删除文件</h2><h3 id="添加指定文件到暂存区"><a href="#添加指定文件到暂存区" class="headerlink" title="添加指定文件到暂存区"></a>添加指定文件到暂存区</h3><p>$ git add [file1] [file2] …</p>
-<h3 id="添加指定目录到暂存区-包括子目录"><a href="#添加指定目录到暂存区-包括子目录" class="headerlink" title="添加指定目录到暂存区,包括子目录"></a>添加指定目录到暂存区,包括子目录</h3><p>$ git add [dir]</p>
-<h3 id="添加当前目录的所有文件到暂存区"><a href="#添加当前目录的所有文件到暂存区" class="headerlink" title="添加当前目录的所有文件到暂存区"></a>添加当前目录的所有文件到暂存区</h3><p>$ git add .</p>
-<h3 id="删除工作区文件-并且将这次删除放入暂存区"><a href="#删除工作区文件-并且将这次删除放入暂存区" class="headerlink" title="删除工作区文件,并且将这次删除放入暂存区"></a>删除工作区文件,并且将这次删除放入暂存区</h3><p>$ git rm [file1] [file2] …</p>
-<h3 id="停止追踪指定文件-但该文件会保留在工作区"><a href="#停止追踪指定文件-但该文件会保留在工作区" class="headerlink" title="停止追踪指定文件,但该文件会保留在工作区"></a>停止追踪指定文件,但该文件会保留在工作区</h3><p>$ git rm –cached [file]</p>
-<h3 id="改名文件-并且将这个改名放入暂存区"><a href="#改名文件-并且将这个改名放入暂存区" class="headerlink" title="改名文件,并且将这个改名放入暂存区"></a>改名文件,并且将这个改名放入暂存区</h3><p>$ git mv [file-original] [file-renamed]</p>
-<h2 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h2><h3 id="提交暂存区到仓库区"><a href="#提交暂存区到仓库区" class="headerlink" title="提交暂存区到仓库区"></a>提交暂存区到仓库区</h3><p>$ git commit -m [message]</p>
-<h3 id="提交暂存区的指定文件到仓库区"><a href="#提交暂存区的指定文件到仓库区" class="headerlink" title="提交暂存区的指定文件到仓库区"></a>提交暂存区的指定文件到仓库区</h3><p>$ git commit [file1] [file2] … -m [message]</p>
-<h3 id="提交工作区自上次commit之后的变化-直接到仓库区"><a href="#提交工作区自上次commit之后的变化-直接到仓库区" class="headerlink" title="提交工作区自上次commit之后的变化,直接到仓库区"></a>提交工作区自上次commit之后的变化,直接到仓库区</h3><p>$ git commit -a</p>
-<h3 id="提交时显示所有diff信息"><a href="#提交时显示所有diff信息" class="headerlink" title="提交时显示所有diff信息"></a>提交时显示所有diff信息</h3><p>$ git commit -v</p>
-<h3 id="使用一次新的commit-替代上一次提交-如果代码没有任何新变化-则用来改写上一次commit的提交信息"><a href="#使用一次新的commit-替代上一次提交-如果代码没有任何新变化-则用来改写上一次commit的提交信息" class="headerlink" title="使用一次新的commit,替代上一次提交 如果代码没有任何新变化,则用来改写上一次commit的提交信息"></a>使用一次新的commit,替代上一次提交 如果代码没有任何新变化,则用来改写上一次commit的提交信息</h3><p>$ git commit –amend -m [message]</p>
-<h3 id="重做上一次commit-并包括指定文件的新变化"><a href="#重做上一次commit-并包括指定文件的新变化" class="headerlink" title="重做上一次commit,并包括指定文件的新变化"></a>重做上一次commit,并包括指定文件的新变化</h3><p>$ git commit –amend [file1] [file2] …</p>
-<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h3 id="列出所有本地分支"><a href="#列出所有本地分支" class="headerlink" title="列出所有本地分支"></a>列出所有本地分支</h3><p>$ git branch</p>
-<h3 id="列出所有远程分支"><a href="#列出所有远程分支" class="headerlink" title="列出所有远程分支"></a>列出所有远程分支</h3><p>$ git branch -r</p>
-<h3 id="列出所有本地分支和远程分支"><a href="#列出所有本地分支和远程分支" class="headerlink" title="列出所有本地分支和远程分支"></a>列出所有本地分支和远程分支</h3><p>$ git branch -a</p>
-<h3 id="新建一个分支-但依然停留在当前分支"><a href="#新建一个分支-但依然停留在当前分支" class="headerlink" title="新建一个分支,但依然停留在当前分支"></a>新建一个分支,但依然停留在当前分支</h3><p>$ git branch [branch-name]</p>
-<h3 id="新建一个分支-并切换到该分支"><a href="#新建一个分支-并切换到该分支" class="headerlink" title="新建一个分支,并切换到该分支"></a>新建一个分支,并切换到该分支</h3><p>$ git checkout -b [branch]</p>
-<h3 id="新建一个分支-指向指定commit"><a href="#新建一个分支-指向指定commit" class="headerlink" title="新建一个分支,指向指定commit"></a>新建一个分支,指向指定commit</h3><p>$ git branch [branch] [commit]</p>
-<h3 id="新建一个分支-与指定的远程分支建立追踪关系"><a href="#新建一个分支-与指定的远程分支建立追踪关系" class="headerlink" title="新建一个分支,与指定的远程分支建立追踪关系"></a>新建一个分支,与指定的远程分支建立追踪关系</h3><p>$ git branch –track [branch] [remote-branch]</p>
-<h3 id="切换到指定分支-并更新工作区"><a href="#切换到指定分支-并更新工作区" class="headerlink" title="切换到指定分支,并更新工作区"></a>切换到指定分支,并更新工作区</h3><p>$ git checkout [branch-name]</p>
-<h3 id="建立追踪关系-在现有分支与指定的远程分支之间"><a href="#建立追踪关系-在现有分支与指定的远程分支之间" class="headerlink" title="建立追踪关系,在现有分支与指定的远程分支之间"></a>建立追踪关系,在现有分支与指定的远程分支之间</h3><p>$ git branch –set-upstream [branch] [remote-branch]</p>
-<h3 id="合并指定分支到当前分支"><a href="#合并指定分支到当前分支" class="headerlink" title="合并指定分支到当前分支"></a>合并指定分支到当前分支</h3><p>$ git merge [branch]</p>
-<h3 id="选择一个commit-合并进当前分支"><a href="#选择一个commit-合并进当前分支" class="headerlink" title="选择一个commit,合并进当前分支"></a>选择一个commit,合并进当前分支</h3><p>$ git cherry-pick [commit]</p>
-<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><p>$ git branch -d [branch-name]</p>
-<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><p>$ git push origin –delete [branch-name]<br>$ git branch -dr [remote/branch]</p>
-<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="列出所有tag"><a href="#列出所有tag" class="headerlink" title="列出所有tag"></a>列出所有tag</h3><p>$ git tag</p>
-<h3 id="新建一个tag在当前commit"><a href="#新建一个tag在当前commit" class="headerlink" title="新建一个tag在当前commit"></a>新建一个tag在当前commit</h3><p>$ git tag [tag]</p>
-<h3 id="新建一个tag在指定commit"><a href="#新建一个tag在指定commit" class="headerlink" title="新建一个tag在指定commit"></a>新建一个tag在指定commit</h3><p>$ git tag [tag] [commit]</p>
-<h3 id="查看tag信息"><a href="#查看tag信息" class="headerlink" title="查看tag信息"></a>查看tag信息</h3><p>$ git show [tag]</p>
-<h3 id="提交指定tag"><a href="#提交指定tag" class="headerlink" title="提交指定tag"></a>提交指定tag</h3><p>$ git push [remote] [tag]</p>
-<h3 id="提交所有tag"><a href="#提交所有tag" class="headerlink" title="提交所有tag"></a>提交所有tag</h3><p>$ git push [remote] –tags</p>
-<h3 id="新建一个分支-指向某个tag"><a href="#新建一个分支-指向某个tag" class="headerlink" title="新建一个分支,指向某个tag"></a>新建一个分支,指向某个tag</h3><p>$ git checkout -b [branch] [tag]</p>
-<h2 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h2><h3 id="显示有变更的文件"><a href="#显示有变更的文件" class="headerlink" title="显示有变更的文件"></a>显示有变更的文件</h3><p>$ git status</p>
-<h3 id="显示当前分支的版本历史"><a href="#显示当前分支的版本历史" class="headerlink" title="显示当前分支的版本历史"></a>显示当前分支的版本历史</h3><p>$ git log</p>
-<h3 id="显示commit历史-以及每次commit发生变更的文件"><a href="#显示commit历史-以及每次commit发生变更的文件" class="headerlink" title="显示commit历史,以及每次commit发生变更的文件"></a>显示commit历史,以及每次commit发生变更的文件</h3><p>$ git log –stat</p>
-<h3 id="显示某个文件的版本历史-包括文件改名"><a href="#显示某个文件的版本历史-包括文件改名" class="headerlink" title="显示某个文件的版本历史,包括文件改名"></a>显示某个文件的版本历史,包括文件改名</h3><p>$ git log –follow [file]<br>$ git whatchanged [file]</p>
-<h3 id="显示指定文件相关的每一次diff"><a href="#显示指定文件相关的每一次diff" class="headerlink" title="显示指定文件相关的每一次diff"></a>显示指定文件相关的每一次diff</h3><p>$ git log -p [file]</p>
-<h3 id="显示指定文件是什么人在什么时间修改过"><a href="#显示指定文件是什么人在什么时间修改过" class="headerlink" title="显示指定文件是什么人在什么时间修改过"></a>显示指定文件是什么人在什么时间修改过</h3><p>$ git blame [file]</p>
-<h3 id="显示暂存区和工作区的差异"><a href="#显示暂存区和工作区的差异" class="headerlink" title="显示暂存区和工作区的差异"></a>显示暂存区和工作区的差异</h3><p>$ git diff</p>
-<h3 id="显示暂存区和上一个commit的差异"><a href="#显示暂存区和上一个commit的差异" class="headerlink" title="显示暂存区和上一个commit的差异"></a>显示暂存区和上一个commit的差异</h3><p>$ git diff –cached [file]</p>
-<h3 id="显示工作区与当前分支最新commit之间的差异"><a href="#显示工作区与当前分支最新commit之间的差异" class="headerlink" title="显示工作区与当前分支最新commit之间的差异"></a>显示工作区与当前分支最新commit之间的差异</h3><p>$ git diff HEAD</p>
-<h3 id="显示两次提交之间的差异"><a href="#显示两次提交之间的差异" class="headerlink" title="显示两次提交之间的差异"></a>显示两次提交之间的差异</h3><p>$ git diff [first-branch]…[second-branch]</p>
-<h3 id="显示某次提交的元数据和内容变化"><a href="#显示某次提交的元数据和内容变化" class="headerlink" title="显示某次提交的元数据和内容变化"></a>显示某次提交的元数据和内容变化</h3><p>$ git show [commit]</p>
-<h3 id="显示某次提交发生变化的文件"><a href="#显示某次提交发生变化的文件" class="headerlink" title="显示某次提交发生变化的文件"></a>显示某次提交发生变化的文件</h3><p>$ git show –name-only [commit]</p>
-<h3 id="显示某次提交时-某个文件的内容"><a href="#显示某次提交时-某个文件的内容" class="headerlink" title="显示某次提交时,某个文件的内容"></a>显示某次提交时,某个文件的内容</h3><p>$ git show [commit]:[filename]</p>
-<h3 id="显示当前分支的最近几次提交"><a href="#显示当前分支的最近几次提交" class="headerlink" title="显示当前分支的最近几次提交"></a>显示当前分支的最近几次提交</h3><p>$ git reflog</p>
-<h2 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h2><h3 id="下载远程仓库的所有变动"><a href="#下载远程仓库的所有变动" class="headerlink" title="下载远程仓库的所有变动"></a>下载远程仓库的所有变动</h3><p>$ git fetch [remote]</p>
-<h3 id="显示所有远程仓库"><a href="#显示所有远程仓库" class="headerlink" title="显示所有远程仓库"></a>显示所有远程仓库</h3><p>$ git remote -v</p>
-<h3 id="显示某个远程仓库的信息"><a href="#显示某个远程仓库的信息" class="headerlink" title="显示某个远程仓库的信息"></a>显示某个远程仓库的信息</h3><p>$ git remote show [remote]</p>
-<h3 id="增加一个新的远程仓库-并命名"><a href="#增加一个新的远程仓库-并命名" class="headerlink" title="增加一个新的远程仓库,并命名"></a>增加一个新的远程仓库,并命名</h3><p>$ git remote add [shortname] [url]</p>
-<h3 id="取回远程仓库的变化-并与本地分支合并"><a href="#取回远程仓库的变化-并与本地分支合并" class="headerlink" title="取回远程仓库的变化,并与本地分支合并"></a>取回远程仓库的变化,并与本地分支合并</h3><p>$ git pull [remote] [branch]</p>
-<h3 id="上传本地指定分支到远程仓库"><a href="#上传本地指定分支到远程仓库" class="headerlink" title="上传本地指定分支到远程仓库"></a>上传本地指定分支到远程仓库</h3><p>$ git push [remote] [branch]</p>
-<h3 id="强行推送当前分支到远程仓库-即使有冲突"><a href="#强行推送当前分支到远程仓库-即使有冲突" class="headerlink" title="强行推送当前分支到远程仓库,即使有冲突"></a>强行推送当前分支到远程仓库,即使有冲突</h3><p>$ git push [remote] –force</p>
-<h3 id="推送所有分支到远程仓库"><a href="#推送所有分支到远程仓库" class="headerlink" title="推送所有分支到远程仓库"></a>推送所有分支到远程仓库</h3><p>$ git push [remote] –all</p>
-<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><h3 id="恢复暂存区的指定文件到工作区"><a href="#恢复暂存区的指定文件到工作区" class="headerlink" title="恢复暂存区的指定文件到工作区"></a>恢复暂存区的指定文件到工作区</h3><p>$ git checkout [file]</p>
-<h3 id="恢复某个commit的指定文件到工作区"><a href="#恢复某个commit的指定文件到工作区" class="headerlink" title="恢复某个commit的指定文件到工作区"></a>恢复某个commit的指定文件到工作区</h3><p>$ git checkout [commit] [file]</p>
-<h3 id="恢复上一个commit的所有文件到工作区"><a href="#恢复上一个commit的所有文件到工作区" class="headerlink" title="恢复上一个commit的所有文件到工作区"></a>恢复上一个commit的所有文件到工作区</h3><p>$ git checkout .</p>
-<h3 id="重置暂存区的指定文件-与上一次commit保持一致-但工作区不变"><a href="#重置暂存区的指定文件-与上一次commit保持一致-但工作区不变" class="headerlink" title="重置暂存区的指定文件,与上一次commit保持一致,但工作区不变"></a>重置暂存区的指定文件,与上一次commit保持一致,但工作区不变</h3><p>$ git reset [file]</p>
-<h3 id="重置暂存区与工作区-与上一次commit保持一致"><a href="#重置暂存区与工作区-与上一次commit保持一致" class="headerlink" title="重置暂存区与工作区,与上一次commit保持一致"></a>重置暂存区与工作区,与上一次commit保持一致</h3><p>$ git reset –hard</p>
-<h3 id="重置当前分支的指针为指定commit-同时重置暂存区-但工作区不变"><a href="#重置当前分支的指针为指定commit-同时重置暂存区-但工作区不变" class="headerlink" title="重置当前分支的指针为指定commit,同时重置暂存区,但工作区不变"></a>重置当前分支的指针为指定commit,同时重置暂存区,但工作区不变</h3><p>$ git reset [commit]</p>
-<h3 id="重置当前分支的HEAD为指定commit-同时重置暂存区和工作区-与指定commit一致"><a href="#重置当前分支的HEAD为指定commit-同时重置暂存区和工作区-与指定commit一致" class="headerlink" title="重置当前分支的HEAD为指定commit,同时重置暂存区和工作区,与指定commit一致"></a>重置当前分支的HEAD为指定commit,同时重置暂存区和工作区,与指定commit一致</h3><p>$ git reset –hard [commit]</p>
-<h3 id="重置当前HEAD为指定commit-但保持暂存区和工作区不变"><a href="#重置当前HEAD为指定commit-但保持暂存区和工作区不变" class="headerlink" title="重置当前HEAD为指定commit,但保持暂存区和工作区不变"></a>重置当前HEAD为指定commit,但保持暂存区和工作区不变</h3><p>$ git reset –keep [commit]</p>
-<h3 id="新建一个commit-用来撤销指定commit-后者的所有变化都将被前者抵消-并且应用到当前分支"><a href="#新建一个commit-用来撤销指定commit-后者的所有变化都将被前者抵消-并且应用到当前分支" class="headerlink" title="新建一个commit,用来撤销指定commit,后者的所有变化都将被前者抵消,并且应用到当前分支"></a>新建一个commit,用来撤销指定commit,后者的所有变化都将被前者抵消,并且应用到当前分支</h3><p>$ git revert [commit]</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="生成一个可供发布的压缩包"><a href="#生成一个可供发布的压缩包" class="headerlink" title="生成一个可供发布的压缩包"></a>生成一个可供发布的压缩包</h3><p>$ git archive</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/18/从根源上解析 Java volatile 关键字的实现/" itemprop="url">
-                  从根源上解析 Java volatile 关键字的实现
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-18T19:25:09+08:00" content="2016-10-18">
-              2016-10-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="解析概览"><a href="#解析概览" class="headerlink" title="解析概览"></a>解析概览</h2><p>a.内存模型的相关概念</p>
-<p>b.并发编程中的三个概念</p>
-<p>c.Java内存模型</p>
-<p>d.深入剖析Volatile关键字</p>
-<p>e.使用volatile关键字的场景</p>
-<h2 id="内存模型的相关概念"><a href="#内存模型的相关概念" class="headerlink" title="内存模型的相关概念"></a>内存模型的相关概念</h2><p>缓存一致性问题。通常称这种被多个线程访问的变量为共享变量。</p>
-<p>也就是说，如果一个变量在多个CPU中都存在缓存（一般在多线程编程时才会出现），那么就可能存在缓存不一致的问题。</p>
-<p>为了解决缓存不一致性问题，通常来说有以下2种解决方法：</p>
-<p>a.通过在总线加LOCK#锁的方式</p>
-<p>b.通过缓存一致性协议</p>
-<p>这2种方式都是硬件层面上提供的方式。</p>
-<p>上面的方式1会有一个问题，由于在锁住总线期间，其他CPU无法访问内存，导致效率低下。</p>
-<p>缓存一致性协议。最出名的就是Intel 的MESI协议，MESI协议保证了每个缓存中使用的共享变量的副本是一致的。它核心的思想是：当CPU写数据时，如果发现操作的变量是共享变量，即在其他CPU中也存在该变量的副本，会发出信号通知其他CPU将该变量的缓存行置为无效状态，因此当其他CPU需要读取这个变量时，发现自己缓存中缓存该变量的缓存行是无效的，那么它就会从内存重新读取。</p>
-<h2 id="并发编程中的三个概念"><a href="#并发编程中的三个概念" class="headerlink" title="并发编程中的三个概念"></a>并发编程中的三个概念</h2><p>在并发编程中，我们通常会遇到以下三个问题：原子性问题，可见性问题，有序性问题。</p>
-<h3 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h3><p>原子性：即一个操作或者多个操作 要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。</p>
-<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p>可见性是指当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。</p>
-<h3 id="有序性"><a href="#有序性" class="headerlink" title="有序性"></a>有序性</h3><p>有序性：即程序执行的顺序按照代码的先后顺序执行。</p>
-<p>从代码顺序上看，语句1是在语句2前面的，那么JVM在真正执行这段代码的时候会保证语句1一定会在语句2前面执行吗？不一定，为什么呢？这里可能会发生指令重排序（Instruction Reorder）。</p>
-<p>下面解释一下什么是指令重排序，一般来说，处理器为了提高程序运行效率，可能会对输入代码进行优化，它不保证程序中各个语句的执行先后顺序同代码中的顺序一致，但是它会保证程序最终执行结果和代码顺序执行的结果是一致的。</p>
-<p>指令重排序不会影响单个线程的执行，但是会影响到线程并发执行的正确性。</p>
-<p>也就是说，要想并发程序正确地执行，必须要保证原子性、可见性以及有序性。只要有一个没有被保证，就有可能会导致程序运行不正确。</p>
-<h2 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h2><p>在Java虚拟机规范中试图定义一种Java内存模型（Java Memory Model，JMM）来屏蔽各个硬件平台和操作系统的内存访问差异，以实现让Java程序在各种平台下都能达到一致的内存访问效果。那么Java内存模型规定了哪些东西呢，它定义了程序中变量的访问规则，往大一点说是定义了程序执行的次序。注意，为了获得较好的执行性能，Java内存模型并没有限制执行引擎使用处理器的寄存器或者高速缓存来提升指令执行速度，也没有限制编译器对指令进行重排序。也就是说，在java内存模型中，也会存在缓存一致性问题和指令重排序的问题。</p>
-<p>Java内存模型规定所有的变量都是存在主存当中（类似于前面说的物理内存），每个线程都有自己的工作内存（类似于前面的高速缓存）。线程对变量的所有操作都必须在工作内存中进行，而不能直接对主存进行操作。并且每个线程不能访问其他线程的工作内存。</p>
-<h3 id="原子性-1"><a href="#原子性-1" class="headerlink" title="原子性"></a>原子性</h3><p>在Java中，对基本数据类型的变量的读取和赋值操作是原子性操作，即这些操作是不可被中断的，要么执行，要么不执行。</p>
-<p>请分析以下哪些操作是原子性操作：</p>
-<p>x = 10; //语句1</p>
-<p>y = x; //语句2</p>
-<p>x++; //语句3</p>
-<p>x = x + 1; //语句4</p>
-<p>其实只有语句1是原子性操作，其他三个语句都不是原子性操作。</p>
-<p>也就是说，只有简单的读取、赋值（而且必须是将数字赋值给某个变量，变量之间的相互赋值不是原子操作）才是原子操作。</p>
-<p>从上面可以看出，Java内存模型只保证了基本读取和赋值是原子性操作，如果要实现更大范围操作的原子性，可以通过synchronized和Lock来实现。</p>
-<h3 id="可见性-1"><a href="#可见性-1" class="headerlink" title="可见性"></a>可见性</h3><p>对于可见性，Java提供了volatile关键字来保证可见性。</p>
-<p>当一个共享变量被volatile修饰时，它会保证修改的值会立即被更新到主存，当有其他线程需要读取时，它会去内存中读取新值。</p>
-<p>而普通的共享变量不能保证可见性，因为普通共享变量被修改之后，什么时候被写入主存是不确定的，当其他线程去读取时，此时内存中可能还是原来的旧值，因此无法保证可见性。</p>
-<p>另外，通过synchronized和Lock也能够保证可见性，synchronized和Lock能保证同一时刻只有一个线程获取锁然后执行同步代码，并且在释放锁之前会将对变量的修改刷新到主存当中。因此可以保证可见性。</p>
-<h3 id="有序性-1"><a href="#有序性-1" class="headerlink" title="有序性"></a>有序性</h3><p>在Java内存模型中，允许编译器和处理器对指令进行重排序，但是重排序过程不会影响到单线程程序的执行，却会影响到多线程并发执行的正确性。</p>
-<p>在Java里面，可以通过volatile关键字来保证一定的“有序性”（它能禁止进行指令重排序）。另外可以通过synchronized和Lock来保证有序性，很显然，synchronized和Lock保证每个时刻是有一个线程执行同步代码，相当于是让线程顺序执行同步代码，自然就保证了有序性。</p>
-<p>另外，Java内存模型具备一些先天的“有序性”，即不需要通过任何手段就能够得到保证的有序性，这个通常也称为 happens-before 原则。如果两个操作的执行次序无法从happens-before原则推导出来，那么它们就不能保证它们的有序性，虚拟机可以随意地对它们进行重排序。</p>
-<p>下面就来具体介绍下happens-before原则（先行发生原则）：</p>
-<p>1.程序次序规则：一个线程内，按照代码顺序，书写在前面的操作先行发生于书写在后面的操作</p>
-<p>2.锁定规则：一个unLock操作先行发生于后面对同一个锁额lock操作</p>
-<p>3.volatile变量规则：对一个变量的写操作先行发生于后面对这个变量的读操作</p>
-<p>4.传递规则：如果操作A先行发生于操作B，而操作B又先行发生于操作C，则可以得出操作A先行发生于操作C</p>
-<p>5.线程启动规则：Thread对象的start()方法先行发生于此线程的每个一个动作</p>
-<p>6.线程中断规则：对线程interrupt()方法的调用先行发生于被中断线程的代码检测到中断事件的发生</p>
-<p>7.线程终结规则：线程中所有的操作都先行发生于线程的终止检测，我们可以通过Thread.join()方法结束、Thread.isAlive()的返回值手段检测到线程已经终止执行</p>
-<p>8.对象终结规则：一个对象的初始化完成先行发生于他的finalize()方法的开始</p>
-<p>这8条规则中，前4条规则是比较重要的，后4条规则都是显而易见的。</p>
-<p>下面我们来解释一下前4条规则：</p>
-<p>1.对于程序次序规则来说，我的理解就是一段程序代码的执行在单个线程中看起来是有序的。注意，虽然这条规则中提到“书写在前面的操作先行发生于书写在后面的操作”，这个应该是程序看起来执行的顺序是按照代码顺序执行的，因为虚拟机可能会对程序代码进行指令重排序。虽然进行重排序，但是最终执行的结果是与程序顺序执行的结果一致的，它只会对不存在数据依赖性的指令进行重排序。因此，在单个线程中，程序执行看起来是有序执行的，这一点要注意理解。事实上，这个规则是用来保证程序在单线程中执行结果的正确性，但无法保证程序在多线程中执行的正确性。</p>
-<p>2.第二条规则也比较容易理解，也就是说无论在单线程中还是多线程中，同一个锁如果出于被锁定的状态，那么必须先对锁进行了释放操作，后面才能继续进行lock操作。</p>
-<p>3.第三条规则是一条比较重要的规则，也是后文将要重点讲述的内容。直观地解释就是，如果一个线程先去写一个变量，然后一个线程去进行读取，那么写入操作肯定会先行发生于读操作。</p>
-<p>4.第四条规则实际上就是体现happens-before原则具备传递性。</p>
-<h2 id="深入剖析volatile关键字"><a href="#深入剖析volatile关键字" class="headerlink" title="深入剖析volatile关键字"></a>深入剖析volatile关键字</h2><h3 id="Volatile关键字的两层语义"><a href="#Volatile关键字的两层语义" class="headerlink" title="Volatile关键字的两层语义"></a>Volatile关键字的两层语义</h3><p>一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：</p>
-<p>1.保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。</p>
-<p>2.禁止进行指令重排序。</p>
-<p>关于可见性，先看一段代码，假如线程1先执行，线程2后执行：</p>
-<p>//线程1<br>boolean stop = false;<br>while(!stop){<br>doSomething();<br>}<br>//线程2<br>stop = true;</p>
-<p>这段代码是很典型的一段代码，很多人在中断线程时可能都会采用这种标记办法。但是事实上，这段代码会完全运行正确么？即一定会将线程中断么？不一定，也许在大多数时候，这个代码能够把线程中断，但是也有可能会导致无法中断线程（虽然这个可能性很小，但是只要一旦发生这种情况就会造成死循环了）。</p>
-<p>下面解释一下这段代码为何有可能导致无法中断线程。在前面已经解释过，每个线程在运行过程中都有自己的工作内存，那么线程1在运行的时候，会将stop变量的值拷贝一份放在自己的工作内存当中。</p>
-<p>那么当线程2更改了stop变量的值之后，但是还没来得及写入主存当中，线程2转去做其他事情了，那么线程1由于不知道线程2对stop变量的更改，因此还会一直循环下去。</p>
-<p>但是用volatile修饰之后就变得不一样了：</p>
-<p>第一：使用volatile关键字会强制将修改的值立即写入主存；</p>
-<p>第二：使用volatile关键字的话，当线程2进行修改时，会导致线程1的工作内存中缓存变量stop的缓存行无效（反映到硬件层的话，就是CPU的L1或者L2缓存中对应的缓存行无效）；</p>
-<p>第三：由于线程1的工作内存中缓存变量stop的缓存行无效，所以线程1再次读取变量stop的值时会去主存读取。</p>
-<p>那么在线程2修改stop值时（当然这里包括2个操作，修改线程2工作内存中的值，然后将修改后的值写入内存），会使得线程1的工作内存中缓存变量stop的缓存行无效，然后线程1读取时，发现自己的缓存行无效，它会等待缓存行对应的主存地址被更新之后，然后去对应的主存读取最新的值。</p>
-<p>那么线程1读取到的就是最新的正确的值。</p>
-<h3 id="volatile保证原子性吗？"><a href="#volatile保证原子性吗？" class="headerlink" title="volatile保证原子性吗？"></a>volatile保证原子性吗？</h3><p>volatile不保证原子性，下面看一个实例。</p>
-<p>public class Test {<br>    public volatile int inc = 0;<br>public void increase() {<br>inc++;<br>}</p>
-<p>public static void main(String[] args) {<br>final Test test = new Test();<br>for(int i=0;i&lt;10;i++){<br>new Thread(){<br>public void run() {<br>for(int j=0;j&lt;1000;j++)<br>test.increase();<br>};<br>}.start();<br>}</p>
-<p>while(Thread.activeCount()&gt;1) //保证前面的线程都执行完<br>Thread.yield();<br>System.out.println(test.inc);<br>}<br>}</p>
-<p>大家想一下这段程序的输出结果是多少？也许有些朋友认为是10000。但是事实上运行它会发现每次运行结果都不一致，都是一个小于10000的数字。</p>
-<p>这里面就有一个误区了，volatile关键字能保证可见性没有错，但是上面的程序错在没能保证原子性。可见性只能保证每次读取的是最新的值，但是volatile没办法保证对变量的操作的原子性。</p>
-<p>在前面已经提到过，自增操作是不具备原子性的，它包括读取变量的原始值、进行加1操作、写入工作内存。那么就是说自增操作的三个子操作可能会分割开执行，就有可能导致下面这种情况出现：</p>
-<p>假如某个时刻变量inc的值为10。</p>
-<p>线程1对变量进行自增操作，线程1先读取了变量inc的原始值，然后线程1被阻塞了；</p>
-<p>然后线程2对变量进行自增操作，线程2也去读取变量inc的原始值，由于线程1只是对变量inc进行读取操作，而没有对变量进行修改操作，所以不会导致线程2的工作内存中缓存变量inc的缓存行无效，所以线程2会直接去主存读取inc的值，发现inc的值时10，然后进行加1操作，并把11写入工作内存，最后写入主存。</p>
-<p>然后线程1接着进行加1操作，由于已经读取了inc的值，注意此时在线程1的工作内存中inc的值仍然为10，所以线程1对inc进行加1操作后inc的值为11，然后将11写入工作内存，最后写入主存。</p>
-<p>那么两个线程分别进行了一次自增操作后，inc只增加了1。</p>
-<p>解释到这里，可能有朋友会有疑问，不对啊，前面不是保证一个变量在修改volatile变量时，会让缓存行无效吗？然后其他线程去读就会读到新的值，对，这个没错。这个就是上面的happens-before规则中的volatile变量规则，但是要注意，线程1对变量进行读取操作之后，被阻塞了的话，并没有对inc值进行修改。然后虽然volatile能保证线程2对变量inc的值读取是从内存中读取的，但是线程1没有进行修改，所以线程2根本就不会看到修改的值。</p>
-<p>根源就在这里，自增操作不是原子性操作，而且volatile也无法保证对变量的任何操作都是原子性的。</p>
-<p>把上面的代码改成以下任何一种都可以达到效果：</p>
-<p>采用synchronized：</p>
-<p>public class Test {<br>    public  int inc = 0;<br>public synchronized void increase() {<br>inc++;<br>}</p>
-<p>public static void main(String[] args) {<br>final Test test = new Test();<br>for(int i=0;i&lt;10;i++){<br>new Thread(){<br>public void run() {<br>for(int j=0;j&lt;1000;j++)<br>test.increase();<br>};<br>}.start();<br>}</p>
-<p>while(Thread.activeCount()&gt;1) //保证前面的线程都执行完<br>Thread.yield();<br>System.out.println(test.inc);<br>}<br>}</p>
-<p>采用Lock：</p>
-<p>public class Test {<br>    public  int inc = 0;<br>    Lock lock = new ReentrantLock();<br>public void increase() {<br>lock.lock();<br>try {<br>inc++;<br>} finally{<br>lock.unlock();<br>}<br>}</p>
-<p>public static void main(String[] args) {<br>final Test test = new Test();<br>for(int i=0;i&lt;10;i++){<br>new Thread(){<br>public void run() {<br>for(int j=0;j&lt;1000;j++)<br>test.increase();<br>};<br>}.start();<br>}</p>
-<p>while(Thread.activeCount()&gt;1) //保证前面的线程都执行完<br>Thread.yield();<br>System.out.println(test.inc);<br>}<br>}</p>
-<p>采用AtomicInteger：</p>
-<p>public class Test {<br>    public  AtomicInteger inc = new AtomicInteger();<br>public void increase() {<br>inc.getAndIncrement();<br>}</p>
-<p>public static void main(String[] args) {<br>final Test test = new Test();<br>for(int i=0;i&lt;10;i++){<br>new Thread(){<br>public void run() {<br>for(int j=0;j&lt;1000;j++)<br>test.increase();<br>};<br>}.start();<br>}</p>
-<p>while(Thread.activeCount()&gt;1) //保证前面的线程都执行完<br>Thread.yield();<br>System.out.println(test.inc);<br>}<br>}</p>
-<p>在java 1.5的java.util.concurrent.atomic包下提供了一些原子操作类，即对基本数据类型的 自增（加1操作），自减（减1操作）、以及加法操作（加一个数），减法操作（减一个数）进行了封装，保证这些操作是原子性操作。atomic是利用CAS来实现原子性操作的（Compare And Swap），CAS实际上是利用处理器提供的CMPXCHG指令实现的，而处理器执行CMPXCHG指令是一个原子性操作。</p>
-<h3 id="volatile能保证有序性吗？"><a href="#volatile能保证有序性吗？" class="headerlink" title="volatile能保证有序性吗？"></a>volatile能保证有序性吗？</h3><p>volatile能在一定程度上保证有序性。</p>
-<p>volatile关键字禁止指令重排序有两层意思：</p>
-<p>1）当程序执行到volatile变量的读操作或者写操作时，在其前面的操作的更改肯定全部已经进行，且结果已经对后面的操作可见；在其后面的操作肯定还没有进行；</p>
-<p>2）在进行指令优化时，不能将在对volatile变量访问的语句放在其后面执行，也不能把volatile变量后面的语句放到其前面执行。</p>
-<p>举个例子：</p>
-<p>//x、y为非volatile变量<br>//flag为volatile变量<br>x = 2; //语句1<br>y = 0; //语句2<br>flag = true; //语句3<br>x = 4; //语句4<br>y = -1; //语句5</p>
-<p>由于flag变量为volatile变量，那么在进行指令重排序的过程的时候，不会将语句3放到语句1、语句2前面，也不会讲语句3放到语句4、语句5后面。但是要注意语句1和语句2的顺序、语句4和语句5的顺序是不作任何保证的。</p>
-<p>并且volatile关键字能保证，执行到语句3时，语句1和语句2必定是执行完毕了的，且语句1和语句2的执行结果对语句3、语句4、语句5是可见的。</p>
-<h3 id="volatile的原理和实现机制"><a href="#volatile的原理和实现机制" class="headerlink" title="volatile的原理和实现机制"></a>volatile的原理和实现机制</h3><p>这里探讨一下volatile到底如何保证可见性和禁止指令重排序的。</p>
-<p>下面这段话摘自《深入理解Java虚拟机》：</p>
-<p>“观察加入volatile关键字和没有加入volatile关键字时所生成的汇编代码发现，加入volatile关键字时，会多出一个lock前缀指令”</p>
-<p>lock前缀指令实际上相当于一个内存屏障（也成内存栅栏），内存屏障会提供3个功能：</p>
-<p>1.它确保指令重排序时不会把其后面的指令排到内存屏障之前的位置，也不会把前面的指令排到内存屏障的后面；即在执行到内存屏障这句指令时，在它前面的操作已经全部完成；</p>
-<p>2.它会强制将对缓存的修改操作立即写入主存；</p>
-<p>3.如果是写操作，它会导致其他CPU中对应的缓存行无效。</p>
-<h2 id="使用volatile关键字的场景"><a href="#使用volatile关键字的场景" class="headerlink" title="使用volatile关键字的场景"></a>使用volatile关键字的场景</h2><p>synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字的，因为volatile关键字无法保证操作的原子性。通常来说，使用volatile必须具备以下2个条件：</p>
-<p>1.对变量的写操作不依赖于当前值（比如++操作，上面有例子）</p>
-<p>2.该变量没有包含在具有其他变量的不变式中</p>
-<p>实际上，这些条件表明，可以被写入 volatile 变量的这些有效值独立于任何程序的状态，包括变量的当前状态。</p>
-<p>事实上，我的理解就是上面的2个条件需要保证操作是原子性操作，才能保证使用volatile关键字的程序在并发时能够正确执行。</p>
-<p>下面列举几个Java中使用volatile的几个场景。</p>
-<p>状态标记量</p>
-<p>volatile boolean flag = false;<br>while(!flag){<br>doSomething();<br>}</p>
-<p>public void setFlag() {<br>flag = true;<br>}</p>
-<p>volatile boolean inited = false;<br>//线程1:<br>context = loadContext();<br>inited = true;<br>//线程2:<br>while(!inited ){<br>sleep()<br>}<br>doSomethingwithconfig(context);</p>
-<p>double check</p>
-<p>class Singleton{<br>    private volatile static Singleton instance = null;<br>private Singleton() {</p>
-<p>}</p>
-<p>public static Singleton getInstance() {<br>if(instance==null) {<br>synchronized (Singleton.class) {<br>if(instance==null)<br>instance = new Singleton();<br>}<br>}<br>return instance;<br>}<br>}</p>
-<p>至于为何需要这么写请参考：</p>
-<p>《Java 中的双重检查（Double-Check）》<a href="http://blog.csdn.net/dl88250/article/details/5439024和http://www.iteye.com/topic/652440" target="_blank" rel="external">http://blog.csdn.net/dl88250/article/details/5439024和http://www.iteye.com/topic/652440</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/16/Java中的多线程你只要看这一篇就够了/" itemprop="url">
-                  Java中的多线程你只要看这一篇就够了
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-16T17:26:39+08:00" content="2016-08-16">
-              2016-08-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>原文出处:<a href="http://www.importnew.com/21089.html" target="_blank" rel="external">http://www.importnew.com/21089.html</a></p>
-<p>如果对什么是线程、什么是进程仍存有疑惑，请先Google之，因为这两个概念不在本文的范围之内。</p>
-<p>用多线程只有一个目的，那就是更好的利用cpu的资源，因为所有的多线程代码都可以用单线程来实现。说这个话其实只有一半对，因为反应“多角色”的程序代码，最起码每个角色要给他一个线程吧，否则连实际场景都无法模拟，当然也没法说能用单线程来实现：比如最常见的“生产者，消费者模型”。</p>
-<p>很多人都对其中的一些概念不够明确，如同步、并发等等，让我们先建立一个数据字典，以免产生误会。</p>
-<p>多线程：指的是这个程序（一个进程）运行时产生了不止一个线程<br>并行与并发：<br>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。<br>并发：通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。并发往往在场景中有公用的资源，那么针对这个公用的资源往往产生瓶颈，我们会用TPS或者QPS来反应这个系统的处理能力。</p>
-<p>并发与并行<br>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。这个时候使用多线程，我们只需要关注系统的内存，cpu是不是够用即可。反过来，线程不安全就意味着线程的调度顺序会影响最终结果，如不加事务的转账代码：<br>1<br>2<br>3<br>4<br>void transferMoney(User from, User to, float amount){<br>  to.setMoney(to.getBalance() + amount);<br>  from.setMoney(from.getBalance() - amount);<br>}<br>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如上面的代码简单加入@synchronized关键字。在保证结果准确的同时，提高性能，才是优秀的程序。线程安全的优先级高于性能。<br>好了，让我们开始吧。我准备分成几部分来总结涉及到多线程的内容：</p>
-<p>扎好马步：线程的状态<br>内功心法：每个对象都有的方法（机制）<br>太祖长拳：基本线程类<br>九阴真经：高级多线程控制类<br>扎好马步：线程的状态</p>
-<p>先来两张图：</p>
-<p>线程状态</p>
-<p>线程状态转换<br>各种状态一目了然，值得一提的是”blocked”这个状态：<br>线程在Running的过程中可能会遇到阻塞(Blocked)情况</p>
-<p>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。<br>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）<br>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。<br>此外，在runnable状态的线程是处于被调度的线程，此时的调度顺序是不一定的。Thread类中的yield方法可以让一个running状态的线程转入runnable。</p>
-<p>内功心法：每个对象都有的方法（机制）</p>
-<p>synchronized, wait, notify 是任何对象都具有的同步工具。让我们先来了解他们</p>
-<p>monitor<br>他们是应用于同步问题的人工线程调度工具。讲其本质，首先就要明确monitor的概念，Java中的每个对象都有一个监视器，来监测并发代码的重入。在非多线程编码时该监视器不发挥作用，反之如果在synchronized 范围内，监视器发挥作用。</p>
-<p>wait/notify必须存在于synchronized块中。并且，这三个关键字针对的是同一个监视器（某对象的监视器）。这意味着wait之后，其他线程可以进入同步块执行。</p>
-<p>当某代码并不持有监视器的使用权时（如图中5的状态，即脱离同步块）去wait或notify，会抛出java.lang.IllegalMonitorStateException。也包括在synchronized块中去调用另一个对象的wait/notify，因为不同对象的监视器不同，同样会抛出此异常。</p>
-<p>再讲用法：</p>
-<p>synchronized单独使用：<br>代码块：如下，在多线程环境下，synchronized块中的方法获取了lock实例的monitor，如果实例相同，那么只有一个线程能执行该块内容<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>public class Thread1 implements Runnable {<br>   Object lock;<br>   public void run() {<br>       synchronized(lock){<br>         ..do something<br>       }<br>   }<br>}<br>直接用于方法： 相当于上面代码中用lock来锁定的效果，实际获取的是Thread1类的monitor。更进一步，如果修饰的是static方法，则锁定该类所有实例。<br>1<br>2<br>3<br>4<br>5<br>public class Thread1 implements Runnable {<br>   public synchronized void run() {<br>        ..do something<br>   }<br>}<br>synchronized, wait, notify结合:典型场景生产者消费者问题<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>/**</p>
-<ul>
-<li><p>生产者生产出来的产品交给店员<br>*/<br>public synchronized void produce()<br>{<br> if(this.product &gt;= MAX_PRODUCT)<br> {</p>
-<pre><code>try
-{
-    wait();  
-    System.out.println(&quot;产品已满,请稍候再生产&quot;);
-}
-catch(InterruptedException e)
-{
-    e.printStackTrace();
-}
-return;
-</code></pre><p> }</p>
-<p> this.product++;<br> System.out.println(“生产者生产第” + this.product + “个产品.”);<br> notifyAll();   //通知等待区的消费者可以取出产品了<br>}</p>
-<p>/**</p>
-</li>
-<li><p>消费者从店员取产品<br>*/<br>public synchronized void consume()<br>{<br> if(this.product &lt;= MIN_PRODUCT)<br> {</p>
-<pre><code>try
-{
-    wait(); 
-    System.out.println(&quot;缺货,稍候再取&quot;);
-} 
-catch (InterruptedException e) 
-{
-    e.printStackTrace();
-}
-return;
-</code></pre><p> }</p>
-<p> System.out.println(“消费者取走了第” + this.product + “个产品.”);<br> this.product–;<br> notifyAll();   //通知等待去的生产者可以生产产品了<br>}<br>volatile</p>
-</li>
-</ul>
-<p>多线程的内存模型：main memory（主存）、working memory（线程栈），在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。</p>
-<p>volatile<br>针对多线程使用的变量如果不是volatile或者final修饰的，很有可能产生不可预知的结果（另一个线程修改了这个值，但是之后在某线程看到的是修改之前的值）。其实道理上讲同一实例的同一属性本身只有一个副本。但是多线程是会缓存值的，本质上，volatile就是不去缓存，直接取值。在线程安全的情况下加volatile会牺牲性能。</p>
-<p>太祖长拳：基本线程类</p>
-<p>基本线程类指的是Thread类，Runnable接口，Callable接口<br>Thread 类实现了Runnable接口，启动一个线程的方法：</p>
-<p>1<br>2<br>MyThread my = new MyThread();<br>　　my.start();<br>Thread类相关方法：</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>//当前线程可转让cpu控制权，让别的就绪状态线程运行（切换）<br>public static Thread.yield()<br>//暂停一段时间<br>public static Thread.sleep()<br>//在一个线程中调用other.join(),将等待other执行完后才继续本线程。　　　　<br>public join()<br>//后两个函数皆可以被打断<br>public interrupte()<br>关于中断：它并不像stop方法那样会中断一个正在运行的线程。线程会不时地检测中断标识位，以判断线程是否应该被中断（中断标识值是否为true）。终端只会影响到wait状态、sleep状态和join状态。被打断的线程会抛出InterruptedException。<br>Thread.interrupted()检查当前线程是否发生中断，返回boolean<br>synchronized在获锁的过程中是不能被中断的。</p>
-<p>中断是一个状态！interrupt()方法只是将这个状态置为true而已。所以说正常运行的程序不去检测状态，就不会终止，而wait等阻塞方法会去检查并抛出异常。如果在正常运行的程序中添加while(!Thread.interrupted()) ，则同样可以在中断后离开代码体</p>
-<p>Thread类最佳实践：<br>写的时候最好要设置线程名称 Thread.name，并设置线程组 ThreadGroup，目的是方便管理。在出现问题的时候，打印线程栈 (jstack -pid) 一眼就可以看出是哪个线程出的问题，这个线程是干什么的。</p>
-<p>如何获取线程中的异常</p>
-<p>不能用try,catch来获取线程中的异常<br>Runnable</p>
-<p>与Thread类似</p>
-<p>Callable</p>
-<p>future模式：并发模式的一种，可以有两种形式，即无阻塞和阻塞，分别是isDone和get。其中Future对象用来存放该线程的返回值以及状态</p>
-<p>1<br>2<br>3<br>4<br>5<br>ExecutorService e = Executors.newFixedThreadPool(3);<br> //submit方法有多重参数版本，及支持callable也能够支持runnable接口类型.<br>Future future = e.submit(new myCallable());<br>future.isDone() //return true,false 无阻塞<br>future.get() // return 返回值，阻塞直到该线程运行结束<br>九阴真经：高级多线程控制类</p>
-<p>以上都属于内功心法，接下来是实际项目中常用到的工具了，Java1.5提供了一个非常高效实用的多线程包:java.util.concurrent, 提供了大量高级工具,可以帮助开发者编写高效、易维护、结构清晰的Java多线程程序。</p>
-<p>1.ThreadLocal类</p>
-<p>用处：保存线程的独立变量。对一个线程类（继承自Thread)<br>当使用ThreadLocal维护变量时，ThreadLocal为每个使用该变量的线程提供独立的变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本。常用于用户登录控制，如记录session信息。</p>
-<p>实现：每个Thread都持有一个TreadLocalMap类型的变量（该类是一个轻量级的Map，功能与map一样，区别是桶里放的是entry而不是entry的链表。功能还是一个map。）以本身为key，以目标为value。<br>主要方法是get()和set(T a)，set之后在map里维护一个threadLocal -&gt; a，get时将a返回。ThreadLocal是一个特殊的容器。</p>
-<p>2.原子类（AtomicInteger、AtomicBoolean……）</p>
-<p>如果使用atomic wrapper class如atomicInteger，或者使用自己保证原子的操作，则等同于synchronized</p>
-<p>1<br>2<br>//返回值为boolean<br>AtomicInteger.compareAndSet(int expect,int update)<br>该方法可用于实现乐观锁，考虑文中最初提到的如下场景：a给b付款10元，a扣了10元，b要加10元。此时c给b2元，但是b的加十元代码约为：</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>if(b.value.compareAndSet(old, value)){<br>   return ;<br>}else{<br>   //try again<br>   // if that fails, rollback and log<br>}<br>AtomicReference<br>对于AtomicReference 来讲，也许对象会出现，属性丢失的情况，即oldObject == current，但是oldObject.getPropertyA != current.getPropertyA。<br>这时候，AtomicStampedReference就派上用场了。这也是一个很常用的思路，即加上版本号</p>
-<p>3.Lock类</p>
-<p>lock: 在java.util.concurrent包内。共有三个实现：</p>
-<p>ReentrantLock<br>ReentrantReadWriteLock.ReadLock<br>ReentrantReadWriteLock.WriteLock<br>主要目的是和synchronized一样， 两者都是为了解决同步问题，处理资源争端而产生的技术。功能类似但有一些区别。</p>
-<p>区别如下：</p>
-<p>lock更灵活，可以自由定义多把锁的枷锁解锁顺序（synchronized要按照先加的后解顺序）<br>提供多种加锁方案，lock 阻塞式, trylock 无阻塞式, lockInterruptily 可打断式， 还有trylock的带超时时间版本。<br>本质上和监视器锁（即synchronized是一样的）<br>能力越大，责任越大，必须控制好加锁和解锁，否则会导致灾难。<br>和Condition类的结合。<br>性能更高，对比如下图：</p>
-<p>synchronized和Lock性能对比<br>ReentrantLock<br>可重入的意义在于持有锁的线程可以继续持有，并且要释放对等的次数后才真正释放该锁。<br>使用方法是：</p>
-<p>1.先new一个实例</p>
-<p>1<br>static ReentrantLock r=new ReentrantLock();<br>2.加锁</p>
-<p>1<br>r.lock()或r.lockInterruptibly();<br>此处也是个不同，后者可被打断。当a线程lock后，b线程阻塞，此时如果是lockInterruptibly，那么在调用b.interrupt()之后，b线程退出阻塞，并放弃对资源的争抢，进入catch块。（如果使用后者，必须throw interruptable exception 或catch）</p>
-<p>3.释放锁</p>
-<p>1<br>r.unlock()<br>必须做！何为必须做呢，要放在finally里面。以防止异常跳出了正常流程，导致灾难。这里补充一个小知识点，finally是可以信任的：经过测试，哪怕是发生了OutofMemoryError，finally块中的语句执行也能够得到保证。</p>
-<p>ReentrantReadWriteLock</p>
-<p>可重入读写锁（读写锁的一个实现）</p>
-<p>1<br>2<br>3<br>ReentrantReadWriteLock lock = new ReentrantReadWriteLock()<br>　　ReadLock r = lock.readLock();<br>　　WriteLock w = lock.writeLock();<br>两者都有lock,unlock方法。写写，写读互斥；读读不互斥。可以实现并发读的高效线程安全代码</p>
-<p>4.容器类</p>
-<p>这里就讨论比较常用的两个：</p>
-<p>BlockingQueue<br>ConcurrentHashMap<br>BlockingQueue<br>阻塞队列。该类是java.util.concurrent包下的重要类，通过对Queue的学习可以得知，这个queue是单向队列，可以在队列头添加元素和在队尾删除或取出元素。类似于一个管　　道，特别适用于先进先出策略的一些应用场景。普通的queue接口主要实现有PriorityQueue（优先队列），有兴趣可以研究</p>
-<p>BlockingQueue在队列的基础上添加了多线程协作的功能：</p>
-<p>BlockingQueue<br>除了传统的queue功能（表格左边的两列）之外，还提供了阻塞接口put和take，带超时功能的阻塞接口offer和poll。put会在队列满的时候阻塞，直到有空间时被唤醒；take在队　列空的时候阻塞，直到有东西拿的时候才被唤醒。用于生产者-消费者模型尤其好用，堪称神器。</p>
-<p>常见的阻塞队列有：</p>
-<p>ArrayListBlockingQueue<br>LinkedListBlockingQueue<br>DelayQueue<br>SynchronousQueue<br>ConcurrentHashMap<br>高效的线程安全哈希map。请对比hashTable , concurrentHashMap, HashMap</p>
-<p>5.管理类</p>
-<p>管理类的概念比较泛，用于管理线程，本身不是多线程的，但提供了一些机制来利用上述的工具做一些封装。<br>了解到的值得一提的管理类：ThreadPoolExecutor和 JMX框架下的系统级管理类 ThreadMXBean<br>ThreadPoolExecutor<br>如果不了解这个类，应该了解前面提到的ExecutorService，开一个自己的线程池非常方便：</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>ExecutorService e = Executors.newCachedThreadPool();<br>    ExecutorService e = Executors.newSingleThreadExecutor();<br>    ExecutorService e = Executors.newFixedThreadPool(3);<br>    // 第一种是可变大小线程池，按照任务数来分配线程，<br>    // 第二种是单线程池，相当于FixedThreadPool(1)<br>    // 第三种是固定大小线程池。<br>    // 然后运行<br>    e.execute(new MyRunnableImpl());<br>该类内部是通过ThreadPoolExecutor实现的，掌握该类有助于理解线程池的管理，本质上，他们都是ThreadPoolExecutor类的各种实现版本。请参见javadoc：</p>
-<p>ThreadPoolExecutor参数解释<br>翻译一下：<br>corePoolSize:池内线程初始值与最小值，就算是空闲状态，也会保持该数量线程。<br>maximumPoolSize:线程最大值，线程的增长始终不会超过该值。<br>keepAliveTime：当池内线程数高于corePoolSize时，经过多少时间多余的空闲线程才会被回收。回收前处于wait状态<br>unit：<br>时间单位，可以使用TimeUnit的实例，如TimeUnit.MILLISECONDS<br>workQueue:待入任务（Runnable）的等待场所，该参数主要影响调度策略，如公平与否，是否产生饿死(starving)<br>threadFactory:线程工厂类，有默认实现，如果有自定义的需要则需要自己实现ThreadFactory接口并作为参数传入。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/16/Tomcat容器管理安全的几种验证方式/" itemprop="url">
-                  Tomcat容器管理安全的几种验证方式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-16T17:26:39+08:00" content="2016-08-16">
-              2016-08-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>原文出处:<a href="http://my.oschina.net/itblog/blog/678845?fromerr=mnnjJA0O" target="_blank" rel="external">http://my.oschina.net/itblog/blog/678845?fromerr=mnnjJA0O</a></p>
-<p>摘要<br>本文介绍如何使用容器（这里指tomcat）来进行安全管理。</p>
-<p>当访问服务器中受保护的资源时，容器管理的验证方法可以控制确认用户身份的方式。Tomcat支持四种容器管理的安全防护，它们是：</p>
-<p>BASIC(基本验证)：通过HTTP验证，需要提供base64编码文本的用户口令<br>DIGEST(摘要验证)：通过HTTP验证，需要提供摘要编码字符串的用户口令<br>FORM(表单验证)：在网页的表单上要求提供密码<br>CLIENT-CERT(客户端证书验证)：以客户端证书来确认用户的身份<br> 基本验证</p>
-<p>当web.xml文件中的auth-method元素设置为BASIC时，表明应用使用的是基本验证，每次浏览器请求受保护的Web应用资源时，Tomcat都会使用HTTP基本验证向浏览器索取用户名和密码（以页面弹窗的方式）。使用这种验证方法，所有的密码都会以base64编码的文本在网络上传输。</p>
-<p>先看下项目结构（我用Maven管理的依赖）：</p>
-<p>其中，protect/protect.jsp是被保护的，需要授权访问。</p>
-<p>说明：本文提到的tomcat-users.xml，server.xml等文件，如果是在Eclipse中启动tomcat，则这些文件在Eclipse中的Servers工程下对应的tomcat下，如图：</p>
-<p>而本文提到的web.xml是指项目自己的web.xml，而非Servers项目下Tomcat中的web.xml。</p>
-<p>web.xml</p>
-<p><security-constraint><br>    <web-resource-collection><br>        <http-method>GET</http-method><br>        <web-resource-name>tomcat protect page</web-resource-name><br>        <!-- /protect目录下的所有资源是受保护的 --><br>        <url-pattern>/protect/*</url-pattern><br>    </web-resource-collection><br>    <auth-constraint><br>        <!-- 这里的member要与tomcat-user.xml中配置的role一致 --><br>        <role-name>member</role-name><br>    </auth-constraint><br></security-constraint></p>
-<p><login-config><br>    <!-- 验证方式，可选的值为： "BASIC", "DIGEST", "FORM", "CLIENT-CERT" --><br>    <auth-method>BASIC</auth-method><br>    <!-- 使用的Realm名字，注意这里不能有空格 --><br>    <realm-name>MyConstraints</realm-name><br></login-config><br>tomcat-user.xml（注意如果是在Eclipse中启动tomcat，这个tomcat-user.xml在Eclipse中的Servers工程下）</p>
-<p><role rolename="member"><br><!-- member角色下有一个叫alvis的用户，密码为pwd --></role></p>
-<p><user username="alvis" password="pwd" roles="member"><br>重启tomcat后，访问protect目录下的资源，情况是这样的：</user></p>
-<p>输入账户alvis，密码pwd后，访问成功（当然，非protect目录下的资源是可以直接访问的）：</p>
-<p>摘要验证</p>
-<p>当web.xml文件中的auth-method元素设置为DIGEST时，表明应用使用的是摘要验证。还是上面的例子，看配置：</p>
-<p>web.xml和基本验证一样，只是auth-method修改为DIGEST，此处不赘述。</p>
-<p>server.xml中的UserDatabaseRealm（如果tomcat使用的是其他Realm，也一样的）里增加digest属性：</p>
-<p>接下来，要生成tomcat可识别的MD5密码。方式有两种，正如官网描述：</p>
-<p>To calculate the digested value of a cleartext password, two convenience techniques are supported:</p>
-<p>If you are writing an application that needs to calculate digested passwords dynamically, call the static Digest()method of the org.apache.catalina.realm.RealmBase class, passing the cleartext password and the digest algorithm name as arguments. This method will return the digested password.<br>If you want to execute a command line utility to calculate the digested password, simply execute<br>CATALINA_HOME/bin/digest.[bat|sh] -a {algorithm} {cleartext-password}<br>and the digested version of this cleartext password will be returned to standard output.<br>方式一：用代码来生成：</p>
-<p>import org.apache.catalina.realm.RealmBase;</p>
-<p>public class T {<br>    public static void main(String[] args) {<br>        //参数1：要加密的字符串；参数2：加密算法；参数3：字符串的编码<br>        String base = RealmBase.Digest(“alvis:MyConstraints:pwd”, “MD5”, null);<br>        System.out.println(base);<br>    }<br>}<br>由于RealmBase类在catalina.jar包中，如果项目中没有这个类，可在项目上右键–&gt;Java Build Path–&gt; Libraries–&gt;Add Library–&gt;选择Server Runtime–&gt;选择Apache Tomcat V8.0(其实7.0也行)，如图：</p>
-<p>方式二：用脚本来生成：</p>
-<p>在tomcat/bin目录下有个digest.sh(Linux系统)或digest.bat(Windows系统)脚本，运行这个脚本，传入摘要算法和参数即可，这里我在Windows系统上运行，如图：</p>
-<p>这里的-a指定摘要算法为MD5，要特别注意这里的参数是：{用户名}:{Realm名}:{密码明文}。用户名就是tomcat-users.xml中配置的<user>名字(这里为alvis)，Realm名是在web.xml中配置的<realm-name>(这里为MyConstraints)，密码明文即该用户用于登录的密码(我这里设为pwd)。</realm-name></user></p>
-<p>只有这样的参数加密后的密码，在tomcat-users.xml中配置才有效，否则是登录不了的。由于我是参考《Tomcat权威指南(第二版)》的步骤做的，之前试了很久都不知道为什么登录不了，结果在官网找到答案，是这么描述的：</p>
-<p>If using digested passwords with DIGEST authentication, the cleartext used to generate the digest is different and the digest must use the MD5 algorithm. In the examples above {cleartext-password} must be replaced with {username}:{realm}:{cleartext-password}. For example, in a development environment this might take the form testUser:Authentication required:testPassword. The value for {realm} is taken from the <realm-name> element of the web application’s <login-config>. If not specified in web.xml, the default value of Authentication required is used.</login-config></realm-name></p>
-<p>大意是说，如果使用DIGEST方式验证，用于生成摘要的明文必须被替换为这种格式。实践出真知，所以还是不能完全看书啊，动手实践才是实在的。</p>
-<p>然后就是在tomcat-users.xml中配置生成的密码（通过下方的截图，可以比较password跟上方digest.bat脚本生成的密码是否一致）：</p>
-<p>之后重启tomcat，效果自然是跟使用基本验证的效果一样了。</p>
-<p>表单验证</p>
-<p>当web.xml文件中的auth-method元素设置为FORM时，表明应用使用的是表单验证。当用户请求Web应用程序受保护的资源时，表单验证会跳转至配置的登录页面。当登录失败时，还需要一个验证失败的页面，还是上面的例子，看配置：</p>
-<p>web.xml</p>
-<p><security-constraint><br>    <web-resource-collection><br>        <http-method>GET</http-method><br>        <web-resource-name>tomcat member part</web-resource-name><br>        <url-pattern>/protect/*</url-pattern><br>    </web-resource-collection><br>    <auth-constraint><br>        <role-name>member</role-name><br>    </auth-constraint><br></security-constraint></p>
-<p><login-config><br>    <auth-method>FORM</auth-method><br>    <realm-name>MyConstraints</realm-name><br>    <form-login-config><br>        <form-login-page>/form/login.html</form-login-page><br>        <form-error-page>/form/error.html</form-error-page><br>    </form-login-config><br></login-config><br>这里的form/login.html是用于登录的页面，而form/error.html则是验证失败后跳转到的页面（这两个页面在上方的工程结构图中已经有了）。</p>
-<p>login.html</p>
-<p><html><br>    <body><br>    <h2>Login Page.</h2></body></html></p>
-<pre><code>&lt;form method=&quot;post&quot; action=&quot;j_security_check&quot; name=&quot;loginForm&quot;&gt;
-    &lt;input type=&quot;text&quot; name=&quot;j_username&quot; /&gt;&lt;br&gt;
-    &lt;input type=&quot;password&quot; name=&quot;j_password&quot; /&gt;&lt;br&gt;
-    &lt;input type=&quot;submit&quot; value=&quot;Login&quot; /&gt;
-&lt;/form&gt;
-
-&lt;/body&gt;
-</code></pre><p><br>注意：这里form的action=”j_security_check”，账号的name=”j_username”和密码的name=”j_password”都是不可变的，否则配置的验证规则不起作用。</p>
-<p>server.xml中，要去掉Realm中添加的“digest=MD5”这个属性：</p>
-<p>tomcat-users.xml中使用明文保存密码：</p>
-<p>效果（仅在访问protect目录下的资源时才出现Login Page）：</p>
-<p>输入错误的账号和密码，跳转至form/error.html页面：</p>
-<p>输入正确的账号和密码，跳转至受保护的页面：</p>
-<p>客户端证书验证</p>
-<p>待续</p>
-<p>Demo下载：</p>
-<p>链接: <a href="http://pan.baidu.com/s/1gfnqVdT" target="_blank" rel="external">http://pan.baidu.com/s/1gfnqVdT</a> 密码: pubw</p>
-<p>参考页面：</p>
-<p><a href="https://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html" target="_blank" rel="external">https://tomcat.apache.org/tomcat-7.0-doc/realm-howto.html</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/16/粗浅看 Tomcat中设计模式分析/" itemprop="url">
-                  粗浅看Tomcat中设计模式分析
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-16T17:26:39+08:00" content="2016-08-16">
-              2016-08-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>原文出处:<a href="http://www.importnew.com/21106.html" target="_blank" rel="external">http://www.importnew.com/21106.html</a></p>
-<p>简介</p>
-<p>Tomcat 中运用的许多经典设计模式，如模版模式、工厂模式和单例模式等。通过学习它们的实践运用能给我们以后的程序设计起到一定的借鉴作用。</p>
-<p>外观</p>
-<p>外观设计模式在 Tomcat 中有多处使用，在 Request 和Response对象封装中、StandardWrapper到 ServletConfig封装中、ApplicationContext到 ServletContext封装中等都用到了这种设计模式。</p>
-<p>原理</p>
-<p>这么多场合都用到了这种设计模式，那这种设计模式究竟能有什 么作用呢？顾名思义，就是将一个东西封装成一个外观好与人家更容易进行交流，就像一个国家的外交部一样。</p>
-<p>这种设计模式主要用在一个大的系统中有多个子系统组成时，这 多个子系统肯定要涉及到相互通信，但是每个子系统又不能将自己的内部数据过多的暴露给其它系统，不然就没有必要划分子系统了。 每个子系统都会设计一个外观，把别的系统感兴趣的数据封装起来， 通过这个外观来进行访问。这就是外观设计模式存在的意义。</p>
-<p>外观设计模式示意图如下：</p>
-<p>Client只能访问到 Façade中提供的数据是外观设计模式的关键，至 于 Client如何访问 Façade和 Subsystem如何提供 Façade 外观设 计模式并没有规定死。</p>
-<p>Tomcat中的demo</p>
-<p>Tomcat 中外观设计模式使用的很多，因为 Tomcat 中有很多不同组件，每个组件要相互交互数据，用外观模式隔离数据是个很好的方法。</p>
-<p>下面是 Request 上使用的外观设计模式：</p>
-<p>从图中可以看出 HttpRequestFacade类封装了 HttpRequest 接口能 够提供数据，通过 HttpRequestFacade访问到的数据都被代理到 HttpRequest 中，通常被封装的对象都被设为 Private或者 Protected 访问修饰，以防止在 Façade 中被直接访问。</p>
-<p>观察者</p>
-<p>这种设计模式也是常用的设计方法通常也叫发布 -订阅模式，也 就是事件监听机制，通常在某个事件发生的前后会触发一些操作。</p>
-<p>原理</p>
-<p>观察者模式原理也很简单，就是你在做事的时候旁边总有一个人在盯着你，当你做的事情是它感兴趣的时候，它就会跟着做另外一 些事情。但是盯着你的人必须要到你那去登记，不然你无法通知它。 观察者模式通常包含下面这几个角色：</p>
-<p>Subject 就是抽象主题：它负责管理所有观察者的引用，同时定义主要的事件操作。</p>
-<p>ConcreteSubject 具体主题：它实现了抽象主题的所有定义的接口，当自己发生变 化时，会通知所有观察者。</p>
-<p>Observer 观察者：监听主题发生变化相应的操作接口。</p>
-<p>Tomcat中的demo</p>
-<p>Tomcat 中观察者模式也有多处使用，前面讲的控制组件生命周期的 Lifecycle就是这种模式的体现，还有对 Servlet实例的创建、 Session的管理、Container等都是同样的原理。下面主要看一下 Lifecycle 的具体实现。</p>
-<p>Lifecycle 的观察者模式结构图：</p>
-<p>上面的结构图中，LifecycleListener代表的是抽象观察者，它定 义一个 lifecycleEvent方法，这个方法就是当主题变化时要执行的方 法。 ServerLifecycleListener代表的是具体的观察者，它实现了 LifecycleListener接口的方法，就是这个具体的观察者具体的实现方式。Lifecycle接口代表的是抽象主题，它定义了管理观察者的方法 和它要所做的其它方法。而 StandardServer代表的是具体主题，它 实现了抽象主题的所有方法。这里 Tomcat 对观察者做了扩展，增加了另外两个类：LifecycleSupport、LifecycleEvent，它们作为辅助类扩展了观察者的功能。LifecycleEvent使得可以定义事件类别，不 同的事件可区别处理，更加灵活。LifecycleSupport类代理了主题对 多观察者的管理，将这个管理抽出来统一实现，以后如果修改只要 修改 LifecycleSupport类就可以了，不需要去修改所有具体主题， 因为所有具体主题的对观察者的操作都被代理给 LifecycleSupport类了。这可以认为是观察者模式的改进版。</p>
-<p>LifecycleSupport 调用观察者的方法代码如下：</p>
-<ol>
-<li>LifecycleSupport 中的 fireLifecycleEvent 方法</li>
-</ol>
-<p>public void fireLifecycleEvent(String type, Object data) {</p>
-<pre><code>LifecycleEvent event = new LifecycleEvent(lifecycle, type, data);
-
-LifecycleListener interested[] = null;
-
-synchronized (listeners) {
-
-    interested = (LifecycleListener[]) listeners.clone();
-
-}
-
-for (int i = 0; i &lt; interested.length; i++)
-
-    interested[i].lifecycleEvent(event);
-</code></pre><p>}<br>主题是怎么通知观察者呢？看下面代码：</p>
-<ol>
-<li>容器中的 start 方法</li>
-</ol>
-<p>public void start() throws LifecycleException {</p>
-<pre><code>lifecycle.fireLifecycleEvent(BEFORE_START_EVENT, null);
-
-lifecycle.fireLifecycleEvent(START_EVENT, null);
-
-started = true;
-
-synchronized (services) {
-
-    for (int i = 0; i &lt; services.length; i++) {
-
-        if (services[i] instanceof Lifecycle)
-
-            ((Lifecycle) services[i]).start();
-
-    }
-
-}
-
-lifecycle.fireLifecycleEvent(AFTER_START_EVENT, null);
-</code></pre><p>}<br>命令</p>
-<p>前面把 Tomcat中两个核心组件 Connector和 Container，比作一对夫妻。男的将接受过来的请求以命令的方式交给女主人。对应 到 Connector和 Container，Connector也是通过命令模式调用 Container的。</p>
-<p>原理</p>
-<p>命令模式主要作用就是封装命令，把发出命令的责任和执行命令 的责任分开。也是一种功能的分工。不同的模块可以对同一个命令做出不同解释。</p>
-<p>下面是命令模式通常包含下面几个角色：</p>
-<p>Client：创建一个命令，并决定接受者</p>
-<p>Command 命令：命令接口定义一个抽象方法</p>
-<p>ConcreteCommand：具体命令，负责调用接受者的相应操作</p>
-<p>Invoker 请求者：负责调用命令对象执行请求</p>
-<p>Receiver 接受者：负责具体实施和执行一次请求</p>
-<p>Tomcat 中的demo</p>
-<p>Tomcat中命令模式在 Connector和 Container组件之间有体现， Tomcat 作为一个应用服务器，无疑会接受到很多请求，如何分配和执行这些请求是必须的功能。</p>
-<p>下面看一下 Tomcat 是如何实现命令模式的，下面是 Tomcat 命令 模式的结构图：</p>
-<p>Connector 作为抽象请求者，HttpConnector作为具体请求者。 HttpProcessor作为命令。Container作为命令的抽象接受者， ContainerBase 作为具体的接受者。客户端就是应用服务器 Server组件了。Server 首先创建命令请求者HttpConnector对象，然后创建命令 HttpProcessor命令对象。再把命令对象交给命令接受者 ContainerBase 容器来处理命令。命令的最终是被 Tomcat 的 Container执行的。命令可以以队列的方式进来，Container也可以 以不同的方式来处理请求，如 HTTP1.0协议和 HTTP1.1的处理方 式就会不同。</p>
-<p>职责链</p>
-<p>Tomcat 中一个最容易发现的设计模式就是职责链模式，这个设 计模式也是Tomcat中 Container设计的基础，整个容器的就是通 过一个链连接在一起，这个链一直将请求正确的传递给最终处理请 求的那个 Servlet。</p>
-<p>原理</p>
-<p>职责链模式，就是很多对象有每个对象对其下家的引用而连接起 来形成一条链，请求在这条链上传递，直到链上的某个对象处理此请求，或者每个对象都可以处理请求，并传给下一家，直到最终链 上每个对象都处理完。这样可以不影响客户端而能够在链上增加任 意的处理节点。</p>
-<p>通常职责链模式包含下面几个角色：</p>
-<p>Handler（抽象处理者）：定义一个处理请求的接口</p>
-<p>ConcreteHandler（具体处理者）：处理请求的具体类，或者传给下家</p>
-<p>Tomcat 中的demo</p>
-<p>在tomcat中这种设计模式几乎被完整的使用，tomcat的容器设置就是职责链模式，从 Engine 到 Host再到 Context一直到 Wrapper 都是通过一个链传递请求。</p>
-<p>Tomcat 中职责链模式的类结构图如下：</p>
-<p>上图基本描述了四个子容器使用职责链模式的类结构图，对应的 职责链模式的角色，Container扮演抽象处理者角色，具体处理者由 StandardEngine等子容器扮演。与标准的职责链不同的是，这里引 入了 Pipeline和 Valve接口。他们有什么作用呢？</p>
-<p>实际上 Pipeline和 Valve是扩展了这个链的功能，使得在链往下 传递过程中，能够接受外界的干预。Pipeline就是连接每个子容器 的管子，里面传递的 Request和 Response对象好比管子里流的水， 而 Valve就是这个管子上开的一个个小口子，让你有机会能够接触 到里面的水，做一些额外的事情。</p>
-<p>为了防止水被引出来而不能流到下一个容器中，每一段管子最后 总有一个节点保证它一定能流到下一个子容器，所以每个容器都有一个StandardXXXValve。只要涉及到这种有链式是处理流程这是一个非常值得借鉴的模式。</p>
-<p>业务思想</p>
-<p>Tomcat中的设计模式很值得研究学习，免得绕路去上学，搞不好成绩还低呢。</p>
-<p>不知道有朋友看过《射雕英雄传》木？其中一段是讲黄蓉受伤去拜见南帝段皇爷治疗，途遇老顽童的老婆瑛姑，二人在茅屋内做算术题，瑛姑是闭门造车，而黄蓉是看黄老邪（也就是他老爸收集的书本），最后结果相信大家都知道：瑛姑pk失败。原因值得探究：时刻要站在巨人的肩膀上来学习。</p>
-<p>时刻要站在巨人的肩膀上来学习，稍微努力就可以超过巨人哦！给自己也给大家一点儿鼓励，相信自己可以做的更好，goon！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/16/粗浅看Tomcat系统架构分析/" itemprop="url">
-                  粗浅看Tomcat系统架构分析
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-16T17:26:39+08:00" content="2016-08-16">
-              2016-08-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>原文出处:<a href="http://www.importnew.com/21112.html?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">http://www.importnew.com/21112.html?utm_source=tuicool&amp;utm_medium=referral</a><br>Tomcat的结构很复杂，但是Tomcat也非常的模块化，找到了Tomcat最核心的模块，就抓住了Tomcat的“七寸”。</p>
-<h2 id="整体结构"><a href="#整体结构" class="headerlink" title="整体结构"></a>整体结构</h2><p><img src="/images/tomcat_architecture.png" alt=""><br>从上图中可以看出Tomcat的心脏是两个组件：Connector 和 Container，关于这两个组件将在后面详细介绍。Connector 组件是可以被替换，这样可以提供给服务器设计者更多的选择，因为这个组件是如此重要，不仅跟服务器的设计的本身，而且和不同的应用场景也十分相关，所以一个Container 可以选择对应多个Connector。多个Connector和一个Container 就形成了一个Service，Service 的概念大家都很熟悉了，有了Service 就可以对外提供服务了，但是Service还要一个生存的环境，必须要有人能够给她生命、掌握其生死大权，那就非Server莫属了。所以整个Tomcat的生命周期由Server控制。</p>
-<p>以Service  作为“婚姻”</p>
-<p>我们将 Tomcat 中 Connector、Container 作为一个整体比作一对情 侣的话，Connector主要负责对外交流，可以比作为 Boy，Container 主要处理 Connector 接受的请求，主要是处理内部事务，可以比作为 Girl。那么这个 Service就是连接这对男女的结婚证了。是Service将它们连接在一起，共同组成一个家庭。当然要组成一个家庭还要很多其它的元素。</p>
-<p>说白了，Service 只是在Connector 和 Container外面多包一层，把它们组装在一起，向外面提供服务，一个Service可以设置多个Connector，但是只能有一个 Container 容器。这个 Service 接口的 方法列表如下：</p>
-<h3 id="Service接口"><a href="#Service接口" class="headerlink" title="Service接口"></a>Service接口</h3><p>从 Service接口中定义的方法中可以看出，它主要是为了关联Connector和 Container，同时会初始化它下面的其它组件，注意接 口中它并没有规定一定要控制它下面的组件的生命周期。所有组件的 生命周期在一个 Lifecycle 的接口中控制，这里用到了一个重要的设 计模式，关于这个接口将在后面介绍。</p>
-<p>Tomcat 中 Service接口的标准实现类是StandardService它不仅实现了 Service 借口同时还实现了 Lifecycle 接口，这样它就可以控 制它下面的组件的生命周期了。StandardService 类结构图如下：</p>
-<h3 id="StandardService的类结构图"><a href="#StandardService的类结构图" class="headerlink" title="StandardService的类结构图"></a>StandardService的类结构图</h3><p>从上图中可以看出除了 Service接口的方法的实现以及控制组件生命周期的 Lifecycle 接口的实现，还有几个方法是用于在事件监听的 方法的实现，不仅是这个 Service 组件，Tomcat 中其它组件也同样 有这几个方法，这也是一个典型的设计模式，将在后面介绍。</p>
-<p>下面看一下 StandardService 中主要的几个方法实现的代码，下面是setContainer和addConnector 方法的源码：</p>
-<p>③StandardService. SetContainer</p>
-<p>public void setContainer(Container container) {</p>
-<p>Container oldContainer = this.container;</p>
-<p>if ((oldContainer != null) &amp;&amp; (oldContainer instanceof Engine))</p>
-<p>((Engine) oldContainer).setService(null);</p>
-<p>this.container = container;</p>
-<p>if ((this.container != null) &amp;&amp; (this.container instanceof Engine))</p>
-<p>((Engine)  this.container).setService(this);</p>
-<p>if (started &amp;&amp; (this.container != null) &amp;&amp; (this.container instanceof Lifecycle))</p>
-<p>{</p>
-<p>try {</p>
-<p>((Lifecycle) this.container).start();</p>
-<p>} catch (LifecycleException e) {</p>
-<p>;</p>
-<p>}</p>
-<p>}</p>
-<p>synchronized (connectors) {</p>
-<p>for (int i = 0; i &lt; connectors.length; i++)</p>
-<p>connectors[i].setContainer(this.container);</p>
-<p>}</p>
-<p>if (started &amp;&amp; (oldContainer != null) &amp;&amp; (oldContainer instanceof Lifecycle)) {</p>
-<p>try {</p>
-<p>((Lifecycle)  oldContainer).stop();</p>
-<p>} catch (LifecycleException e) {</p>
-<p>;</p>
-<p>}</p>
-<p>}</p>
-<p>support.firePropertyChange(“container”, oldContainer, this.container);<br>—————————————————————————————<br>}<br>这段代码很简单，其实就是先判断当前的这个 Service 有没有已经关 联了 Container，如果已经关联了，那么去掉这个关联关系——oldContainer.setService(null)。如果这个oldContainer 已经被启动 了，结束它的生命周期。然后再替换新的关联、再初始化并开始这个新的 Container 的生命周期。最后将这个过程通知感兴趣的事件监听程序。这里值得注意的地方就是，修改Container 时要将新的 Container关联到每个Connector，还好Container 和 Connector 没有双向关联，不然这个关联关系将会很难维护。</p>
-<p>④StandardService. addConnector</p>
-<p>public void addConnector(Connector connector) {</p>
-<p>synchronized (connectors) {</p>
-<p>connector.setContainer(this.container);</p>
-<p>connector.setService(this);</p>
-<p>Connector results[] = new Connector[connectors.length + 1];</p>
-<p>System.arraycopy(connectors, 0, results, 0, connectors.length);</p>
-<p>results[connectors.length] = connector;</p>
-<p>connectors = results;</p>
-<p>if (initialized) {</p>
-<p>try {</p>
-<p>connector.initialize();</p>
-<p>} catch (LifecycleException e) {</p>
-<p>e.printStackTrace(System.err);</p>
-<p>}</p>
-<p>}</p>
-<p>if (started &amp;&amp; (connector instanceof Lifecycle)) {</p>
-<p>try {</p>
-<p>((Lifecycle) connector).start();</p>
-<p>} catch (LifecycleException e) {</p>
-<p>;</p>
-<p>}</p>
-<p>}</p>
-<p>support.firePropertyChange(“connector”, null, connector);</p>
-<p>}</p>
-<p>}<br>上面是 addConnector 方法，这个方法也很简单，首先是设置关联关 系，然后是初始化工作，开始新的生命周期。这里值得一提的是，注 意 Connector 用的是数组而不是 List集合，这个从性能角度考虑可 以理解，有趣的是这里用了数组但是并没有向我们平常那样，一开始 就分配一个固定大小的数组，它这里的实现机制是：重新创建一个当 前大小的数组对象，然后将原来的数组对象 copy 到新的数组中，这 种方式实现了类似的动态数组的功能，这种实现方式，值得我们以后 拿来借鉴。</p>
-<p>最新的 Tomcat6 中 StandardService也基本没有变化，但是从Tomcat5 开始Service、Server 和容器类都继承了MBeanRegistration接口，Mbeans 的管理更加合理。</p>
-<p>以 Server  为“居”</p>
-<p>前面说一对情侣因为 Service 而成为一对夫妻，有了能够组成一个家 庭的基本条件，但是它们还要有个实体的家，这是它们在社会上生存 之本，有了家它们就可以安心的为人民服务了，一起为社会创造财富。</p>
-<p>Server要完成的任务很简单，就是要能够提供一个接口让其它程序能够访问到这个Service 集合、同时要维护它所包含的所有 Service 的生命周期，包括如何初始化、如何结束服务、如何找到别人要访问的 Service。还有其它的一些次要的任务，如您住在这个地方要向当 地政府去登记啊、可能还有要配合当地公安机关日常的安全检查什么 的。</p>
-<p>Server的类结构图如下：</p>
-<p>①Server的类结构图</p>
-<p>它的标准实现类 StandardServer 实现了上面这些方法，同时也实现 了Lifecycle、MbeanRegistration 两个接口的所有方法，下面主要看 一下 StandardServer重要的一个方法 addService的实现：</p>
-<p>②StandardServer.addService</p>
-<p>public void addService(Service service) {</p>
-<p>service.setServer(this);</p>
-<p>synchronized (services) {</p>
-<p>Service results[] = new Service[services.length + 1];</p>
-<p>System.arraycopy(services, 0, results, 0, services.length);</p>
-<p>results[services.length] = service;</p>
-<p>services = results;</p>
-<p>if (initialized) {</p>
-<p>try {</p>
-<p>service.initialize();</p>
-<p>} catch (LifecycleException e) {</p>
-<p>e.printStackTrace(System.err);</p>
-<p>}</p>
-<p>}</p>
-<p>if (started &amp;&amp; (service instanceof Lifecycle)) {</p>
-<p>try {</p>
-<p>((Lifecycle) service).start();</p>
-<p>} catch (LifecycleException e) {</p>
-<p>;</p>
-<p>}</p>
-<p>}</p>
-<p>support.firePropertyChange(“service”, null, service);</p>
-<p>}</p>
-<p>}<br>从上面第一句就知道了 Service和 Server是相互关联的，Server也是和 Service 管理 Connector 一样管理它，也是将 Service 放在 一个数组中，后面部分的代码也是管理这个新加进来的 Service 的生 命周期。Tomcat6 中也是没有什么变化的。</p>
-<p>组件的生命线“Lifecycle”</p>
-<p>前面一直在说 Service 和 Server 管理它下面组件的生命周期，那它 们是如何管理的呢？</p>
-<p>Tomcat 中组件的生命周期是通过Lifecycle 接口来控制的，组件只 要继承这个接口并实现其中的方法就可以统一被拥有它的组件控制 了，这样一层一层的直到一个最高级的组件就可以控制 Tomcat 中 所有组件的生命周期，这个最高的组件就是 Server，而控制Server的是 Startup，也就是您启动和关闭Tomcat。</p>
-<p>下面是 Lifecycle 接口的类结构图：</p>
-<p>①Lifecycle类结构图</p>
-<p>除了控制生命周期的 Start 和 Stop 方法外还有一个监听机制，在生命周期开始和结束的时候做一些额外的操作。这个机制在其它的框架中也被使用，如在Spring 中。关于这个设计模式会在后面介绍。</p>
-<p>Lifecycle接口的方法的实现都在其它组件中，就像前面中说的，组件的生命周期由包含它的父组件控制，所以它的 Start 方法自然就是调用它下面的组件的 Start 方法，Stop 方法也是一样。如在 Server 中 Start 方法就会调用Service组件的 Start方法，Server 的 Start方法代码如下：</p>
-<p>②StandardServer.Start</p>
-<p>public void start() throws LifecycleException {</p>
-<p>if (started) {</p>
-<p>log.debug(sm.getString(“standardServer.start.started”));</p>
-<p>return;</p>
-<p>}</p>
-<p>lifecycle.fireLifecycleEvent(BEFORE_START_EVENT,  null);</p>
-<p>lifecycle.fireLifecycleEvent(START_EVENT,  null);</p>
-<p>started = true;</p>
-<p>synchronized (services) {</p>
-<p>for (int i = 0; i &lt; services.length; i++) {</p>
-<p>if (services[i] instanceof Lifecycle)</p>
-<p>((Lifecycle) services[i]).start();</p>
-<p>}</p>
-<p>}</p>
-<p>lifecycle.fireLifecycleEvent(AFTER_START_EVENT, null);</p>
-<p>}<br>监听的代码会包围Service组件的启动过程，就是简单的循环启动所有Service组件的Start方法，但是所有Service必须要实现Lifecycle接口，这样做会更加灵活。</p>
-<p>Server的 Stop 方法代码如下：</p>
-<p>③StandardServer.Stop</p>
-<p>public void stop() throws LifecycleException {</p>
-<p>if (!started)</p>
-<p>return;</p>
-<p>lifecycle.fireLifecycleEvent(BEFORE_STOP_EVENT, null);</p>
-<p>lifecycle.fireLifecycleEvent(STOP_EVENT,  null);</p>
-<p>started = false;</p>
-<p>for (int i = 0; i &lt; services.length; i++) {</p>
-<p>if (services[i] instanceof Lifecycle)</p>
-<p>((Lifecycle) services[i]).stop();</p>
-<p>}</p>
-<p>lifecycle.fireLifecycleEvent(AFTER_STOP_EVENT, null);</p>
-<p>}<br>它所要做的事情也和Start方法差不多。</p>
-<h2 id="Connector组件"><a href="#Connector组件" class="headerlink" title="Connector组件"></a>Connector组件</h2><p>Connector组件是Tomcat中两个核心组件之一，它的主要任务是负责接收浏览器的发过来的tcp连接请求，创建个Request 和处理这个请求并把产生的Request 和 Response对象传给处理这个请求的线程，处理这个请求的线程就是Container 组件要做的事了。</p>
-<p>由于这个过程比较复杂，大体的流程可以用下面的顺序图来解释：</p>
-<p>①Connector处理一次请求顺序图</p>
-<p>Tomcat5 中默认的 Connector 是 Coyote，这个 Connector 是可以选择替换的。Connector 最重要的功能就是接收连接请求然后分配线 程让 Container 来处理这个请求，所以这必然是多线程的，多线程的处理是 Connector 设计的核心。Tomcat5将这个过程更加细化，它将 Connector划分成 Connector、Processor、Protocol, 另外Coyote也定义自己的Request 和 Response对象。</p>
-<p>下面主要看一下 Tomcat 中如何处理多线程的连接请求，先看一下Connector的主要类图：</p>
-<p>② Connector的主要类图</p>
-<p>看一下HttpConnector的Start 方法：</p>
-<p>③HttpConnector.Start</p>
-<p>public void start() throws LifecycleException {</p>
-<p>if (started)</p>
-<p>throw new LifecycleException</p>
-<p>(sm.getString(“httpConnector.alreadyStarted”));</p>
-<p>threadName = “HttpConnector[“ + port + “]”;</p>
-<p>lifecycle.fireLifecycleEvent(START_EVENT,  null);</p>
-<p>started = true;</p>
-<p>threadStart();</p>
-<p>while (curProcessors &lt; minProcessors) {</p>
-<p>if ((maxProcessors &gt; 0) &amp;&amp; (curProcessors &gt;= maxProcessors))</p>
-<p>break;</p>
-<p>HttpProcessor processor = newProcessor();</p>
-<p>recycle(processor);</p>
-<p>}</p>
-<p>}<br>threadStart()执行就会进入等待请求的状态，直到一个新的请求到来才会激活它继续执行，这个激活是在HttpProcessor 的 assign 方法中，这个方法是代码如下 ：</p>
-<p>④ HttpProcessor.assign</p>
-<p>synchronized void assign(Socket socket) {</p>
-<p>while (available) {</p>
-<p>try {</p>
-<p>wait();</p>
-<p>} catch (InterruptedException e) {</p>
-<p>—————————————————————————————<br>}</p>
-<p>}</p>
-<p>this.socket = socket;</p>
-<p>available = true;</p>
-<p>notifyAll();</p>
-<p>if ((debug &gt;= 1) &amp;&amp; (socket != null))</p>
-<p>log(“ An incoming request is being assigned”);</p>
-<p>}<br>创建 HttpProcessor 对象是会把 available 设为 false，所以当请求 到来时不会进入 while循环，将请求的socket 赋给当期处理的 socket，并将 available设为true，当 available设为true 是 HttpProcessor的 run方法将被激活，接下去将会处理这次请求。</p>
-<p>Run方法代码如下：</p>
-<p>⑤HttpProcessor.Run</p>
-<p>public void run() {</p>
-<p>while (!stopped) {</p>
-<p>Socket socket = await();</p>
-<p>if (socket == null)</p>
-<p>continue;</p>
-<p>try {</p>
-<p>process(socket);</p>
-<p>} catch (Throwable t) {</p>
-<p>log(“process.invoke”, t);</p>
-<p>}</p>
-<p>connector.recycle(this);</p>
-<p>}</p>
-<p>—————————————————————————————<br>synchronized (threadSync) {</p>
-<p>threadSync.notifyAll();</p>
-<p>}</p>
-<p>}<br>解析 socket 的过程在 process 方法中，process 方法的代码片段如 下：</p>
-<p>⑥HttpProcessor.process</p>
-<p>private void process(Socket socket) {</p>
-<p>boolean ok = true;</p>
-<p>boolean finishResponse = true;</p>
-<p>SocketInputStream input = null;</p>
-<p>OutputStream output = null;</p>
-<p>try {</p>
-<p>input = new SocketInputStream(socket.getInputStream(),connector.getBufferSize());<br>} catch (Exception e) {</p>
-<p>log(“process.create”, e);</p>
-<p>ok = false;</p>
-<p>}</p>
-<p>keepAlive = true;</p>
-<p>while (!stopped &amp;&amp; ok &amp;&amp; keepAlive) {</p>
-<p>finishResponse = true;</p>
-<p>try {</p>
-<p>request.setStream(input);</p>
-<p>request.setResponse(response);</p>
-<p>output = socket.getOutputStream();</p>
-<p>response.setStream(output);</p>
-<p>response.setRequest(request);</p>
-<p>((HttpServletResponse)  response.getResponse())</p>
-<p>—————————————————————————————<br>.setHeader(“Server”, SERVER_INFO);</p>
-<p>} catch (Exception e) {</p>
-<p>log(“process.create”, e);</p>
-<p>ok = false;</p>
-<p>}</p>
-<p>try {</p>
-<p>if (ok) {</p>
-<p>parseConnection(socket);</p>
-<p>parseRequest(input, output);</p>
-<p>if (!request.getRequest().getProtocol().startsWith(“HTTP/0”))</p>
-<p>parseHeaders(input);</p>
-<p>if (http11) {</p>
-<p>ackRequest(output);</p>
-<p>if  (connector.isChunkingAllowed())</p>
-<p>response.setAllowChunking(true);</p>
-<p>}</p>
-<p>}</p>
-<p>try {</p>
-<p>((HttpServletResponse)  response).setHeader</p>
-<p>(“Date”,  FastHttpDateFormat.getCurrentDate());</p>
-<p>if (ok) {</p>
-<p>connector.getContainer().invoke(request, response);</p>
-<p>}</p>
-<p>}</p>
-<p>try {</p>
-<p>shutdownInput(input);</p>
-<p>socket.close();</p>
-<p>} catch (IOException e) {</p>
-<p>;</p>
-<p>} catch (Throwable e) {</p>
-<p>log(“process.invoke”, e);</p>
-<p>}</p>
-<p>socket = null;</p>
-<p>}<br>当 Connector将 socket 连接封装成 request 和 response 对象后 接下来的事情就交给Container 来处理了。</p>
-<p>Servlet容器“Container”</p>
-<p>Container是容器的父接口，所有子容器都必须实现这个接口，Container容器的设计用的是典型的责任链的设计模式，它有四个子 容器组件构成，分别是：Engine、Host、Context、Wrapper，这四个组件不是平行的，而是父子关系，Engine包含 Host,Host 包含 Context，Context 包含 Wrapper。通常一个 Servlet class 对应一个 Wrapper，如果有多个 Servlet 就可以定义多个 Wrapper，如果有多 个 Wrapper 就要定义一个更高的Container 了，如 Context， Context 通常就是对应下面这个配置：</p>
-<p>①Server.xml</p>
-<context path="/library" docbase="D:\projects\library\deploy\target\library.war" reloadable="true">
-
-<p>②容器的总体设计</p>
-<p>Context 还可以定义在父容器Host中，Host 不是必须的，但是要运行 war 程序，就必须要 Host，因为 war 中必有 web.xml 文件， 这个文件的解析就需要 Host 了，如果要有多个 Host 就要定义一个 top 容器 Engine 了。而 Engine 没有父容器了，一个 Engine 代表 一个完整的 Servlet 引擎。</p>
-<p>那么这些容器是如何协同工作的呢？先看一下它们之间的关系图：</p>
-<p>① 四个容器的关系图</p>
-<p>当 Connector接受到一个连接请求时，将请求交给Container， Container是如何处理这个请求的？这四个组件是怎么分工的，怎么 把请求传给特定的子容器的呢？又是如何将最终的请求交给 Servlet处理。下面是这个过程的时序图：</p>
-<p>②Engine和Host  处理请求的时序图</p>
-<p>这里看到了 Valve 是不是很熟悉，没错 Valve 的设计在其他框架中 也有用的，同样Pipeline的原理也基本是相似的，它是一个管道，Engine和 Host都会执行这个 Pipeline，您可以在这个管道上增加 任意的 Valve，Tomcat 会挨个执行这些Valve，而且四个组件都会 有自己的一套 Valve 集合。您怎么才能定义自己的Valve 呢？在server.xml 文件中可以添加，如给 Engine 和 Host 增加一个 Valve如下：</p>
-<p>③Server.xml</p>
-<engine defaulthost="localhost" name="Catalina">
-
-<valve classname="org.apache.catalina.valves.RequestDumperValve">
-
-<p>………</p>
-<host appbase="webapps" autodeploy="true" name="localhost" unpackwars="true" xmlnamespaceaware="false" xmlvalidation="false"><br><br><valve classname="org.apache.catalina.valves.FastCommonAccessLogValve" directory="logs" prefix="localhost_access_log." suffix=".txt" pattern="common" resolvehosts="false"><br><br>…………<br><br></valve></host>
-
-<p></p></valve></engine><br>StandardEngineValve和 StandardHostValve是 Engine和 Host的默认的 Valve，它们是最后一个Valve 负责将请求传给它们的子 容器，以继续往下执行。<p></p>
-<p>前面是 Engine和 Host容器的请求过程，下面看Context 和Wrapper 容器时如何处理请求的。下面是处理请求的时序图：</p>
-<p>④Context 和wrapper  的处理请求时序图</p>
-<p>从 Tomcat5 开始，子容器的路由放在了 request 中，request 中保 存了当前请求正在处理的 Host、Context 和 wrapper。</p>
-<p>③Engine 容器</p>
-<p>Engine容器比较简单，它只定义了一些基本的关联关系，接口类图如下：</p>
-<p>①Engine 接口的类结构</p>
-<p>它的标准实现类是StandardEngine，这个类注意一点就是 Engine没有父容器了，如果调用 setParent 方法时将会报错。添加子容器也 只能是 Host 类型的，代码如下：</p>
-<p>②StandardEngine. addChild</p>
-<p>public void addChild(Container child) {</p>
-<p>if (!(child instanceof Host))</p>
-<p>throw new IllegalArgumentException</p>
-<p>(sm.getString(“standardEngine.notHost”));</p>
-<p>super.addChild(child);</p>
-<p>}</p>
-<p>public void setParent(Container container) {</p>
-<p>throw new IllegalArgumentException</p>
-<p>(sm.getString(“standardEngine.notParent”));</p>
-<p>}<br>它的初始化方法也就是初始化和它相关联的组件，以及一些事件的监听。</p>
-<p>④Host容器</p>
-<p>Host是 Engine 的字容器，一个Host在 Engine中代表一个虚拟主机，这个虚拟主机的作用就是运行多个应用，它负责安装和展开这些应用，并且标识这个应用以便能够区分它们。它的子容器通常是Context，它除了关联子容器外，还有就是保存一个主机应该有的信 息。</p>
-<p>①Host 相关的类图</p>
-<p>从上图中可以看出除了所有容器都继承的ContainerBase外， StandardHost还实现了Deployer 接口，上图清楚的列出了这个接口的主要方法，这些方法都是安装、展开、启动和结束每个web application。</p>
-<p>Deployer 接口的实现是 StandardHostDeployer，这个类实现了的最要的几个方法，Host可以调用这些方法完成应用的部署等。</p>
-<p>⑤Context容器</p>
-<p>Context 代表 Servlet 的 Context，它具备了 Servlet 运行的基本环 境，理论上只要有Context 就能运行Servlet 了。简单的 Tomcat可以没有 Engine 和 Host。</p>
-<p>Context 最重要的功能就是管理它里面的Servlet实例，Servlet 实 例在 Context 中是以Wrapper 出现的，还有一点就是 Context 如 何才能找到正确的Servlet 来执行它呢？Tomcat5以前是通过一 个 Mapper 类来管理的，Tomcat5 以后这个功能被移到了request 中，在前面的时序图中就可以发现获取子容器都是通过request 来分配的。</p>
-<p>Context 准备 Servlet 的运行环境是在 Start 方法开始的，这个方法 的代码片段如下：</p>
-<p>①StandardContext.start</p>
-<p>public synchronized void start() throws LifecycleException {</p>
-<p>………</p>
-<p>if( !initialized ) {</p>
-<p>try {</p>
-<p>init();</p>
-<p>} catch( Exception ex ) {</p>
-<p>throw new LifecycleException(“Error initializaing “, ex);</p>
-<p>}</p>
-<p>}</p>
-<p>………</p>
-<p>lifecycle.fireLifecycleEvent(BEFORE_START_EVENT,   null);</p>
-<p>setAvailable(false);</p>
-<p>setConfigured(false);</p>
-<p>boolean ok = true;</p>
-<p>File configBase = getConfigBase();</p>
-<p>if (configBase != null) {</p>
-<p>if (getConfigFile() == null) {</p>
-<p>File file = new File(configBase, getDefaultConfigFile());</p>
-<p>setConfigFile(file.getPath());</p>
-<p>try {</p>
-<p>File appBaseFile = new File(getAppBase());</p>
-<p>if (!appBaseFile.isAbsolute()) {</p>
-<p>appBaseFile = new File(engineBase(), getAppBase());</p>
-<p>}</p>
-<p>String appBase = appBaseFile.getCanonicalPath();</p>
-<p>String basePath =</p>
-<p>(new  File(getBasePath())).getCanonicalPath();</p>
-<p>if (!basePath.startsWith(appBase)) {</p>
-<p>Server server = ServerFactory.getServer();</p>
-<p>((StandardServer)  server).storeContext(this);</p>
-<p>}</p>
-<p>} catch (Exception e) {</p>
-<p>log.warn(“Error storing config file”, e);</p>
-<p>}</p>
-<p>} else {</p>
-<p>try {</p>
-<p>String canConfigFile =  (new File(getConfigFile())).getCanonicalPath();<br>if (!canConfigFile.startsWith (configBase.getCanonicalPath())) {</p>
-<p>File file = new File(configBase, getDefaultConfigFile());</p>
-<p>if (copy(new File(canConfigFile), file)) {</p>
-<p>—————————————————————————————<br>setConfigFile(file.getPath());</p>
-<p>}</p>
-<p>}</p>
-<p>} catch (Exception e) {</p>
-<p>log.warn(“Error setting config file”, e);</p>
-<p>}</p>
-<p>}</p>
-<p>}<br>………</p>
-<p>Container children[] = findChildren();</p>
-<p>for (int i = 0; i &lt; children.length; i++) {</p>
-<p>if (children[i] instanceof Lifecycle)</p>
-<p>((Lifecycle)  children[i]).start();</p>
-<p>}</p>
-<p>if (pipeline instanceof Lifecycle)</p>
-<p>((Lifecycle) pipeline).start();</p>
-<p>………</p>
-<p>}<br>它主要是设置各种资源属性和管理组件，还有非常重要的就是启动子容器和 Pipeline。</p>
-<p>我们知道 Context 的配置文件中有个 reloadable 属性，如下面配置：</p>
-<p>②Server.xml</p>
-<p>&lt;Context</p>
-<p>path=”/library”</p>
-<p>—————————————————————————————<br>docBase=”D:\projects\library\deploy\target\library.war”</p>
-<p>reloadable=”true”</p>
-<p>/&gt;<br>当这个 reloadable 设为 true 时，war被修改后 Tomcat 会自动的重新加载这个应用。如何做到这点的呢? 这个功能是在StandardContext的 backgroundProcess 方法中实现的，这个方法的代码如下：</p>
-<p>③StandardContext. backgroundProcess</p>
-<p>public void backgroundProcess() {</p>
-<p>if (!started) return;</p>
-<p>count = (count + 1) % managerChecksFrequency;</p>
-<p>if ((getManager() != null) &amp;&amp; (count == 0)) {</p>
-<p>try {</p>
-<p>getManager().backgroundProcess();</p>
-<p>} catch ( Exception x ) {</p>
-<p>log.warn(“Unable to perform background process on manager”,x);</p>
-<p>}</p>
-<p>}</p>
-<p>if (getLoader() != null) {</p>
-<p>if (reloadable &amp;&amp; (getLoader().modified())) {</p>
-<p>try {</p>
-<p>Thread.currentThread().setContextClassLoader</p>
-<p>(StandardContext.class.getClassLoader());</p>
-<p>reload();</p>
-<p>} finally {</p>
-<p>if (getLoader() != null) {</p>
-<p>Thread.currentThread().setContextClassLoader</p>
-<p>(getLoader().getClassLoader());</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
-<p>if (getLoader() instanceof WebappLoader) {</p>
-<p>((WebappLoader)  getLoader()).closeJARs(false);</p>
-<p>}</p>
-<p>}</p>
-<p>}<br>它会调用 reload 方法，而 reload方法会先调用 stop方法然后再调用 Start 方法，完成Context 的一次重新加载。可以看出执行reload方法的条件是reloadable 为 true 和应用被修改，那么这个backgroundProcess 方法是怎么被调用的呢？</p>
-<p>这个方法是在 ContainerBase 类中定义的内部类ContainerBackgroundProcessor被周期调用的，这个类是运行在一个后台线程中，它会周期的执行 run 方法，它的 run 方法会周期调 用所有容器的 backgroundProcess 方法，因为所有容器都会继承ContainerBase类，所以所有容器都能够在backgroundProcess 方 法中定义周期执行的事件。</p>
-<p>⑥Wrapper容器</p>
-<p>Wrapper 代表一个Servlet，它负责管理一个 Servlet，包括的 Servlet的装载、初始化、执行以及资源回收。Wrapper是最底层的 容器，它没有子容器了，所以调用它的addChild 将会报错。</p>
-<p>Wrapper 的实现类是 StandardWrapper，StandardWrapper 还实现 了拥有一个 Servlet初始化信息的ServletConfig，由此看出 StandardWrapper 将直接和Servlet的各种信息打交道。</p>
-<p>下面看一下非常重要的一个方法loadServlet，代码片段如下：</p>
-<p>①StandardWrapper.loadServlet</p>
-<p>public synchronized Servlet loadServlet() throws ServletException {</p>
-<p>………</p>
-<p>Servlet servlet;</p>
-<p>try {</p>
-<p>………</p>
-<p>ClassLoader classLoader = loader.getClassLoader();</p>
-<p>………</p>
-<p>Class classClass = null;</p>
-<p>………</p>
-<p>servlet = (Servlet) classClass.newInstance();</p>
-<p>if ((servlet instanceof ContainerServlet) &amp;&amp;</p>
-<p>(isContainerProvidedServlet(actualClass)  ||</p>
-<p>((Context)getParent()).getPrivileged() )) {</p>
-<p>((ContainerServlet)  servlet).setWrapper(this);</p>
-<p>}</p>
-<p>classLoadTime=(int) (System.currentTimeMillis() -t1);</p>
-<p>try {</p>
-<p>instanceSupport.fireInstanceEvent(InstanceEvent.BEFORE_INIT_EVENT,servlet);</p>
-<p>if( System.getSecurityManager() != null) {</p>
-<p>Class[] classType = new Class[]{ServletConfig.class};</p>
-<p>Object[] args = new Object[]{((ServletConfig)facade)};</p>
-<p>SecurityUtil.doAsPrivilege(“init”,servlet,classType,args);</p>
-<p>} else {</p>
-<p>servlet.init(facade);</p>
-<p>}</p>
-<p>if ((loadOnStartup &gt;= 0) &amp;&amp; (jspFile != null)) {</p>
-<p>………</p>
-<p>if( System.getSecurityManager() != null) {</p>
-<p>Class[] classType = new Class[]{ServletRequest.class,</p>
-<p>ServletResponse.class};</p>
-<p>Object[] args = new Object[]{req, res};</p>
-<p>SecurityUtil.doAsPrivilege(“service”,servlet,classType,args);</p>
-<p>} else {</p>
-<p>servlet.service(req, res);</p>
-<p>}</p>
-<p>}</p>
-<p>instanceSupport.fireInstanceEvent(InstanceEvent.AFTER_INIT_EVENT,servlet);</p>
-<p>………</p>
-<p>return servlet;</p>
-<p>}<br>它基本上描述了对Servlet 的操作，当装载了Servlet后就会调用Servlet的 init方法，同时会传一个StandardWrapperFacade对象给Servlet，这个对象包装了StandardWrapper，ServletConfig 与它们的关系图如下：</p>
-<p>②ServletConf 与StandardWrapperFacade、StandardWrapper的关系</p>
-<p>Servlet可以获得的信息都在StandardWrapperFacade封装，这些信息又是在StandardWrapper 对象中拿到的。所以 Servlet 可以通 过 ServletConfig 拿到有限的容器的信息。</p>
-<p>当 Servlet 被初始化完成后，就等着 StandardWrapperValve 去调用 它的 service 方法了，调用 service 方法之前要调用 Servlet 所有的 filter。</p>
-<p>Tomcat中其它组件</p>
-<p>Tomcat 还有其它重要的组件，如安全组件security、logger 日 志组件、session、mbeans、naming 等其它组件。这些组件共同为Connector和 Container 提供必要的服务。</p>
-</context>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/21/Web-ContainerAndWeb-ServerAndApp-Server/" itemprop="url">
-                  web容器web服务器应用服务器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-21T18:15:54+08:00" content="2016-07-21">
-              2016-07-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="WebServer，Webcontainer和ApplicationServer区别。"><a href="#WebServer，Webcontainer和ApplicationServer区别。" class="headerlink" title="WebServer，Webcontainer和ApplicationServer区别。"></a>WebServer，Webcontainer和ApplicationServer区别。</h2><p>　　WebServer，Web服务器，同上面所说，Web服务器是指能够为发出请求的浏览器提供文档的程序。服务器是一种被动程序，只有浏览器发出请求的时候才会响应。应用层使用的是HTTP协议。目前最主流的三个Web服务器是ApacheNginxIIS。<br>　　Web容器是一种服务器程序，在服务器端口就有一个提供相应服务的程序。所以现在知道为什么Tomcat有默认的端口——8080。一个服务器可以有多个容器。<br>如Tomcat，收到浏览器的请求之后还会解析Servlet，然后再把Servlet处理后的结果返回给浏览器。其实Tomcat既是Web服务器也是Web容器。为什么这样说，第三点会讲到。<br>而应用服务器，这里有个区分它与Web服务器的答案：<br>　　Whatisthedifferencebetweenapplicationserverandwebserver?<br>　　Web服务器设计服务于HTTP内容，应用服务器不只限于HTTP。Web服务器服务于静态内容，有插件支持动态语言，<br>　　应用服务器也具有Web服务器的这些东西，除此它还支持程序级的服务，如连接池，事务支持，信息服务等。</p>
-<h2 id="web容器"><a href="#web容器" class="headerlink" title="web容器"></a>web容器</h2><p>何为容器：<br>容器是一种服务调用规范框架，J2EE大量运用了容器和组件技术来构建分层的企业级应用。在J2EE规范中，相应的有WEBContainer和EJBContainer等。<br>WEB容器给处于其中的应用程序组件（JSP，SERVLET）提供一个环境，使JSP，SERVLET直接跟容器中的环境变量交互，不必关注其它系统问题（从这个角度来说，web容器应该属于架构上的概念）。web容器主要由WEB服务器来实现。例如：TOMCAT，WEBLOGIC，WEBSPHERE等。<br>若容器提供的接口严格遵守J2EE规范中的WEBAPPLICATION标准。我们把该容器叫做J2EE中的WEB容器。<br>　　WEB容器更多的是跟基于HTTP的请求打交道。而EJB容器不是。它是更多的跟数据库、其它服务打交道。<br>容器的行为是将其内部的应用程序组件与外界的通信协议交互进行了隔离，从而减轻内部应用程序组件的负担（实现方面的负担？）。例如，SERVLET不用关心HTTP的细节，而是直接引用环境变量session、request、response就行、EJB不用关心数据库连接速度、各种事务控制，直接由容器来完成。</p>
-<h2 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h2><p>Web服务器（WebServer）可以处理HTTP协议。当Web服务器接收到一个HTTP请求，会返回一个HTTP响应，例如送回一个HTML页面。<br>Web服务器可以响应针对静态页面或图片的请求，进行页面跳转（redirect），或者把动态响应（dynamicresponse）的产生委托（delegate）给一些其它的程序，例如CGI脚本，JSP（JavaServerPages）脚本，servlets，ASP（ActiveServerPages）脚本，服务器端JavaScript，或者一些其它的服务器端技术。<br>　　Web服务器仅仅提供一个可以执行服务器端程序和返回(程序所产生的)响应的环境，而不会超出职能范围。<br>　　Web服务器主要是处理需要向浏览器发送HTML的请求以供浏览。</p>
-<h2 id="应用程序服务器（TheApplicationServer）"><a href="#应用程序服务器（TheApplicationServer）" class="headerlink" title="应用程序服务器（TheApplicationServer）"></a>应用程序服务器（TheApplicationServer）</h2><p>根据定义，作为应用程序服务器，要求可以通过各种协议（包括HTTP协议）把商业逻辑暴露给（expose）客户端应用程序。应用程序使用此商业逻辑就像你调用对象的一个方法或过程（语言中的一个函数）一样。</p>
-<h2 id="serverlet"><a href="#serverlet" class="headerlink" title="serverlet"></a>serverlet</h2><p>Servlet（ServerApplet），全称JavaServlet，未有中文译文。是用Java编写的服务器端程序。其主要功能在于交互式地浏览和修改数据，生成动态Web内容。狭义的Servlet是指Java语言实现的一个接口，广义的Servlet是指任何实现了这个Servlet接口的类，一般情况下，人们将Servlet理解为后者。<br>Servlet运行于支持Java的应用服务器中。从实现上讲，Servlet可以响应任何类型的请求，但绝大多数情况下Servlet只用来扩展基于HTTP协议的Web服务器。</p>
-<h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><p>Tomcat服务器是一个免费的开放源代码的Web应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP程序的首选。对于一个初学者来说，可以这样认为，当在一台机器上配置好Apache服务器，可利用它响应对HTML页面的访问请求。实际上Tomcat部分是Apache服务器的扩展，但它是独立运行的，所以当你运行tomcat时，它实际上作为一个与Apache独立的进程单独运行的。<br>ApacheTomcatisanopensourcesoftwareimplementationoftheJavaServletandJavaServerPagestechnologies.<br>Tomcat服务器是一个免费的开放源代码的Web应用服务器。因为Tomcat技术先进、性能稳定且免费，所以深受Java爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web应用服务器。</p>
-<h2 id="Tomcat与应用服务器"><a href="#Tomcat与应用服务器" class="headerlink" title="Tomcat与应用服务器"></a>Tomcat与应用服务器</h2><p>到目前为止，Tomcat一直被认为是Servlet/JSPAPI的执行器，也就所谓的Servlet容器。然而，Tomcat并不仅仅如此，它还提供了JNDI和JMXAPI的实现机制。尽管如此，Tomcat仍然还不能算是应用服务器，因为它不提供大多数J2EEAPI的支持。</p>
-<p>很有意思的是，目前许多的应用服务器通常把Tomcat作为它们Servlet和JSPAPI的容器。由于Tomcat允许开发者只需通过加入一行致谢，就可以把Tomcat嵌入到它们的应用中。遗憾的是，许多商业应用服务器并没有遵守此规则。</p>
-<p>对于开发者来说，如果是为了寻找利用Servlet、JSP、JNDI和JMX技术来生成JavaWeb应用的话，选择Tomcat是一个优秀的解决方案；但是为了寻找支持其他的J2EEAPI，那么寻找一个应用服务器或者把Tomcat作为应用服务器的辅助，将是一个不错的解决方案；第三种方式是找到独立的J2EEAPI实现，然后把它们跟Tomcat结合起来使用。虽然整合会带来相关的问题，但是这种方式是最为有效的。</p>
-<h2 id="Tomcat与Web服务器"><a href="#Tomcat与Web服务器" class="headerlink" title="Tomcat与Web服务器"></a>Tomcat与Web服务器</h2><p>Tomcat是提供一个支持Servlet和JSP运行的容器。Servlet和JSP能根据实时需要，产生动态网页内容。而对于Web服务器来说，Apache仅仅支持静态网页，对于支持动态网页就会显得无能为力；Tomcat则既能为动态网页服务，同时也能为静态网页提供支持。尽管它没有通常的Web服务器快、功能也不如Web服务器丰富，但是Tomcat逐渐为支持静态内容不断扩充。大多数的Web服务器都是用底层语言编写如C，利用了相应平台的特征，因此用纯Java编写的Tomcat执行速度不可能与它们相提并论。</p>
-<p>一般来说，大的站点都是将Tomcat与Apache的结合，Apache负责接受所有来自客户端的HTTP请求，然后将Servlets和JSP的请求转发给Tomcat来处理。Tomcat完成处理后，将响应传回给Apache，最后Apache将响应返回给客户端。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Asher Yao" />
-          <p class="site-author-name" itemprop="name">Asher Yao</p>
-          <p class="site-description motion-element" itemprop="description">Love is the source of life</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">13</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
-
-          
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-      </section>
-
-      
-
-    </div>
-  </aside>
-
-
-        
       </div>
-    </main>
+    </div>
+  </div>
+</header>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Asher Yao</span>
-</div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+<!-- Home Page Post List -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 col-md-offset-1">
+      
+        <div class="post-item-wrapper">
+  <a href="/2017/02/28/oracle-tablespace/" class="post-title">
+      oracle_tablespace
   </a>
-</div>
-
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2017-02-28</div>
+      <div class="categories">
         
+          
+
+<a href="/categories/Database/">Database</a>
 
         
       </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        <div class="untagged">Untagged</div>
+      
     </div>
   </div>
+</div>
 
-  
+      
+        <div class="post-item-wrapper">
+  <a href="/2017/02/09/SQL语句大全—查看表空间(一)/" class="post-title">
+      SQL语句大全—查看表空间(一)
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2017-02-09</div>
+      <div class="categories">
+        
+          
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<a href="/categories/Database/">Database</a>
+
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        
+
+<a class="tag" href="/tags/Database/">Database</a>
+
+
+      
+    </div>
+  </div>
+</div>
+
+      
+        <div class="post-item-wrapper">
+  <a href="/2017/02/09/Linux 文件和文件夹的操作权限/" class="post-title">
+      Linux 文件和文件夹的操作权限
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2017-02-09</div>
+      <div class="categories">
+        
+          
+
+<a href="/categories/Linux/">Linux</a>
+
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        
+
+<a class="tag" href="/tags/Linux/">Linux</a>
+
+
+      
+    </div>
+  </div>
+</div>
+
+      
+        <div class="post-item-wrapper">
+  <a href="/2016/10/20/常用Git命令清单/" class="post-title">
+      常用 Git 命令清单
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2016-10-20</div>
+      <div class="categories">
+        
+          
+
+<a href="/categories/Java/">Java</a>
+
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        
+
+<a class="tag" href="/tags/Java/">Java</a>
+
+
+      
+    </div>
+  </div>
+</div>
+
+      
+        <div class="post-item-wrapper">
+  <a href="/2016/10/18/从根源上解析 Java volatile 关键字的实现/" class="post-title">
+      从根源上解析 Java volatile 关键字的实现
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2016-10-18</div>
+      <div class="categories">
+        
+          
+
+<a href="/categories/Java/">Java</a>
+
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        
+
+<a class="tag" href="/tags/Java/">Java</a>
+
+
+      
+    </div>
+  </div>
+</div>
+
+      
+        <div class="post-item-wrapper">
+  <a href="/2016/08/16/Java中的多线程你只要看这一篇就够了/" class="post-title">
+      Java中的多线程你只要看这一篇就够了
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2016-08-16</div>
+      <div class="categories">
+        
+          Uncategorized
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        <div class="untagged">Untagged</div>
+      
+    </div>
+  </div>
+</div>
+
+      
+        <div class="post-item-wrapper">
+  <a href="/2016/08/16/Tomcat容器管理安全的几种验证方式/" class="post-title">
+      Tomcat容器管理安全的几种验证方式
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2016-08-16</div>
+      <div class="categories">
+        
+          Uncategorized
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        <div class="untagged">Untagged</div>
+      
+    </div>
+  </div>
+</div>
+
+      
+        <div class="post-item-wrapper">
+  <a href="/2016/08/16/粗浅看 Tomcat中设计模式分析/" class="post-title">
+      粗浅看Tomcat中设计模式分析
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2016-08-16</div>
+      <div class="categories">
+        
+          Uncategorized
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        <div class="untagged">Untagged</div>
+      
+    </div>
+  </div>
+</div>
+
+      
+        <div class="post-item-wrapper">
+  <a href="/2016/08/16/粗浅看Tomcat系统架构分析/" class="post-title">
+      粗浅看Tomcat系统架构分析
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2016-08-16</div>
+      <div class="categories">
+        
+          Uncategorized
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        <div class="untagged">Untagged</div>
+      
+    </div>
+  </div>
+</div>
+
+      
+        <div class="post-item-wrapper">
+  <a href="/2016/07/21/Web-ContainerAndWeb-ServerAndApp-Server/" class="post-title">
+      web容器web服务器应用服务器
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2016-07-21</div>
+      <div class="categories">
+        
+          
+
+<a href="/categories/Java/">Java</a>
+
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        
+
+<a class="tag" href="/tags/Java/">Java</a>
+
+
+      
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 col-md-offset-1">
+      <ul class="pagination">
+          
+          
+            <li class="next">
+              <a href="/page/2/">
+                <span>下一页</span>
+                <span class="symbol-right">&gt;</span>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
 </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-  
-  
-  
-
-  
-
-  
-
-</body>
+  </body>
 </html>
+
